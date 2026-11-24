@@ -1,0 +1,1834 @@
+{
+  "mode": "offline_artifact_review",
+  "expectations_status": "final",
+  "semantic_quality": "not_measured; human review required",
+  "api_calls": 0,
+  "cases": [
+    {
+      "case_id": "PURE_002_without_team",
+      "group_id": "PURE_002",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "final",
+          "goals_to_cover": [
+            "Enable people new to online commerce to set up and operate an online retail business."
+          ],
+          "users_to_cover": [
+            "Store owners",
+            "Sales personnel",
+            "Customers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Store owners and sales personnel can manage products.",
+            "Store owners and sales personnel can manage customer accounts.",
+            "Customers can browse available products.",
+            "Customers can maintain a shopping cart.",
+            "Customers can place orders through the store."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "empty",
+            "roles": [],
+            "additional_stakeholder": null,
+            "responsibilities_to_cover": []
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask for project team roles and decision responsibilities needed to prepare RACI."
+          ],
+          "must_avoid": [
+            "Do not infer payment methods, delivery rules, refunds, or inventory synchronization as confirmed requirements."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ],
+          "reviewed_by": "project owner (user)",
+          "requirement_matching": "Both Store owners and Sales personnel must retain product and customer-account management capabilities. Actor lists may be combined in a single requirement, but omitting either actor is partial coverage. Do not expand unspecified manage actions until a reply supplies the operations."
+        },
+        "journey": {
+          "status": "final",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "team_responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "reply",
+                      "prepared_reply_id": "A0",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Online payment processing",
+              "Shipping provider integration"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Cart quantity",
+                "given": "A customer has an available product in the cart.",
+                "when": "The customer changes its quantity to 3.",
+                "then": "The cart displays quantity 3 for that product."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Empty order",
+                "given": "The cart is empty.",
+                "when": "The customer attempts to submit an order.",
+                "then": "Submission is rejected and no order is created."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Order submission",
+                "given": "A signed-in customer has a nonempty valid cart.",
+                "when": "The customer submits the order.",
+                "then": "One order with the selected items and quantities is created and its reference is displayed."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed.",
+            "reply_reference_rule": "Resolve evidence_reply_id to the dataset prepared reply, then to the actual runtime answer/source through the recorded delivery mapping; do not compare dataset IDs directly with runtime A-IDs."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ],
+          "reviewed_by": "project owner (user)"
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_002_with_team",
+      "group_id": "PURE_002",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "final",
+          "reviewed_by": "project owner (user)",
+          "goals_to_cover": [
+            "Enable people new to online commerce to set up and operate an online retail business."
+          ],
+          "users_to_cover": [
+            "Store owners",
+            "Sales personnel",
+            "Customers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Store owners and sales personnel can manage products.",
+            "Store owners and sales personnel can manage customer accounts.",
+            "Customers can browse available products.",
+            "Customers can maintain a shopping cart.",
+            "Customers can place orders through the store."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Sales representative",
+            "responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Sales representative",
+                "responsibilities": [
+                  {
+                    "meaning": "Act as a business stakeholder.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Explain day-to-day sales workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Participate in user acceptance testing.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer payment methods, delivery rules, refunds, or inventory synchronization as confirmed requirements."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ],
+          "requirement_matching": "Both Store owners and Sales personnel must retain product and customer-account management capabilities. Actor lists may be combined in a single requirement, but omitting either actor is partial coverage. Do not expand unspecified manage actions until a reply supplies the operations."
+        },
+        "journey": {
+          "status": "final",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "team_responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Sales representative",
+                "responsibilities": [
+                  {
+                    "meaning": "Act as a business stakeholder.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Explain day-to-day sales workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Participate in user acceptance testing.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Online payment processing",
+              "Shipping provider integration"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Cart quantity",
+                "given": "A customer has an available product in the cart.",
+                "when": "The customer changes its quantity to 3.",
+                "then": "The cart displays quantity 3 for that product."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Empty order",
+                "given": "The cart is empty.",
+                "when": "The customer attempts to submit an order.",
+                "then": "Submission is rejected and no order is created."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Order submission",
+                "given": "A signed-in customer has a nonempty valid cart.",
+                "when": "The customer submits the order.",
+                "then": "One order with the selected items and quantities is created and its reference is displayed."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed.",
+            "reply_reference_rule": "Resolve evidence_reply_id to the dataset prepared reply, then to the actual runtime answer/source through the recorded delivery mapping; do not compare dataset IDs directly with runtime A-IDs."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ],
+          "reviewed_by": "project owner (user)"
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_003_conflict_resolved",
+      "group_id": "PURE_003",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "final",
+          "reviewed_by": "project owner (user)",
+          "goals_to_cover": [
+            "Combine the inventory databases of three faculties."
+          ],
+          "users_to_cover": [
+            "University staff",
+            "Faculty staff",
+            "Department staff",
+            "Other users requesting assets or reserving spaces",
+            "Owning faculty administrator as the stated room-reservation approver; interaction channel is not specified."
+          ],
+          "requirement_meanings_to_cover": [
+            "Combine inventory databases from all three faculties.",
+            "Make integrated inventory available through a web interface.",
+            "The web interface must be secure; no provider or numeric security target is specified.",
+            "University, faculty and department staff can manage assets including rooms, software licences and equipment.",
+            "Other users can request assets for approval by the appropriate administrative level.",
+            "Other users can reserve spaces for approval by the appropriate administrative level.",
+            "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+            "Every room reservation is confirmed immediately without administrator approval."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+                "Every room reservation is confirmed immediately without administrator approval."
+              ],
+              "required_question_meaning": "Clarify whether administrator approval precedes reservation confirmation."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Faculty inventory representative",
+            "responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Faculty inventory representative",
+                "responsibilities": [
+                  {
+                    "meaning": "Explain asset request workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Explain space reservation workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Participate in user acceptance testing.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask a neutral question to resolve the explicit room-approval conflict, not a question treating the owning faculty administrator as entirely unspecified.",
+            "Clarify the appropriate administrative level for asset requests or other approval contexts only where it remains unknown; do not duplicate the room conflict as a gap.",
+            "Keep the faculty administrator as a business-process participant without assuming an application interface."
+          ],
+          "must_avoid": [
+            "Do not invent which administrative level approves a particular request.",
+            "Do not infer a specific authentication provider or quantitative security target."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ],
+          "requirement_matching": "Preserve actors, all three faculties, asset examples, administrative approval and before-confirmation timing. The two incompatible rules are BOTH required extraction targets even though one will later be withdrawn. Equivalent splitting of the secure-web requirement is acceptable if both capability and quality are preserved."
+        },
+        "journey": {
+          "status": "final",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "additional_facts_to_cover": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "conflict_resolution": "Faculty administrator approval is required before room reservation confirmation.",
+            "team_responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Faculty inventory representative",
+                "responsibilities": [
+                  {
+                    "meaning": "Explain asset request workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Explain space reservation workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Participate in user acceptance testing.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  }
+                ]
+              }
+            ],
+            "preserve_unchanged_initial_requirements": true,
+            "superseded_requirements": [
+              {
+                "statement": "Every room reservation is confirmed immediately without administrator approval.",
+                "disposition": "Withdraw from active confirmed requirements, tasks and acceptance criteria. Retain the original statement and conflict only in revision history/decision context.",
+                "evidence_prepared_reply_id": "C_REPLY",
+                "evidence_quote": "Every room reservation requires approval by the owning faculty administrator before confirmation. Withdraw the immediate confirmation rule."
+              }
+            ],
+            "retained_rule": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Automatic merging of ambiguous duplicate inventory records",
+              "Immediate room confirmation without approval"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Approval",
+                "given": "A member has submitted a valid room reservation.",
+                "when": "The owning faculty administrator has not approved it.",
+                "then": "The reservation is not confirmed before the required approval. An equivalent non-confirmed intermediate state is acceptable; no literal status name is mandated.",
+                "status_note": "The replies establish prior approval, not a required status string such as pending."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Overlap",
+                "given": "A room has a confirmed reservation from 10:00 to 11:00 Europe/Kyiv.",
+                "when": "A reservation for the same room from 10:30 to 11:30 is submitted for confirmation.",
+                "then": "The system prevents overlapping confirmation."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Rejected request",
+                "given": "A member has a pending asset request.",
+                "when": "The owning faculty administrator rejects it.",
+                "then": "The requester can still see the request with rejected status."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed.",
+            "reply_reference_rule": "Resolve evidence_reply_id to the dataset prepared reply, then to the actual runtime answer/source through the recorded delivery mapping; do not compare dataset IDs directly with runtime A-IDs."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures.",
+            "Use the selected rule in all final documents; retain the rejected rule only as historical conflict context."
+          ],
+          "reviewed_by": "project owner (user)"
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_003_conflict_unresolved",
+      "group_id": "PURE_003",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "final",
+          "reviewed_by": "project owner (user)",
+          "goals_to_cover": [
+            "Combine the inventory databases of three faculties."
+          ],
+          "users_to_cover": [
+            "University staff",
+            "Faculty staff",
+            "Department staff",
+            "Other users requesting assets or reserving spaces",
+            "Owning faculty administrator as the stated room-reservation approver; interaction channel is not specified."
+          ],
+          "requirement_meanings_to_cover": [
+            "Combine inventory databases from all three faculties.",
+            "Make integrated inventory available through a web interface.",
+            "The web interface must be secure; no provider or numeric security target is specified.",
+            "University, faculty and department staff can manage assets including rooms, software licences and equipment.",
+            "Other users can request assets for approval by the appropriate administrative level.",
+            "Other users can reserve spaces for approval by the appropriate administrative level.",
+            "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+            "Every room reservation is confirmed immediately without administrator approval."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+                "Every room reservation is confirmed immediately without administrator approval."
+              ],
+              "required_question_meaning": "Clarify whether administrator approval precedes reservation confirmation."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Faculty inventory representative",
+            "responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Faculty inventory representative",
+                "responsibilities": [
+                  {
+                    "meaning": "Explain asset request workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Explain space reservation workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Participate in user acceptance testing.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask a neutral question to resolve the explicit room-approval conflict, not a question treating the owning faculty administrator as entirely unspecified.",
+            "Clarify the appropriate administrative level for asset requests or other approval contexts only where it remains unknown; do not duplicate the room conflict as a gap.",
+            "Keep the faculty administrator as a business-process participant without assuming an application interface."
+          ],
+          "must_avoid": [
+            "Do not invent which administrative level approves a particular request.",
+            "Do not infer a specific authentication provider or quantitative security target."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ],
+          "requirement_matching": "Preserve actors, all three faculties, asset examples, administrative approval and before-confirmation timing. The two incompatible rules are BOTH required extraction targets even though one will later be withdrawn. Equivalent splitting of the secure-web requirement is acceptable if both capability and quality are preserved."
+        },
+        "journey": {
+          "status": "final",
+          "clarification": [
+            "Detect both incompatible rules and ask a neutral question.",
+            "The undecided reply leaves the conflict open."
+          ],
+          "updated_requirements": {
+            "conflict_status": "unresolved",
+            "must_preserve_both_positions": true,
+            "team_responsibilities_to_cover": [
+              {
+                "role": "Product Owner",
+                "responsibilities": [
+                  {
+                    "meaning": "Set priorities.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve business requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Make the final release decision.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                    }
+                  },
+                  {
+                    "meaning": "Approve user acceptance testing results.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Product Owner approves the user acceptance testing results."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Business Analyst",
+                "responsibilities": [
+                  {
+                    "meaning": "Gather requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Clarify requirements.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Prepare the specification.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  },
+                  {
+                    "meaning": "Maintain links between requirements and implementation tasks.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Full-stack Developer",
+                "responsibilities": [
+                  {
+                    "meaning": "Make technical implementation decisions.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Develop the application.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  },
+                  {
+                    "meaning": "Deploy releases.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "QA Engineer",
+                "responsibilities": [
+                  {
+                    "meaning": "Prepare tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Execute tests.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Record defects.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  },
+                  {
+                    "meaning": "Report whether the release meets the agreed acceptance criteria.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "Faculty inventory representative",
+                "responsibilities": [
+                  {
+                    "meaning": "Explain asset request workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Explain space reservation workflows.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  },
+                  {
+                    "meaning": "Participate in user acceptance testing.",
+                    "evidence": {
+                      "stage": "initial",
+                      "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "specification": {
+            "expected_behavior": "Explain the unresolved decision. A clearly marked partial draft may be offered, with both positions retained."
+          },
+          "tasks": {
+            "expected_behavior": "Any provisional task affected by the conflict must show its dependency on the open decision."
+          },
+          "acceptance_criteria": {
+            "expected_behavior": "Do not present either incompatible rule as an agreed acceptance condition."
+          },
+          "raci": {
+            "expected_behavior": "Assigning a decision owner does not resolve the product rule.",
+            "reply_reference_rule": "Resolve evidence_reply_id to the dataset prepared reply, then to the actual runtime answer/source through the recorded delivery mapping; do not compare dataset IDs directly with runtime A-IDs."
+          },
+          "end_to_end": [
+            "Do not claim a finalized specification or silently select either rule.",
+            "Allow the user to return later and resolve the conflict."
+          ],
+          "reviewed_by": "project owner (user)"
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    }
+  ]
+}

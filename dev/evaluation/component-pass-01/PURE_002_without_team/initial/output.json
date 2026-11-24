@@ -1,0 +1,139 @@
+{
+  "goals": [
+    {
+      "id": "G1",
+      "description": "Enable individuals new to online commerce to set up and operate an online retail business.",
+      "source": {
+        "document": "brief",
+        "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "U1",
+      "name": "Store owner",
+      "responsibilities": [
+        {
+          "description": "Manage products and customer accounts.",
+          "source": {
+            "document": "brief",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts"
+          }
+        }
+      ]
+    },
+    {
+      "id": "U2",
+      "name": "Sales personnel",
+      "responsibilities": [
+        {
+          "description": "Manage products and customer accounts.",
+          "source": {
+            "document": "brief",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts"
+          }
+        }
+      ]
+    },
+    {
+      "id": "U3",
+      "name": "Customer",
+      "responsibilities": [
+        {
+          "description": "Browse the available products.",
+          "source": {
+            "document": "brief",
+            "quote": "customers should be able to browse the available products,"
+          }
+        },
+        {
+          "description": "Maintain a shopping cart.",
+          "source": {
+            "document": "brief",
+            "quote": "maintain a shopping cart,"
+          }
+        },
+        {
+          "description": "Place orders through the store.",
+          "source": {
+            "document": "brief",
+            "quote": "and place orders through the store."
+          }
+        }
+      ]
+    }
+  ],
+  "team_roles": [],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "Allow store owners and sales personnel to manage products.",
+      "source": {
+        "document": "brief",
+        "quote": "Store owners and sales personnel should be able to manage products"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R2",
+      "description": "Allow store owners and sales personnel to manage customer accounts.",
+      "source": {
+        "document": "brief",
+        "quote": "Store owners and sales personnel should be able to manage products and customer accounts"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R3",
+      "description": "Allow customers to browse available products.",
+      "source": {
+        "document": "brief",
+        "quote": "customers should be able to browse the available products,"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R4",
+      "description": "Allow customers to maintain a shopping cart.",
+      "source": {
+        "document": "brief",
+        "quote": "maintain a shopping cart,"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R5",
+      "description": "Allow customers to place orders through the store.",
+      "source": {
+        "document": "brief",
+        "quote": "and place orders through the store."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    }
+  ],
+  "missing_information": [
+    {
+      "id": "M1",
+      "topic": "Project Team roles",
+      "why_needed": "No project team members (such as developers, designers, or decision-makers) are identified. Responsibilities for project implementation and final acceptance are undefined."
+    }
+  ],
+  "contradictions": [],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Could you please specify the members of the project team and identify who holds authority for project decisions, development, and system acceptance?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": true
+    }
+  ],
+  "assumptions": [],
+  "resolutions": []
+}

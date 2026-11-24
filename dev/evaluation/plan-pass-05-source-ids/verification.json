@@ -1,0 +1,9 @@
+{
+  "baseline_hashes": "passed",
+  "registry_offsets_and_quotes": "passed",
+  "model_source_ids": "all_exist",
+  "candidate_api_calls": 1,
+  "retries": 0,
+  "local_tests_passed": 62,
+  "semantic_review": "concrete errors retained in comparison.json; no final approval implied"
+}

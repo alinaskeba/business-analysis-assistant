@@ -1,0 +1,16 @@
+{
+  "mode": "actual_headless_edge_browser_live_click",
+  "before": {
+    "button": "Retry RACI only",
+    "disabled": false
+  },
+  "after": {
+    "status": "Done - review the result",
+    "button": "Generate documents",
+    "errors": null,
+    "documentsVisible": true,
+    "raciVisible": true
+  },
+  "passed": true,
+  "clicks": 1
+}

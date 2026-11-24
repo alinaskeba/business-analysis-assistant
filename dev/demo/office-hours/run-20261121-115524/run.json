@@ -1,0 +1,10 @@
+{
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "approval_kind": "simulated_demo_approval_not_user_approval",
+  "analysis_prompt": "full-workflow-v1",
+  "plan_prompt": "plan-v4-explicit-implementation-task-coverage",
+  "started_at": "2026-11-21T11:55:24.772336+00:00",
+  "status": "passed_automated_checks_pending_semantic_review",
+  "completed_at": "2026-11-21T11:55:28.710937+00:00"
+}

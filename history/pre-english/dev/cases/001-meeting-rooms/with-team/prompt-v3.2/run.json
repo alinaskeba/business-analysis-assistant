@@ -1,0 +1,15 @@
+{
+  "case_id": "001-meeting-rooms/with-team",
+  "split": "dev",
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "prompt_revision": "brief-analysis-v3.2-coverage",
+  "prompt_sha256": "50312903710d7a85a6396a044e7ffcd43f3bc337ca5f11805bc1cb5be6865f20",
+  "brief_sha256": "a19c11f6ff5cfd5475680223f3bad4d0ade34872daf15ab173137e4bf830f195",
+  "started_at_utc": "2026-11-18T12:43:25.176052+00:00",
+  "evaluation": "exploratory; draft expectations unchanged",
+  "status": "failed",
+  "validation": "failed",
+  "failure_stage": "local_validation",
+  "failure_reason": "M2 has no clarification question"
+}

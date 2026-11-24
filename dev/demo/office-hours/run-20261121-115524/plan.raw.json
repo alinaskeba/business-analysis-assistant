@@ -1,0 +1,148 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Develop public static office hours page",
+      "description": "Implement the public web page to display the required opening hours text string without any additional features.",
+      "requirement_ids": [
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Configure hosting and domain",
+      "description": "Deploy the page using the existing company hosting environment and company domain.",
+      "requirement_ids": [
+        "R4"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "An office visitor navigates to the public web page",
+      "when": "the page loads",
+      "then": "the text 'Monday to Friday, 09:00-17:00' is displayed on the screen",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "A visitor is not signed in",
+      "when": "the visitor navigates to the public web page",
+      "then": "the visitor can view the opening hours text without a sign-in prompt",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "A visitor is browsing the page",
+      "when": "the visitor interacts with the page",
+      "then": "no options for editing, booking, or creating accounts are accessible or visible",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "The application is ready for release",
+      "when": "deployment is initiated",
+      "then": "the application is hosted on the existing company hosting environment and accessible via the existing company domain",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "open_questions": [],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Implement static page and configure infrastructure",
+      "task_ids": [
+        "TASK1",
+        "TASK2"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S6",
+            "S10"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S6",
+            "S10"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "implementation"
+    },
+    {
+      "id": "RA2",
+      "activity": "Test functional requirements",
+      "task_ids": [
+        "TASK1"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "testing"
+    },
+    {
+      "id": "RA3",
+      "activity": "Deploy public page",
+      "task_ids": [
+        "TASK2"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S8"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "deployment"
+    }
+  ]
+}

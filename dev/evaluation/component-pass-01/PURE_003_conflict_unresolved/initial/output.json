@@ -1,0 +1,274 @@
+{
+  "goals": [
+    {
+      "id": "G1",
+      "description": "Create a Unified University Inventory System that combines inventory databases of three faculties and provides access via a secure web interface.",
+      "source": {
+        "document": "brief",
+        "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "U1",
+      "name": "University, faculty, and department staff",
+      "responsibilities": [
+        {
+          "description": "Manage assets such as rooms, software licences, and equipment.",
+          "source": {
+            "document": "brief",
+            "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+          }
+        }
+      ]
+    },
+    {
+      "id": "U2",
+      "name": "Other users",
+      "responsibilities": [
+        {
+          "description": "Request assets or reserve spaces.",
+          "source": {
+            "document": "brief",
+            "quote": "other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+          }
+        }
+      ]
+    },
+    {
+      "id": "U3",
+      "name": "Faculty inventory representative",
+      "responsibilities": [
+        {
+          "description": "Explains asset request and space reservation workflows.",
+          "source": {
+            "document": "brief",
+            "quote": "A faculty inventory representative explains asset request and space reservation workflows"
+          }
+        },
+        {
+          "description": "Participates in user acceptance testing.",
+          "source": {
+            "document": "brief",
+            "quote": "and participates in user acceptance testing."
+          }
+        }
+      ]
+    }
+  ],
+  "team_roles": [
+    {
+      "id": "T1",
+      "name": "Product Owner",
+      "responsibilities": [
+        {
+          "description": "Defines priorities.",
+          "source": {
+            "document": "brief",
+            "quote": "The Product Owner defines priorities"
+          }
+        },
+        {
+          "description": "Approves business requirements.",
+          "source": {
+            "document": "brief",
+            "quote": "approves business requirements"
+          }
+        },
+        {
+          "description": "Makes the final release decision.",
+          "source": {
+            "document": "brief",
+            "quote": "and makes the final release decision."
+          }
+        },
+        {
+          "description": "Approves user acceptance testing results.",
+          "source": {
+            "document": "brief",
+            "quote": "The Product Owner approves the user acceptance testing results."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "name": "Business Analyst",
+      "responsibilities": [
+        {
+          "description": "Gathers and clarifies requirements.",
+          "source": {
+            "document": "brief",
+            "quote": "The Business Analyst gathers and clarifies requirements"
+          }
+        },
+        {
+          "description": "Prepares the specification.",
+          "source": {
+            "document": "brief",
+            "quote": "prepares the specification"
+          }
+        },
+        {
+          "description": "Maintains links between requirements and implementation tasks.",
+          "source": {
+            "document": "brief",
+            "quote": "and maintains links between requirements and implementation tasks."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "name": "Full-stack Developer",
+      "responsibilities": [
+        {
+          "description": "Makes technical implementation decisions.",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer makes technical implementation decisions"
+          }
+        },
+        {
+          "description": "Develops the application.",
+          "source": {
+            "document": "brief",
+            "quote": "develops the application"
+          }
+        },
+        {
+          "description": "Deploys releases.",
+          "source": {
+            "document": "brief",
+            "quote": "and deploys releases."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T4",
+      "name": "QA Engineer",
+      "responsibilities": [
+        {
+          "description": "Prepares and executes tests.",
+          "source": {
+            "document": "brief",
+            "quote": "The QA Engineer prepares and executes tests"
+          }
+        },
+        {
+          "description": "Records defects.",
+          "source": {
+            "document": "brief",
+            "quote": "records defects"
+          }
+        },
+        {
+          "description": "Reports whether the release meets the agreed acceptance criteria.",
+          "source": {
+            "document": "brief",
+            "quote": "and reports whether the release meets the agreed acceptance criteria."
+          }
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "The system must be accessible through a secure web interface.",
+      "source": {
+        "document": "brief",
+        "quote": "makes the integrated inventory available through a secure web interface."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R2",
+      "description": "University, faculty, and department staff must be able to manage assets.",
+      "source": {
+        "document": "brief",
+        "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R3",
+      "description": "Other users must be able to request assets.",
+      "source": {
+        "document": "brief",
+        "quote": "other users should be able to request assets"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R4",
+      "description": "Other users must be able to reserve spaces.",
+      "source": {
+        "document": "brief",
+        "quote": "or reserve spaces for approval by the appropriate administrative level."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R5",
+      "description": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+      "source": {
+        "document": "brief",
+        "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R6",
+      "description": "Every room reservation is confirmed immediately without administrator approval.",
+      "source": {
+        "document": "brief",
+        "quote": "Every room reservation is confirmed immediately without administrator approval."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    }
+  ],
+  "missing_information": [
+    {
+      "id": "M1",
+      "topic": "Definition of 'appropriate administrative level'",
+      "why_needed": "The brief mentions that requests and reservations are subject to approval by an appropriate administrative level, but does not specify which roles this encompasses for different asset types."
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "C1",
+      "description": "Room reservations cannot be both approved by a faculty administrator before confirmation and confirmed immediately without such approval.",
+      "requirement_ids": [
+        "R5",
+        "R6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Should room reservations require approval by a faculty administrator, or should they be confirmed immediately upon request?",
+      "target_type": "conflict",
+      "target_id": "C1",
+      "blocks_final_specification": true
+    },
+    {
+      "id": "Q2",
+      "text": "Which roles specifically constitute the 'appropriate administrative level' responsible for approving different types of asset requests and space reservations?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": true
+    }
+  ],
+  "assumptions": [],
+  "resolutions": []
+}

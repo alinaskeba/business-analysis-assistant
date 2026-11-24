@@ -1,0 +1,197 @@
+{
+  "quote_checks": [
+    {
+      "path": "result.goals[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "A small community library needs an English-language web application to manage book loans"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.goals[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "reduce manual loan records."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[0].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "Librarians can add and update book-copy records."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[0].responsibilities[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "Librarians can record the return of a borrowed copy."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[1].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "Members can browse available copies,"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[1].responsibilities[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "borrow an available copy,"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[1].responsibilities[2].source",
+      "source": {
+        "document": "brief",
+        "quote": "and view their own current loans."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[0].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "the Product Owner is Accountable for its preparation."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[0].responsibilities[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "The Product Owner is both Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[1].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "The Business Analyst is Responsible for preparing the specification"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[2].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "The Developer is both Responsible and Accountable for implementation and deployment."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[3].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "The QA Engineer is both Responsible and Accountable for test preparation and execution."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[4].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "A library representative explains library workflows"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[4].responsibilities[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "and participates in user acceptance testing as a project adviser."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "Librarians can add and update book-copy records."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "Members can browse available copies,"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[2].source",
+      "source": {
+        "document": "brief",
+        "quote": "borrow an available copy,"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[3].source",
+      "source": {
+        "document": "brief",
+        "quote": "and view their own current loans."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[4].source",
+      "source": {
+        "document": "brief",
+        "quote": "Librarians can record the return of a borrowed copy."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[5].source",
+      "source": {
+        "document": "brief",
+        "quote": "The application must prevent a copy from having two active loans."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[6].source",
+      "source": {
+        "document": "brief",
+        "quote": "A recorded return makes that copy available again."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[7].source",
+      "source": {
+        "document": "brief",
+        "quote": "needs an English-language web application"
+      },
+      "verbatim": true
+    }
+  ],
+  "verbatim_quotes": {
+    "numerator": 22,
+    "denominator": 22
+  },
+  "semantic_support": "requires_human_review",
+  "extraction_recall_and_precision": "requires_semantic_matching",
+  "counts": {
+    "goals": 2,
+    "users": 2,
+    "team_roles": 5,
+    "requirements": 8,
+    "missing_information": 2,
+    "contradictions": 0,
+    "questions": 2,
+    "assumptions": 0,
+    "resolutions": 0
+  }
+}

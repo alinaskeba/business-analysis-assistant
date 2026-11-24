@@ -1,0 +1,300 @@
+{
+  "sources": {
+    "brief": "A small community library needs an English-language web application to manage book loans and reduce manual loan records. Librarians can add and update book-copy records. Members can browse available copies, borrow an available copy, and view their own current loans. Librarians can record the return of a borrowed copy. The application must prevent a copy from having two active loans. A recorded return makes that copy available again.\n\nThe project team consists of a Product Owner, a Business Analyst, a Developer and a QA Engineer. The Business Analyst is Responsible for preparing the specification and the Product Owner is Accountable for its preparation. The Product Owner is both Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision. The Developer is both Responsible and Accountable for implementation and deployment. The QA Engineer is both Responsible and Accountable for test preparation and execution. A library representative explains library workflows and participates in user acceptance testing as a project adviser.",
+    "A1": "Members sign in before borrowing or viewing their own current loans. Browsing available copies does not require sign-in. Each member can have at most three active loans. Borrowing a fourth copy is refused without creating another loan. A member can see only their own current loans. Librarians can add and update copies and record returns. A copy is available when it has no active loan. Borrowing an unavailable copy is refused. For this prototype, a librarian is an authorized product role; staff authentication implementation is left to the Developer. Fines, reservations, renewals, payments and email notifications are outside the first release. The first release is due six weeks after requirements approval. The Product Owner accepts the release when the agreed borrowing, loan-limit, access and return scenarios pass user acceptance testing. No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target. The Developer decides the technical mechanism for identifying members and individual book copies. This technical choice is delegated to the Developer rather than being an unresolved business decision.",
+    "A2": "The library representative advises the project team and does not require separate access to the web application."
+  },
+  "replies": [
+    {
+      "id": "A1",
+      "question_id": "Q1",
+      "text": "Members sign in before borrowing or viewing their own current loans. Browsing available copies does not require sign-in. Each member can have at most three active loans. Borrowing a fourth copy is refused without creating another loan. A member can see only their own current loans. Librarians can add and update copies and record returns. A copy is available when it has no active loan. Borrowing an unavailable copy is refused. For this prototype, a librarian is an authorized product role; staff authentication implementation is left to the Developer. Fines, reservations, renewals, payments and email notifications are outside the first release. The first release is due six weeks after requirements approval. The Product Owner accepts the release when the agreed borrowing, loan-limit, access and return scenarios pass user acceptance testing. No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target. The Developer decides the technical mechanism for identifying members and individual book copies. This technical choice is delegated to the Developer rather than being an unresolved business decision.",
+      "at": "2026-11-21T14:18:35.127634+00:00"
+    },
+    {
+      "id": "A2",
+      "question_id": "Q2",
+      "text": "The library representative advises the project team and does not require separate access to the web application.",
+      "at": "2026-11-21T14:18:35.127654+00:00"
+    }
+  ],
+  "previous_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Manage book loans in a small community library via a web application.",
+        "source": {
+          "document": "brief",
+          "quote": "A small community library needs an English-language web application to manage book loans"
+        }
+      },
+      {
+        "id": "G2",
+        "description": "Reduce manual loan records.",
+        "source": {
+          "document": "brief",
+          "quote": "reduce manual loan records."
+        }
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "Librarian",
+        "responsibilities": [
+          {
+            "description": "Add and update book-copy records.",
+            "source": {
+              "document": "brief",
+              "quote": "Librarians can add and update book-copy records."
+            }
+          },
+          {
+            "description": "Record the return of a borrowed copy.",
+            "source": {
+              "document": "brief",
+              "quote": "Librarians can record the return of a borrowed copy."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "name": "Member",
+        "responsibilities": [
+          {
+            "description": "Browse available copies.",
+            "source": {
+              "document": "brief",
+              "quote": "Members can browse available copies,"
+            }
+          },
+          {
+            "description": "Borrow an available copy.",
+            "source": {
+              "document": "brief",
+              "quote": "borrow an available copy,"
+            }
+          },
+          {
+            "description": "View their own current loans.",
+            "source": {
+              "document": "brief",
+              "quote": "and view their own current loans."
+            }
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Product Owner",
+        "responsibilities": [
+          {
+            "description": "Accountable for specification preparation.",
+            "source": {
+              "document": "brief",
+              "quote": "the Product Owner is Accountable for its preparation."
+            }
+          },
+          {
+            "description": "Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision.",
+            "source": {
+              "document": "brief",
+              "quote": "The Product Owner is both Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "name": "Business Analyst",
+        "responsibilities": [
+          {
+            "description": "Responsible for preparing the specification.",
+            "source": {
+              "document": "brief",
+              "quote": "The Business Analyst is Responsible for preparing the specification"
+            }
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "name": "Developer",
+        "responsibilities": [
+          {
+            "description": "Responsible and Accountable for implementation and deployment.",
+            "source": {
+              "document": "brief",
+              "quote": "The Developer is both Responsible and Accountable for implementation and deployment."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "name": "QA Engineer",
+        "responsibilities": [
+          {
+            "description": "Responsible and Accountable for test preparation and execution.",
+            "source": {
+              "document": "brief",
+              "quote": "The QA Engineer is both Responsible and Accountable for test preparation and execution."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T5",
+        "name": "Library representative",
+        "responsibilities": [
+          {
+            "description": "Explains library workflows.",
+            "source": {
+              "document": "brief",
+              "quote": "A library representative explains library workflows"
+            }
+          },
+          {
+            "description": "Participates in user acceptance testing as a project adviser.",
+            "source": {
+              "document": "brief",
+              "quote": "and participates in user acceptance testing as a project adviser."
+            }
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Librarians can add and update book-copy records.",
+        "source": {
+          "document": "brief",
+          "quote": "Librarians can add and update book-copy records."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R2",
+        "description": "Members can browse available copies.",
+        "source": {
+          "document": "brief",
+          "quote": "Members can browse available copies,"
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R3",
+        "description": "Members can borrow an available copy.",
+        "source": {
+          "document": "brief",
+          "quote": "borrow an available copy,"
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R4",
+        "description": "Members can view their own current loans.",
+        "source": {
+          "document": "brief",
+          "quote": "and view their own current loans."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R5",
+        "description": "Librarians can record the return of a borrowed copy.",
+        "source": {
+          "document": "brief",
+          "quote": "Librarians can record the return of a borrowed copy."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R6",
+        "description": "Prevent a copy from having two active loans.",
+        "source": {
+          "document": "brief",
+          "quote": "The application must prevent a copy from having two active loans."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R7",
+        "description": "A recorded return makes that copy available again.",
+        "source": {
+          "document": "brief",
+          "quote": "A recorded return makes that copy available again."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R8",
+        "description": "Application must be in English.",
+        "source": {
+          "document": "brief",
+          "quote": "needs an English-language web application"
+        },
+        "kind": "non_functional",
+        "status": "confirmed"
+      }
+    ],
+    "missing_information": [
+      {
+        "id": "M1",
+        "topic": "Identification method for members and books",
+        "why_needed": "To define how the system verifies who is borrowing and which specific book copy is involved."
+      },
+      {
+        "id": "M2",
+        "topic": "Interaction channel for library representative",
+        "why_needed": "Clarification on how the library representative accesses the system or interface to fulfill their advisory role."
+      }
+    ],
+    "contradictions": [],
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "How should the system identify members and book copies to support borrowing and returning actions?",
+        "target_type": "gap",
+        "target_id": "M1",
+        "blocks_final_specification": true
+      },
+      {
+        "id": "Q2",
+        "text": "Does the library representative require direct access to the web application for their advisory activities, or is there a separate communication process?",
+        "target_type": "gap",
+        "target_id": "M2",
+        "blocks_final_specification": false
+      }
+    ],
+    "assumptions": [],
+    "resolutions": []
+  },
+  "previously_asked_questions": {
+    "Q1": {
+      "id": "Q1",
+      "text": "How should the system identify members and book copies to support borrowing and returning actions?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": true
+    },
+    "Q2": {
+      "id": "Q2",
+      "text": "Does the library representative require direct access to the web application for their advisory activities, or is there a separate communication process?",
+      "target_type": "gap",
+      "target_id": "M2",
+      "blocks_final_specification": false
+    }
+  }
+}

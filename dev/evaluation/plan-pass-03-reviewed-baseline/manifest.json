@@ -1,0 +1,34 @@
+{
+  "case_id": "PURE_002_without_team",
+  "baseline_id": "source-reviewed-plan-v1",
+  "origin": "assistant_edited_from_preserved_model_output_at_user_request",
+  "not_a_model_run": true,
+  "ready_for_finalization": false,
+  "status": "reviewed_baseline_with_open_governance_assignments",
+  "review_note": "Editorial corrections are not stakeholder answers. Do not invent unknown A/R assignments.",
+  "original_output": "dev\\evaluation\\plan-pass-02-PURE_002_without_team\\candidate-attempt-04\\output.json",
+  "original_output_sha256": "2351377c8d7c1efae84db8a94667ef687614dad35c4d540b57301628072fb073",
+  "input_sha256": "ffadd2c18f6356d5431c3b2034edb5c61f485c43eaaa10172584cd5e3b84507f",
+  "criteria_count": 15,
+  "criterion_id_coverage": {
+    "covered": 13,
+    "total": 13
+  },
+  "runtime_validation": {
+    "status": "blocked",
+    "errors": [
+      "result.raci[0].accountable: too few items",
+      "result.raci[5].responsible: too few items"
+    ]
+  },
+  "governance_question_ids": [
+    "GQ1",
+    "GQ2"
+  ],
+  "files_sha256": {
+    "plan.reviewed.json": "0b3d179d42b1fe127c92bd5b8913cb901a1cf9bbe1e4221dd567c59ab437c697",
+    "governance-questions.json": "d4e8c0fbf054c637fea40669f4270d8003d110df5649f73fc67f3d5d5b59815c",
+    "scenario-parameters.json": "3167ce67052c7ea9b0a0d43a4a69e450defc31a39fdeb1d61870e64b6eb5bd24",
+    "changes.json": "30dbc33a1beca9e3eefa8263d8b77049fad8dffb220b7977dc1c3ce32e797f82"
+  }
+}

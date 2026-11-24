@@ -1,0 +1,165 @@
+{
+  "origin": "assistant-assisted review of unedited live model response",
+  "criterion_coverage": {
+    "covered": 13,
+    "total": 13
+  },
+  "open_questions": [],
+  "validation_status": "validation_failed",
+  "validation_errors": [
+    "acceptance_criteria[11].source: quote not found in named source",
+    "raci[1].accountable.source: quote not found in named source",
+    "raci[1].responsible.source: quote not found in named source",
+    "raci[4].responsible.source: quote not found in named source"
+  ],
+  "governance": {
+    "specification_preparation": {
+      "A": "Product Owner",
+      "R": "Business Analyst",
+      "matches_A4": true,
+      "source_quote_valid": true
+    },
+    "specification_acceptance": {
+      "A": "Product Owner",
+      "R": "Product Owner",
+      "matches_A4": true,
+      "source_quote_valid": false
+    },
+    "empty_task_ids_for_governance": true,
+    "missing_activities": [
+      "Approve business requirements",
+      "Accept user acceptance testing results"
+    ]
+  },
+  "business_behavior_findings": [
+    {
+      "component": "acceptance_criteria",
+      "id": "AC1",
+      "path": "acceptance_criteria[0].given",
+      "finding": "Adds authenticated-staff precondition; source supplies role permissions but does not specify a staff sign-in policy. This test scenario does not by itself prove denial for other states, so treat as an unconfirmed test assumption, not a confirmed new access rule.",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      },
+      "observed": "a store owner or sales personnel is authenticated"
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC2",
+      "path": "acceptance_criteria[1].given",
+      "finding": "Adds authenticated-staff precondition; source supplies role permissions but does not specify a staff sign-in policy. This test scenario does not by itself prove denial for other states, so treat as an unconfirmed test assumption, not a confirmed new access rule.",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      },
+      "observed": "a store owner or sales personnel is authenticated"
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC10",
+      "path": "acceptance_criteria[9].given",
+      "finding": "Adds authenticated-staff precondition; source supplies role permissions but does not specify a staff sign-in policy. This test scenario does not by itself prove denial for other states, so treat as an unconfirmed test assumption, not a confirmed new access rule.",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      },
+      "observed": "a store owner or sales personnel is authenticated"
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC11",
+      "path": "acceptance_criteria[10].given",
+      "finding": "Adds authenticated-staff precondition; source supplies role permissions but does not specify a staff sign-in policy. This test scenario does not by itself prove denial for other states, so treat as an unconfirmed test assumption, not a confirmed new access rule.",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      },
+      "observed": "a store owner or sales personnel is authenticated"
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC5",
+      "path": "acceptance_criteria[4]",
+      "finding": "No explicit signed-in precondition; outcome omits the required quantities.",
+      "source": {
+        "document": "A2",
+        "quote": "A successful submission creates one order containing the selected items and quantities"
+      },
+      "observed": {
+        "id": "AC5",
+        "requirement_id": "R5",
+        "given": "a customer has items in their cart",
+        "when": "the customer successfully submits the order",
+        "then": "a single order containing selected items is created",
+        "source": {
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities"
+        }
+      }
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC7",
+      "path": "acceptance_criteria[6]",
+      "finding": "A redirect/prompt is checked instead of explicitly ensuring no order before successful sign-in.",
+      "source": {
+        "document": "A2",
+        "quote": "must sign in before placing an order."
+      },
+      "observed": {
+        "id": "AC7",
+        "requirement_id": "R7",
+        "given": "a customer is not signed in",
+        "when": "they attempt to place an order",
+        "then": "the system redirects or prompts the customer to sign in",
+        "source": {
+          "document": "A2",
+          "quote": "must sign in before placing an order."
+        }
+      }
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC8",
+      "path": "acceptance_criteria[7]",
+      "finding": "No negative or parameterized quantity cases cover zero, negative or fractional values.",
+      "source": {
+        "document": "A2",
+        "quote": "change quantities to positive whole numbers"
+      },
+      "observed": {
+        "id": "AC8",
+        "requirement_id": "R9",
+        "given": "a customer has an item in the cart",
+        "when": "they update the quantity to a positive whole number",
+        "then": "the cart updates to the new quantity",
+        "source": {
+          "document": "A2",
+          "quote": "change quantities to positive whole numbers"
+        }
+      }
+    },
+    {
+      "component": "acceptance_criteria",
+      "id": "AC12",
+      "path": "acceptance_criteria[11]",
+      "finding": "Adds unique to reference; cited source is paraphrased with ellipsis rather than verbatim.",
+      "source": {
+        "document": "A2",
+        "quote": "A successful submission creates one order... and displays its reference."
+      },
+      "observed": {
+        "id": "AC12",
+        "requirement_id": "R16",
+        "given": "a customer submits an order",
+        "when": "the submission is successful",
+        "then": "the system displays the unique order reference",
+        "source": {
+          "document": "A2",
+          "quote": "A successful submission creates one order... and displays its reference."
+        }
+      }
+    }
+  ],
+  "note": "Corrected plan/reference was not sent to Gemini. Per-ID coverage and right role labels do not make the evidence or criteria semantically complete."
+}

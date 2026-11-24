@@ -1,0 +1,191 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Inventory Data Integration",
+      "description": "Develop ETL processes to combine and import inventory databases from three faculties into a unified structure, requiring manual duplicate resolution.",
+      "requirement_ids": [
+        "R1",
+        "R16"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Secure Web Interface Development",
+      "description": "Implement a secure web interface for accessing the unified inventory and managing assets based on user roles.",
+      "requirement_ids": [
+        "R2",
+        "R3",
+        "R4",
+        "R8",
+        "R9",
+        "R10",
+        "R11"
+      ]
+    },
+    {
+      "id": "TASK3",
+      "title": "Asset and Reservation Workflow Implementation",
+      "description": "Build the request/reservation engine ensuring administrator approval workflows, time zone compliance, and non-overlapping reservation checks.",
+      "requirement_ids": [
+        "R5",
+        "R6",
+        "R7",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ]
+    },
+    {
+      "id": "TASK4",
+      "title": "Testing and Release",
+      "description": "Execute user acceptance testing and release activities within the eight-week delivery constraint.",
+      "requirement_ids": [
+        "R17"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R13",
+      "given": "a room has a confirmed reservation from 10:00 to 12:00",
+      "when": "a user attempts to reserve the same room from 11:00 to 13:00",
+      "then": "the system rejects the reservation request",
+      "source": {
+        "document": "A2",
+        "quote": "A room cannot have overlapping confirmed reservations."
+      }
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R14",
+      "given": "a reservation request",
+      "when": "the reservation end time is before the start time in Europe/Kyiv",
+      "then": "the system rejects the request",
+      "source": {
+        "document": "A2",
+        "quote": "Start and end times use the Europe/Kyiv time zone and the end must be later than the start."
+      }
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R7",
+      "given": "a submitted room reservation request",
+      "when": "the owning faculty administrator has not yet reviewed the request",
+      "then": "the status is not confirmed",
+      "source": {
+        "document": "A1",
+        "quote": "Every room reservation requires approval by the owning faculty administrator before confirmation."
+      }
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R15",
+      "given": "a rejected reservation request",
+      "when": "the requester views their dashboard",
+      "then": "the request is visible with a rejected status",
+      "source": {
+        "document": "A2",
+        "quote": "A rejected request remains visible to its requester with a rejected status."
+      }
+    }
+  ],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Specification Preparation",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source": {
+            "document": "A3",
+            "quote": "The Business Analyst is responsible for preparing the specification."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA2",
+      "activity": "Implementation and Deployment",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A3",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA3",
+      "activity": "Testing",
+      "task_ids": [
+        "TASK4"
+      ],
+      "accountable": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A3",
+            "quote": "The QA Engineer is accountable for test execution."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "brief",
+            "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+          }
+        }
+      ],
+      "consulted": [
+        {
+          "role_id": "T5",
+          "source": {
+            "document": "brief",
+            "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+          }
+        }
+      ],
+      "informed": []
+    }
+  ]
+}

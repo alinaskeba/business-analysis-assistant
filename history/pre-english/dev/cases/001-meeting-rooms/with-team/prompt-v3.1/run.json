@@ -1,0 +1,15 @@
+{
+  "case_id": "001-meeting-rooms/with-team",
+  "split": "dev",
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "prompt_revision": "brief-analysis-v3.1-coverage",
+  "prompt_sha256": "424e2a184826d944cd09f286e480d589c4ed72f36d214ebb613b6cec2bf81029",
+  "brief_sha256": "a19c11f6ff5cfd5475680223f3bad4d0ade34872daf15ab173137e4bf830f195",
+  "started_at_utc": "2026-11-18T12:38:13.971150+00:00",
+  "evaluation": "exploratory; draft expectations unchanged",
+  "status": "failed",
+  "failure_stage": "local_validation",
+  "failure_reason": "T1 quote concatenates source sentences with invented [...]",
+  "validation": "failed"
+}

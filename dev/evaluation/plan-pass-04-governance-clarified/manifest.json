@@ -1,0 +1,23 @@
+{
+  "case_id": "PURE_002_without_team",
+  "model": "gemini-3.1-flash-lite",
+  "origin": "live_api",
+  "prompt_revision": "plan-v2-complete-criteria",
+  "schema_version": 2,
+  "approved_requirements_unchanged": true,
+  "only_input_changes": "A4 source and source-backed team responsibilities; no edited plan/examples/labels",
+  "input_sha256": "bd5cd65df91d4f79d1b376432a73bd8c08c1b104f089a269aa4a78d39e9a6496",
+  "baseline_input_sha256": "34a604de2252623b07cb5b381f67f44cd9d001a0e10fdf9e207d83692c591e6c",
+  "prompt_sha256": "c957986fec79ba10ef84325e3cd2a84a8548f52ab9ac424d02227d6460fe499f",
+  "schema_sha256": "bc5dd0d510ffe4380ffd5a40250a044608fcc6a67c3cce14a6fc6db0c9ea2330",
+  "initial_files_sha256": {
+    "ba_workflow.py": "1bba543b0786755481037a115a545dc115334bf822478d91752c14336865117d",
+    "business_analysis.py": "3e68885616ea6008bb2d3102bcc64ce877b4780ae0422e4b182056972064f57b",
+    "clarification.json": "c1f55dd6c3712779afd66b1b96428fa78afba49cf177942c92bb934828a142d9",
+    "evaluation-reference.json": "8c7944eee81e237f4ff058c9d6f77e4b4514a552869f221f08ba6af55888d170",
+    "input.json": "bacb3c7e0aa78f83add61dbbe8e98b3aebddccdc6b7199690eb5ab66f374853e",
+    "instructions.txt": "4a513c2eabc46786881c9cbe655f7121b7e1a4a9b50692cd43bc5737162b764c",
+    "protocol.json": "bceaff0642a186a4d9528e93c687ec61225fd38629a7300a18972e14d81c8684",
+    "schema.json": "8a4fe049c375c3a3654312985270ec012956c19f19d78cc92dc4948ad1445277"
+  }
+}

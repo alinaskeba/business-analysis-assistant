@@ -1,0 +1,17 @@
+We need a small web application for booking meeting rooms in our office.
+The goal is to reduce scheduling clashes in bookings.
+An employee views available rooms by date and time, creates and cancels their own booking.
+An administrator adds rooms, their capacity and equipment.
+The system does not allow the same room to be booked for a time that overlaps another booking.
+All bookings are confirmed automatically and immediately.
+Every booking must be approved by the office manager before confirmation.
+Sign-in uses corporate email. Email booking confirmations are required.
+We want the first version in one month.
+
+A small team is building the internal meeting-room booking application. The first version is planned in one month.
+The Product Owner from the administrative department sets priorities and makes decisions about booking rules.
+The Business Analyst gathers requirements, prepares the specification and agrees it with the Product Owner.
+The Full-stack Developer is responsible for technical implementation and deployment.
+The QA Engineer is responsible for testing, including checking simultaneous bookings of the same room.
+The office manager advises on room-use rules and participates in acceptance testing.
+The Product Owner makes the decision to launch the first version.

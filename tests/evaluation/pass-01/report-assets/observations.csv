@@ -1,0 +1,5 @@
+case,stage,status,quotes_correct,quotes_total,api_calls
+TEST_001_library_complete,initial,validated_result,22,22,1
+TEST_001_library_complete,clarify,validation_failed,31,32,1
+TEST_002_equipment_unresolved,initial,validated_result,15,15,1
+TEST_002_equipment_unresolved,clarify,validated_result,16,16,1

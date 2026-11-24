@@ -1,0 +1,75 @@
+{
+  "mode": "initial_test_collection",
+  "system_version": "v1.2-eval",
+  "dataset_version": "1.0-final",
+  "live_api_calls": 3,
+  "observations": [
+    {
+      "case_id": "TEST_001_library_complete",
+      "stage": "initial",
+      "status": "validated_result",
+      "api_calls": 1,
+      "quotes": {
+        "numerator": 22,
+        "denominator": 22
+      },
+      "counts": {
+        "goals": 2,
+        "users": 2,
+        "team_roles": 5,
+        "requirements": 8,
+        "missing_information": 2,
+        "contradictions": 0,
+        "questions": 2,
+        "assumptions": 0,
+        "resolutions": 0
+      }
+    },
+    {
+      "case_id": "TEST_002_equipment_unresolved",
+      "stage": "initial",
+      "status": "validated_result",
+      "api_calls": 1,
+      "quotes": {
+        "numerator": 15,
+        "denominator": 15
+      },
+      "counts": {
+        "goals": 1,
+        "users": 2,
+        "team_roles": 4,
+        "requirements": 5,
+        "missing_information": 1,
+        "contradictions": 1,
+        "questions": 2,
+        "assumptions": 0,
+        "resolutions": 0
+      }
+    },
+    {
+      "case_id": "TEST_002_equipment_unresolved",
+      "stage": "clarify",
+      "status": "validated_result",
+      "api_calls": 1,
+      "quotes": {
+        "numerator": 16,
+        "denominator": 16
+      },
+      "counts": {
+        "goals": 1,
+        "users": 2,
+        "team_roles": 4,
+        "requirements": 5,
+        "missing_information": 1,
+        "contradictions": 1,
+        "questions": 2,
+        "assumptions": 0,
+        "resolutions": 1
+      }
+    }
+  ],
+  "semantic_metrics": "not_finalized_pending_human_annotation",
+  "library_trajectory": "awaiting_question_routing_and_owner_review; documents not run",
+  "equipment_trajectory": "deferred decision preserved; finalization blocked; full documents N/A",
+  "frozen_implementation_unchanged": true
+}

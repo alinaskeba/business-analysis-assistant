@@ -1,0 +1,121 @@
+{
+  "goals": [
+    {
+      "id": "G1",
+      "description": "Provide office visitors with a way to check office opening hours.",
+      "source": {
+        "document": "brief",
+        "quote": "Build a small public web page so office visitors can check the office opening hours."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "U1",
+      "name": "Office visitor",
+      "responsibilities": [
+        {
+          "description": "Read office opening hours on the public web page.",
+          "source": {
+            "document": "brief",
+            "quote": "office visitors can check the office opening hours."
+          }
+        }
+      ]
+    }
+  ],
+  "team_roles": [
+    {
+      "id": "T1",
+      "name": "Full-stack Developer",
+      "responsibilities": [
+        {
+          "description": "Implement every product requirement and implementation task.",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer is both Responsible and Accountable for implementing every product requirement and every implementation task."
+          }
+        },
+        {
+          "description": "Test every product requirement.",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer is both Responsible and Accountable for testing every product requirement."
+          }
+        },
+        {
+          "description": "Deploy the page.",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer is both Responsible and Accountable for deploying the page."
+          }
+        },
+        {
+          "description": "Provide the hosting environment and the domain name.",
+          "source": {
+            "document": "A1",
+            "quote": "The Full-stack Developer is both Responsible and Accountable for providing the hosting environment and the domain name."
+          }
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "The page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor.",
+      "source": {
+        "document": "brief",
+        "quote": "The page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R2",
+      "description": "Visitors must be able to read the opening hours without signing in.",
+      "source": {
+        "document": "brief",
+        "quote": "Visitors must be able to read the opening hours without signing in."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R3",
+      "description": "The application shall not contain editing, booking, accounts or other features.",
+      "source": {
+        "document": "brief",
+        "quote": "This version contains only this static information page; it has no editing, booking, accounts or other product features."
+      },
+      "kind": "constraint",
+      "status": "confirmed"
+    },
+    {
+      "id": "R4",
+      "description": "The page must use the existing company hosting environment and the existing company domain.",
+      "source": {
+        "document": "A1",
+        "quote": "The page will use the existing company hosting environment and the existing company domain"
+      },
+      "kind": "constraint",
+      "status": "confirmed"
+    }
+  ],
+  "missing_information": [],
+  "contradictions": [],
+  "questions": [],
+  "assumptions": [],
+  "resolutions": [
+    {
+      "question_id": "Q1",
+      "answer_id": "A1",
+      "outcome": "resolved",
+      "description": "The Full-stack Developer is responsible and accountable for the hosting and domain, utilizing existing company assets.",
+      "source": {
+        "document": "A1",
+        "quote": "The Full-stack Developer is both Responsible and Accountable for providing the hosting environment and the domain name. The page will use the existing company hosting environment and the existing company domain; no purchase or new infrastructure is in scope."
+      }
+    }
+  ]
+}

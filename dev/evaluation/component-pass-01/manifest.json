@@ -1,0 +1,21 @@
+{
+  "experiment": "component-pass-01",
+  "started_at_utc": "2026-11-21T08:35:59.618284+00:00",
+  "mode": "isolated_components",
+  "dataset_version": "0.4",
+  "expectations": "final",
+  "changes_during_run": "none",
+  "retry_policy": "one retry only for HTTP 503 or timeout; invalid responses are not retried",
+  "reviewer": "assistant-assisted semantic review; project-owner verification required",
+  "files_sha256": {
+    "analysis.instructions.txt": "56c32c13b0431f9c6a2c5261d8ebc6c65210c84d1ee5be433aae8cccf7d4871e",
+    "analysis.schema.json": "abae6118b8c7e5d84065ba20d9d0ab3afc23940befa9fae6d8d16eba07136506",
+    "dataset.json": "9856f86c8cb377264b8bc3fa2cc4d9c98078cd781b1e3a13012c0e18a1d844fa",
+    "plan.instructions.txt": "5ffe04c08f9195126fc0132f99323a6219771b099bdf665a6d0668fdf399bb59",
+    "plan.schema.json": "52521494e989d35f442b3d5be08b26a66cf08d32ac67310bffec44c65be97e15",
+    "configuration\\ba_workflow.py": "66ed744c341befed2d9f3bb24d18199dec9d74f10270a5cb72c58b2fdd83a600",
+    "configuration\\business_analysis.py": "3e68885616ea6008bb2d3102bcc64ce877b4780ae0422e4b182056972064f57b",
+    "configuration\\evaluate_dev.py": "a9014613b20ce7fd0685327d149ea424759558e3d6e3b806ed986aa478254c4b",
+    "configuration\\run_component_eval.py": "bea161bfe9f3217ba1a7fb225616d11771cb0c5e7ff452d74462eb544f1bd0d1"
+  }
+}

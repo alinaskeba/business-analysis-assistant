@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "properties": {
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "functional",
+              "non_functional",
+              "constraint"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "description",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_needed": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "topic",
+          "why_needed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_a": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_b": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "description",
+          "evidence_a",
+          "evidence_b"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "requirements",
+    "missing_information",
+    "contradictions",
+    "questions"
+  ],
+  "additionalProperties": false
+}

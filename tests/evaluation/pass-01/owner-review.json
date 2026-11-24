@@ -1,0 +1,16 @@
+{
+  "reviewed_on": "2026-11-21",
+  "reviewer": "project_owner",
+  "case_id": "TEST_001_library_complete",
+  "stage": "initial",
+  "assessment": "The owner considers the initial library analysis generally consistent with the brief and acceptable overall. The identified issues should be documented as limitations rather than treated as making the entire analysis invalid.",
+  "scope": "Qualitative acceptance of the initial analysis only; not approval of unseen documents or individual semantic scoring annotations.",
+  "limitations_retained": [
+    "Create and update actions share one requirement record.",
+    "Some source fragments omit the actor or contextual antecedent.",
+    "The expected loan-limit clarification was not asked.",
+    "Question relevance is uneven, including application access for a project adviser."
+  ],
+  "application_approval_recorded": false,
+  "atomic_precision_recall_annotations_approved": false
+}

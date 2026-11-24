@@ -1,0 +1,12 @@
+{
+  "mode": "live_browser_component_test",
+  "work_unchanged_excluding_python_hydrated_evidence": true,
+  "implementation_task_coverage": [
+    "TASK1",
+    "TASK2",
+    "TASK3"
+  ],
+  "full_validator": "passed",
+  "semantic_review": "known_failures_retained_for_evaluation",
+  "api_calls": 1
+}

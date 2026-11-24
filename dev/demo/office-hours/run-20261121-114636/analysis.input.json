@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "brief": "Build a small public web page so office visitors can check the office opening hours.\n\nThe page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor.\nVisitors must be able to read the opening hours without signing in.\nThis version contains only this static information page; it has no editing, booking, accounts or other product features.\n\nThe project has one team member, a Full-stack Developer. The Full-stack Developer is both Responsible and Accountable for implementing every product requirement and every implementation task. The Full-stack Developer is both Responsible and Accountable for testing every product requirement. The Full-stack Developer is both Responsible and Accountable for deploying the page.\nThere are no separate business-requirements approval, specification preparation, specification acceptance, user acceptance testing or release-decision activities in this small demo project."
+  },
+  "replies": [],
+  "previous_analysis": null,
+  "previously_asked_questions": {}
+}

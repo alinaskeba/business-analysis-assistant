@@ -1,0 +1,326 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Develop product and customer management features",
+      "description": "Implement CRUD functionality for store owners and sales personnel to manage products and customer accounts.",
+      "requirement_ids": [
+        "R1",
+        "R2",
+        "R12",
+        "R14"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Develop storefront browsing and cart operations",
+      "description": "Implement product catalog browsing and shopping cart management for customers.",
+      "requirement_ids": [
+        "R3",
+        "R4",
+        "R6",
+        "R9",
+        "R10"
+      ]
+    },
+    {
+      "id": "TASK3",
+      "title": "Develop order submission processing",
+      "description": "Implement order creation logic, requirement for sign-in, and feedback of order reference.",
+      "requirement_ids": [
+        "R5",
+        "R7",
+        "R16",
+        "R17"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "a store owner or sales personnel is logged in",
+      "when": "the user creates a new product with valid details",
+      "then": "a new product is recorded in the system",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "a store owner or sales personnel is logged in",
+      "when": "the user creates a new customer account",
+      "then": "a new customer account is created",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "a visitor to the store",
+      "when": "the visitor browses the available products",
+      "then": "the product list is displayed",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "a product is available in the store",
+      "when": "the customer adds the product to the cart",
+      "then": "the product is listed in the user's cart",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "AC5",
+      "requirement_id": "R5",
+      "given": "a customer has products in the cart and is signed in",
+      "when": "the customer submits the order",
+      "then": "one order is created containing the selected items and their quantities",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "AC6",
+      "requirement_id": "R6",
+      "given": "a guest visitor",
+      "when": "the user browses products",
+      "then": "the system displays the product catalog without requiring a sign-in",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "AC7",
+      "requirement_id": "R7",
+      "given": "a guest visitor with items in the cart",
+      "when": "the user attempts to place an order",
+      "then": "the system mandates a sign-in before order processing proceeds",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "AC8",
+      "requirement_id": "R9",
+      "given": "an item in the cart",
+      "when": "the customer updates the quantity to a positive whole number",
+      "then": "the cart quantity is updated to that integer",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "AC9",
+      "requirement_id": "R10",
+      "given": "an item in the cart",
+      "when": "the customer removes the item",
+      "then": "the item is no longer in the cart",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "AC10",
+      "requirement_id": "R12",
+      "given": "an existing product record",
+      "when": "a store owner or sales personnel updates the product details",
+      "then": "the product record reflects the updated information",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "AC11",
+      "requirement_id": "R14",
+      "given": "an existing customer account",
+      "when": "a store owner or sales personnel updates the account details",
+      "then": "the account record reflects the updated information",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "AC12",
+      "requirement_id": "R16",
+      "given": "a successful order submission",
+      "when": "the order creation completes",
+      "then": "an order reference is displayed to the customer",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "AC13",
+      "requirement_id": "R17",
+      "given": "an empty cart",
+      "when": "the user attempts to submit the order",
+      "then": "the submission is rejected and no order is created",
+      "source_ids": [
+        "S15"
+      ]
+    }
+  ],
+  "open_questions": [],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Requirements Approval",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "requirements_approval"
+    },
+    {
+      "id": "RA2",
+      "activity": "Specification Preparation",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S26"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source_ids": [
+            "S21",
+            "S25",
+            "S5"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "specification_preparation"
+    },
+    {
+      "id": "RA3",
+      "activity": "Specification Acceptance",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S20",
+            "S27"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S27"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "specification_acceptance"
+    },
+    {
+      "id": "RA4",
+      "activity": "User Acceptance Testing",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S20"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S17",
+            "S8"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "uat_acceptance"
+    },
+    {
+      "id": "RA5",
+      "activity": "Final Release Decision",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S24",
+            "S4"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "release_decision"
+    },
+    {
+      "id": "RA6",
+      "activity": "Implementation of Core Business Functionality",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source_ids": [
+            "S22"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "implementation"
+    }
+  ]
+}

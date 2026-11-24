@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "brief": "An organization needs a web application to track shared equipment requests. Employees can browse available equipment, submit a request for one item, and view their own requests. An equipment coordinator reviews requests. Every request must remain pending until the equipment coordinator approves it. Every submitted request must immediately become approved without coordinator review. The Product Owner makes decisions about the request approval policy. The project team consists of a Product Owner, a Business Analyst, a Developer and a QA Engineer. The Business Analyst gathers and documents requirements, the Developer implements the application, and the QA Engineer tests it."
+  },
+  "replies": [],
+  "previous_analysis": null,
+  "previously_asked_questions": {}
+}

@@ -1,0 +1,10 @@
+{
+  "confirmed_on": "2026-11-21",
+  "prepared_part": "Approved dataset conversation.prepared_answers.A1, routed to the member identification/access question Q1.",
+  "additional_decisions": "Owner explicitly confirmed Developer technical identification choice and no separate adviser application access in this conversation.",
+  "runtime_sources": {
+    "A1": "Q1: approved prepared reply plus owner technical clarification",
+    "A2": "Q2: owner-confirmed adviser access clarification"
+  },
+  "initial_gold_unchanged": true
+}

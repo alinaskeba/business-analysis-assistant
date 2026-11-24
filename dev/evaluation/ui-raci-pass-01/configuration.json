@@ -1,0 +1,15 @@
+{
+  "case_id": "PURE_002_without_team",
+  "stage_revision": "staged-plan-v1",
+  "plan_prompt_revision": "plan-v4-explicit-implementation-task-coverage",
+  "schema_version": 3,
+  "sha256": {
+    "business_analysis.py": "d8f1c37d33118065ac0f7b417ea9957ff35f25e8b403fa21beb870367fce4b41",
+    "ba_workflow.py": "dc9c61aa5d581ffca54f34ab80279b179da5ed6b56f4352ec801a92935f55845",
+    "plan_sources.py": "d4f6c71591bd74f73e981f0fc11c849e08daacdf865c1a6e195c864d4d6bcc7c",
+    "staged_plan.py": "5e21c290b3e083923abb71397b7eb7757d813bc7030eac90a5632e33be7064f6",
+    "web_ui.py": "c41ab368bb9930d647847b4959c24c6ef6d35284914c45a66c6d3837deabe1e1",
+    "web/app.js": "7b3700dc8aa9a04a817788d7877b14bedf32357260aa9bf7ff3588c1c82921f6",
+    "web/index.html": "d8d727185801523985176cc1c62e55f4ce7f0fda65f9b734972b2116586ab224"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "created_on": "2026-11-24",
+  "language": "English",
+  "application_version": "v1.2-eval",
+  "new_api_calls": 0,
+  "manual_review_status": "Single assistant-assisted assessment; no independent second-rating study. Raw evidence and gold labels are unchanged.",
+  "artifacts": {
+    "component_review.json": "64aaa41d9b8d118ef317eae5a3cec84a200db19aef6b6aa7e2db1dde3d9d9593",
+    "Evaluation_Report.docx": "7f3e6fd0f05384390fd8610e7980538fea85543f385588890d700926b2839b94",
+    "Evaluation_Report.md": "5abfd85cfd5e68208335deb6cbd169e7e485ca7dae16cef2d274cee0640b71b8",
+    "Project_Report.docx": "680ecc71fbbb094a15ffc614ddd9c7c6720e108e82fa4921a24c47c9d17b96d7",
+    "Project_Report.md": "2a20d4c4336159862f59b92da648114f3f0fc941bf96b8d1e58772af496a740c",
+    "README.md": "08700d6e5c38c54ac79cc33d9422f7940e43dc4c150699259b447662a39259ae",
+    "test_metrics.json": "da3d92b5be808a48f2dbd953203f369dad8eea9ac2d07cc976726b0d999119a6",
+    "diagrams\\system_diagram.mmd": "6ae36ec0c2e26b2c5e500111e32511e74c620ae1e8481b298ee01ccacd78ffe6",
+    "diagrams\\system_diagram.pdf": "1dac86d6e542682540ba18fed7cd3b5aa90cba5885ef0e725d0e1edd44174ccf",
+    "diagrams\\system_diagram.png": "8a24391ec7e732e2705658105060786284ef57153804812cfa01b93a1d77b46a",
+    "diagrams\\system_diagram.svg": "54a5ffa963108b2bd2aede22d85456380b520936195839b20fd304767aa73d62",
+    "figures\\assisted_link_coverage.png": "1bb03a8981739a1150ed46292bb2c15f468afb1a181f502f2e53066b314a4314",
+    "figures\\assisted_link_coverage.svg": "d483a60d241a36896d602489f13f6614ab86fdc110f218292a8905a4fa9f38bf",
+    "figures\\equipment_requirement_metrics.png": "57e1e86243d896063aa01fb40f1418219af307db29288b8f4531b2a6abb67d95",
+    "figures\\equipment_requirement_metrics.svg": "255f76f3899f32c59f8a1b354c17ddd50649e1ad8e8962ee6d25081b8638df00",
+    "figures\\initial_record_counts.png": "c353e25fcdbdc9ef18eca2366f0c9b8d13948ca2124b7cb2771c4a00ed735f92",
+    "figures\\initial_record_counts.svg": "2f6836eb77e7d322a4596dc59ada4ee3baa4fc21a1f8c228e0b17196d7071f2e",
+    "figures\\observations.csv": "2846fc16de287ad4ffd4283f69bfabc96ef59d0ff3ac6ea9ea1479d92c7c6352",
+    "figures\\quote_fidelity.png": "af2087f16f9881afb37e74717608c669442c1aa57c254824faad433136f47ee6",
+    "figures\\quote_fidelity.svg": "ba5fcbdf1456e8b334e7e7228928212460fe3ad325483cc212cd0d0749aabce9",
+    "figures\\request_latency.png": "a31f8f22c7c37e57ba27d26b2ee38d9e5cee8da4c42e5b03593004105ac77840",
+    "figures\\request_latency.svg": "22d6cdeed4dd00fd9d28c91b2adc05d3660ef742f0d890189313f72f1b584736",
+    "figures\\scenario_progression.png": "7104f2ca3e97106951f4782cf83543a61cacd4f40e251d3fd68905910212a1f9",
+    "figures\\scenario_progression.svg": "834203d958779a2c9486934031266f7211f9f38ef0f44859706fa38a6e08781b"
+  }
+}

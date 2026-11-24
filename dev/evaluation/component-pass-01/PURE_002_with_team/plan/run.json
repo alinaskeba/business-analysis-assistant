@@ -1,0 +1,32 @@
+{
+  "case_id": "PURE_002_with_team",
+  "stage": "plan",
+  "model": "gemini-3.1-flash-lite",
+  "origin": "live_api",
+  "started_at_utc": "2026-11-21T08:41:31.393717+00:00",
+  "input_sha256": "785db3cfb891b243dc6d3e73dec2dff3b3a6de6bf5f35c9ce914818065fa39af",
+  "prompt_sha256": "e5a877323a7aa6cbc894488ac5deac82d5fc2506096880eef484169b822df8a7",
+  "schema_sha256": "d74c31eb9c8f684c5636000c595ec9f10a36c6674e635dd06e15669e000d3d1c",
+  "prompt_revision": "full-workflow-v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "response_received",
+      "elapsed_seconds": 23.826
+    }
+  ],
+  "status": "validation_failed",
+  "validation_errors": [
+    "R1: missing acceptance criteria",
+    "R10: missing acceptance criteria",
+    "R12: missing acceptance criteria",
+    "R14: missing acceptance criteria",
+    "R16: missing acceptance criteria",
+    "R2: missing acceptance criteria",
+    "R3: missing acceptance criteria",
+    "R4: missing acceptance criteria",
+    "R6: missing acceptance criteria",
+    "R9: missing acceptance criteria"
+  ],
+  "completed_at_utc": "2026-11-21T08:41:55.222232+00:00"
+}

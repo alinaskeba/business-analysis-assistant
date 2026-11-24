@@ -1,0 +1,1042 @@
+{
+  "workflow_version": 1,
+  "model": "gemini-3.1-flash-lite",
+  "execution_mode": "offline_mock_fixture",
+  "sources": {
+    "brief": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business. Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store.",
+    "A1": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results.",
+    "A2": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project.",
+    "A3": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+  },
+  "replies": [
+    {
+      "id": "A1",
+      "question_id": "Q1",
+      "text": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results.",
+      "at": "2026-11-19T09:48:54.332318+00:00"
+    },
+    {
+      "id": "A2",
+      "question_id": "Q2",
+      "text": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project.",
+      "at": "2026-11-19T09:48:54.333919+00:00"
+    },
+    {
+      "id": "A3",
+      "question_id": "Q3",
+      "text": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision.",
+      "at": "2026-11-19T09:48:54.335395+00:00"
+    }
+  ],
+  "analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Enable new online retailers to run a store",
+        "source": {
+          "document": "brief",
+          "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+        }
+      }
+    ],
+    "users": [],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Product Owner",
+        "responsibilities": [
+          {
+            "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "source": {
+              "document": "A1",
+              "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "name": "Business Analyst",
+        "responsibilities": [
+          {
+            "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+            "source": {
+              "document": "A1",
+              "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "name": "Full-stack Developer",
+        "responsibilities": [
+          {
+            "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+            "source": {
+              "document": "A1",
+              "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "name": "QA Engineer",
+        "responsibilities": [
+          {
+            "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+            "source": {
+              "document": "A1",
+              "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            }
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Store staff manage products",
+        "source": {
+          "document": "brief",
+          "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R2",
+        "description": "Reject empty-cart submission",
+        "source": {
+          "document": "A2",
+          "quote": "An empty cart cannot be submitted."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R3",
+        "kind": "constraint",
+        "status": "confirmed",
+        "description": "No online payment or shipping integrations in release one",
+        "source": {
+          "document": "A2",
+          "quote": "Orders are submitted for staff processing; online payments and shipping integrations are outside the first release."
+        }
+      }
+    ],
+    "missing_information": [],
+    "contradictions": [],
+    "questions": [],
+    "assumptions": [
+      {
+        "id": "P1",
+        "description": "A shared staging environment may help delivery",
+        "rationale": "Proposal only; not supplied by the customer",
+        "status": "proposed"
+      }
+    ],
+    "resolutions": [
+      {
+        "question_id": "Q1",
+        "answer_id": "A1",
+        "outcome": "resolved",
+        "description": "The user supplied this decision",
+        "source": {
+          "document": "A1",
+          "quote": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results."
+        }
+      },
+      {
+        "question_id": "Q2",
+        "answer_id": "A2",
+        "outcome": "resolved",
+        "description": "The user supplied this decision",
+        "source": {
+          "document": "A2",
+          "quote": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project."
+        }
+      },
+      {
+        "question_id": "Q3",
+        "answer_id": "A3",
+        "outcome": "resolved",
+        "description": "The user supplied this decision",
+        "source": {
+          "document": "A3",
+          "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+        }
+      }
+    ]
+  },
+  "revision": 4,
+  "question_history": {
+    "Q1": {
+      "id": "Q1",
+      "text": "Who is on the project team and who makes decisions?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": true
+    },
+    "Q2": {
+      "id": "Q2",
+      "text": "What is the first-release scope and ordering behavior?",
+      "target_type": "gap",
+      "target_id": "M2",
+      "blocks_final_specification": true
+    },
+    "Q3": {
+      "id": "Q3",
+      "text": "Who is accountable for each project activity?",
+      "target_type": "gap",
+      "target_id": "M3",
+      "blocks_final_specification": true
+    }
+  },
+  "history": [
+    {
+      "revision": 1,
+      "at": "2026-11-19T09:48:54.331107+00:00",
+      "source_ids": [
+        "brief"
+      ],
+      "analysis": {
+        "goals": [
+          {
+            "id": "G1",
+            "description": "Enable new online retailers to run a store",
+            "source": {
+              "document": "brief",
+              "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+            }
+          }
+        ],
+        "users": [],
+        "team_roles": [],
+        "requirements": [
+          {
+            "id": "R1",
+            "description": "Store staff manage products",
+            "source": {
+              "document": "brief",
+              "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+            },
+            "kind": "functional",
+            "status": "confirmed"
+          }
+        ],
+        "missing_information": [
+          {
+            "id": "M1",
+            "topic": "Team",
+            "why_needed": "Define scope and responsibilities"
+          },
+          {
+            "id": "M2",
+            "topic": "Business rules",
+            "why_needed": "Define scope and responsibilities"
+          },
+          {
+            "id": "M3",
+            "topic": "RACI authority",
+            "why_needed": "Define scope and responsibilities"
+          }
+        ],
+        "contradictions": [],
+        "questions": [
+          {
+            "id": "Q1",
+            "text": "Who is on the project team and who makes decisions?",
+            "target_type": "gap",
+            "target_id": "M1",
+            "blocks_final_specification": true
+          },
+          {
+            "id": "Q2",
+            "text": "What is the first-release scope and ordering behavior?",
+            "target_type": "gap",
+            "target_id": "M2",
+            "blocks_final_specification": true
+          },
+          {
+            "id": "Q3",
+            "text": "Who is accountable for each project activity?",
+            "target_type": "gap",
+            "target_id": "M3",
+            "blocks_final_specification": true
+          }
+        ],
+        "assumptions": [
+          {
+            "id": "P1",
+            "description": "A shared staging environment may help delivery",
+            "rationale": "Proposal only; not supplied by the customer",
+            "status": "proposed"
+          }
+        ],
+        "resolutions": []
+      },
+      "requirement_changes": {
+        "added": [
+          "R1"
+        ],
+        "removed": [],
+        "modified": []
+      }
+    },
+    {
+      "revision": 2,
+      "at": "2026-11-19T09:48:54.332797+00:00",
+      "source_ids": [
+        "brief",
+        "A1"
+      ],
+      "analysis": {
+        "goals": [
+          {
+            "id": "G1",
+            "description": "Enable new online retailers to run a store",
+            "source": {
+              "document": "brief",
+              "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+            }
+          }
+        ],
+        "users": [],
+        "team_roles": [
+          {
+            "id": "T1",
+            "name": "Product Owner",
+            "responsibilities": [
+              {
+                "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T2",
+            "name": "Business Analyst",
+            "responsibilities": [
+              {
+                "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T3",
+            "name": "Full-stack Developer",
+            "responsibilities": [
+              {
+                "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T4",
+            "name": "QA Engineer",
+            "responsibilities": [
+              {
+                "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ]
+          }
+        ],
+        "requirements": [
+          {
+            "id": "R1",
+            "description": "Store staff manage products",
+            "source": {
+              "document": "brief",
+              "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+            },
+            "kind": "functional",
+            "status": "confirmed"
+          }
+        ],
+        "missing_information": [
+          {
+            "id": "M2",
+            "topic": "Business rules",
+            "why_needed": "Define scope and responsibilities"
+          },
+          {
+            "id": "M3",
+            "topic": "RACI authority",
+            "why_needed": "Define scope and responsibilities"
+          }
+        ],
+        "contradictions": [],
+        "questions": [
+          {
+            "id": "Q2",
+            "text": "What is the first-release scope and ordering behavior?",
+            "target_type": "gap",
+            "target_id": "M2",
+            "blocks_final_specification": true
+          },
+          {
+            "id": "Q3",
+            "text": "Who is accountable for each project activity?",
+            "target_type": "gap",
+            "target_id": "M3",
+            "blocks_final_specification": true
+          }
+        ],
+        "assumptions": [
+          {
+            "id": "P1",
+            "description": "A shared staging environment may help delivery",
+            "rationale": "Proposal only; not supplied by the customer",
+            "status": "proposed"
+          }
+        ],
+        "resolutions": [
+          {
+            "question_id": "Q1",
+            "answer_id": "A1",
+            "outcome": "resolved",
+            "description": "The user supplied this decision",
+            "source": {
+              "document": "A1",
+              "quote": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results."
+            }
+          }
+        ]
+      },
+      "requirement_changes": {
+        "added": [],
+        "removed": [],
+        "modified": []
+      }
+    },
+    {
+      "revision": 3,
+      "at": "2026-11-19T09:48:54.334302+00:00",
+      "source_ids": [
+        "brief",
+        "A1",
+        "A2"
+      ],
+      "analysis": {
+        "goals": [
+          {
+            "id": "G1",
+            "description": "Enable new online retailers to run a store",
+            "source": {
+              "document": "brief",
+              "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+            }
+          }
+        ],
+        "users": [],
+        "team_roles": [
+          {
+            "id": "T1",
+            "name": "Product Owner",
+            "responsibilities": [
+              {
+                "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T2",
+            "name": "Business Analyst",
+            "responsibilities": [
+              {
+                "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T3",
+            "name": "Full-stack Developer",
+            "responsibilities": [
+              {
+                "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T4",
+            "name": "QA Engineer",
+            "responsibilities": [
+              {
+                "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ]
+          }
+        ],
+        "requirements": [
+          {
+            "id": "R1",
+            "description": "Store staff manage products",
+            "source": {
+              "document": "brief",
+              "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+            },
+            "kind": "functional",
+            "status": "confirmed"
+          },
+          {
+            "id": "R2",
+            "description": "Reject empty-cart submission",
+            "source": {
+              "document": "A2",
+              "quote": "An empty cart cannot be submitted."
+            },
+            "kind": "functional",
+            "status": "confirmed"
+          },
+          {
+            "id": "R3",
+            "kind": "constraint",
+            "status": "confirmed",
+            "description": "No online payment or shipping integrations in release one",
+            "source": {
+              "document": "A2",
+              "quote": "Orders are submitted for staff processing; online payments and shipping integrations are outside the first release."
+            }
+          }
+        ],
+        "missing_information": [
+          {
+            "id": "M3",
+            "topic": "RACI authority",
+            "why_needed": "Define scope and responsibilities"
+          }
+        ],
+        "contradictions": [],
+        "questions": [
+          {
+            "id": "Q3",
+            "text": "Who is accountable for each project activity?",
+            "target_type": "gap",
+            "target_id": "M3",
+            "blocks_final_specification": true
+          }
+        ],
+        "assumptions": [
+          {
+            "id": "P1",
+            "description": "A shared staging environment may help delivery",
+            "rationale": "Proposal only; not supplied by the customer",
+            "status": "proposed"
+          }
+        ],
+        "resolutions": [
+          {
+            "question_id": "Q1",
+            "answer_id": "A1",
+            "outcome": "resolved",
+            "description": "The user supplied this decision",
+            "source": {
+              "document": "A1",
+              "quote": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results."
+            }
+          },
+          {
+            "question_id": "Q2",
+            "answer_id": "A2",
+            "outcome": "resolved",
+            "description": "The user supplied this decision",
+            "source": {
+              "document": "A2",
+              "quote": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project."
+            }
+          }
+        ]
+      },
+      "requirement_changes": {
+        "added": [
+          "R2",
+          "R3"
+        ],
+        "removed": [],
+        "modified": []
+      }
+    },
+    {
+      "revision": 4,
+      "at": "2026-11-19T09:48:54.335733+00:00",
+      "source_ids": [
+        "brief",
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "analysis": {
+        "goals": [
+          {
+            "id": "G1",
+            "description": "Enable new online retailers to run a store",
+            "source": {
+              "document": "brief",
+              "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+            }
+          }
+        ],
+        "users": [],
+        "team_roles": [
+          {
+            "id": "T1",
+            "name": "Product Owner",
+            "responsibilities": [
+              {
+                "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T2",
+            "name": "Business Analyst",
+            "responsibilities": [
+              {
+                "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T3",
+            "name": "Full-stack Developer",
+            "responsibilities": [
+              {
+                "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                }
+              }
+            ]
+          },
+          {
+            "id": "T4",
+            "name": "QA Engineer",
+            "responsibilities": [
+              {
+                "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ]
+          }
+        ],
+        "requirements": [
+          {
+            "id": "R1",
+            "description": "Store staff manage products",
+            "source": {
+              "document": "brief",
+              "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+            },
+            "kind": "functional",
+            "status": "confirmed"
+          },
+          {
+            "id": "R2",
+            "description": "Reject empty-cart submission",
+            "source": {
+              "document": "A2",
+              "quote": "An empty cart cannot be submitted."
+            },
+            "kind": "functional",
+            "status": "confirmed"
+          },
+          {
+            "id": "R3",
+            "kind": "constraint",
+            "status": "confirmed",
+            "description": "No online payment or shipping integrations in release one",
+            "source": {
+              "document": "A2",
+              "quote": "Orders are submitted for staff processing; online payments and shipping integrations are outside the first release."
+            }
+          }
+        ],
+        "missing_information": [],
+        "contradictions": [],
+        "questions": [],
+        "assumptions": [
+          {
+            "id": "P1",
+            "description": "A shared staging environment may help delivery",
+            "rationale": "Proposal only; not supplied by the customer",
+            "status": "proposed"
+          }
+        ],
+        "resolutions": [
+          {
+            "question_id": "Q1",
+            "answer_id": "A1",
+            "outcome": "resolved",
+            "description": "The user supplied this decision",
+            "source": {
+              "document": "A1",
+              "quote": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results."
+            }
+          },
+          {
+            "question_id": "Q2",
+            "answer_id": "A2",
+            "outcome": "resolved",
+            "description": "The user supplied this decision",
+            "source": {
+              "document": "A2",
+              "quote": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project."
+            }
+          },
+          {
+            "question_id": "Q3",
+            "answer_id": "A3",
+            "outcome": "resolved",
+            "description": "The user supplied this decision",
+            "source": {
+              "document": "A3",
+              "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+            }
+          }
+        ]
+      },
+      "requirement_changes": {
+        "added": [],
+        "removed": [],
+        "modified": []
+      }
+    }
+  ],
+  "events": [
+    {
+      "action": "analyze",
+      "at": "2026-11-19T09:48:54.331231+00:00",
+      "prompt_revision": "full-workflow-v1",
+      "analysis_hash": "cd5fa6cbd21d849dd3f82b09f3cd79769cab58642467405813587ef6892766f0",
+      "schema_hash": "f63390037eb7055235f2263d93b0fef84412e2f3b1344f8c548b8fa80138770b",
+      "prompt_hash": "3f970527eba855f0a22777e3a2196870d0dfeee3df789a548fa98503dc255fc0",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "action": "analyze",
+      "at": "2026-11-19T09:48:54.332865+00:00",
+      "prompt_revision": "full-workflow-v1",
+      "analysis_hash": "ab7d9971e677ed828f079ea825599e598cc8eb350f5870d4d75fcc59d6f69924",
+      "schema_hash": "f63390037eb7055235f2263d93b0fef84412e2f3b1344f8c548b8fa80138770b",
+      "prompt_hash": "3f970527eba855f0a22777e3a2196870d0dfeee3df789a548fa98503dc255fc0",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "action": "analyze",
+      "at": "2026-11-19T09:48:54.334374+00:00",
+      "prompt_revision": "full-workflow-v1",
+      "analysis_hash": "0ace187360b5c77d4522d252a1fbb1da211b5346815fdf7844fdcc430f8a7090",
+      "schema_hash": "f63390037eb7055235f2263d93b0fef84412e2f3b1344f8c548b8fa80138770b",
+      "prompt_hash": "3f970527eba855f0a22777e3a2196870d0dfeee3df789a548fa98503dc255fc0",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "action": "analyze",
+      "at": "2026-11-19T09:48:54.335805+00:00",
+      "prompt_revision": "full-workflow-v1",
+      "analysis_hash": "25b7c64c6337aeb78fb9392c9ae43301fb59a5062d63d12d8c29e233279c3bd4",
+      "schema_hash": "f63390037eb7055235f2263d93b0fef84412e2f3b1344f8c548b8fa80138770b",
+      "prompt_hash": "3f970527eba855f0a22777e3a2196870d0dfeee3df789a548fa98503dc255fc0",
+      "model": "gemini-3.1-flash-lite"
+    },
+    {
+      "action": "approve",
+      "at": "2026-11-19T09:48:54.336771+00:00"
+    },
+    {
+      "action": "generate",
+      "at": "2026-11-19T09:48:54.338155+00:00",
+      "prompt_revision": "full-workflow-v1",
+      "prompt_hash": "e5a877323a7aa6cbc894488ac5deac82d5fc2506096880eef484169b822df8a7",
+      "schema_hash": "d74c31eb9c8f684c5636000c595ec9f10a36c6674e635dd06e15669e000d3d1c",
+      "model": "gemini-3.1-flash-lite"
+    }
+  ],
+  "approval": {
+    "revision_hash": "f6f0386439890625a9d3feedfca2eb2e9788e8c677d6cc489d46f468842617f9",
+    "message": "Offline test approval of a partial hand-authored fixture, not a real stakeholder approval.",
+    "at": "2026-11-19T09:48:54.336765+00:00"
+  },
+  "documents": {
+    "status": "draft_for_document_review",
+    "requirements_approval": {
+      "revision_hash": "f6f0386439890625a9d3feedfca2eb2e9788e8c677d6cc489d46f468842617f9",
+      "message": "Offline test approval of a partial hand-authored fixture, not a real stakeholder approval.",
+      "at": "2026-11-19T09:48:54.336765+00:00"
+    },
+    "revision_hash": "f6f0386439890625a9d3feedfca2eb2e9788e8c677d6cc489d46f468842617f9",
+    "specification": {
+      "business_goals": [
+        {
+          "id": "G1",
+          "description": "Enable new online retailers to run a store",
+          "source": {
+            "document": "brief",
+            "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+          }
+        }
+      ],
+      "product_users": [],
+      "scope_and_exclusions": [
+        {
+          "id": "R3",
+          "kind": "constraint",
+          "status": "confirmed",
+          "description": "No online payment or shipping integrations in release one",
+          "source": {
+            "document": "A2",
+            "quote": "Orders are submitted for staff processing; online payments and shipping integrations are outside the first release."
+          }
+        }
+      ],
+      "functional_requirements": [
+        {
+          "id": "R1",
+          "description": "Store staff manage products",
+          "source": {
+            "document": "brief",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+          },
+          "kind": "functional",
+          "status": "confirmed"
+        },
+        {
+          "id": "R2",
+          "description": "Reject empty-cart submission",
+          "source": {
+            "document": "A2",
+            "quote": "An empty cart cannot be submitted."
+          },
+          "kind": "functional",
+          "status": "confirmed"
+        }
+      ],
+      "quality_requirements_and_constraints": [
+        {
+          "id": "R3",
+          "kind": "constraint",
+          "status": "confirmed",
+          "description": "No online payment or shipping integrations in release one",
+          "source": {
+            "document": "A2",
+            "quote": "Orders are submitted for staff processing; online payments and shipping integrations are outside the first release."
+          }
+        }
+      ],
+      "project_team": [
+        {
+          "id": "T1",
+          "name": "Product Owner",
+          "responsibilities": [
+            {
+              "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+              "source": {
+                "document": "A1",
+                "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              }
+            }
+          ]
+        },
+        {
+          "id": "T2",
+          "name": "Business Analyst",
+          "responsibilities": [
+            {
+              "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+              "source": {
+                "document": "A1",
+                "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              }
+            }
+          ]
+        },
+        {
+          "id": "T3",
+          "name": "Full-stack Developer",
+          "responsibilities": [
+            {
+              "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+              "source": {
+                "document": "A1",
+                "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              }
+            }
+          ]
+        },
+        {
+          "id": "T4",
+          "name": "QA Engineer",
+          "responsibilities": [
+            {
+              "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+              "source": {
+                "document": "A1",
+                "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              }
+            }
+          ]
+        }
+      ],
+      "confirmed_decisions": [
+        {
+          "question_id": "Q1",
+          "answer_id": "A1",
+          "outcome": "resolved",
+          "description": "The user supplied this decision",
+          "source": {
+            "document": "A1",
+            "quote": "The project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. The Product Owner approves the user acceptance testing results."
+          }
+        },
+        {
+          "question_id": "Q2",
+          "answer_id": "A2",
+          "outcome": "resolved",
+          "description": "The user supplied this decision",
+          "source": {
+            "document": "A2",
+            "quote": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project."
+          }
+        },
+        {
+          "question_id": "Q3",
+          "answer_id": "A3",
+          "outcome": "resolved",
+          "description": "The user supplied this decision",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+          }
+        }
+      ],
+      "proposed_assumptions": [
+        {
+          "id": "P1",
+          "description": "A shared staging environment may help delivery",
+          "rationale": "Proposal only; not supplied by the customer",
+          "status": "proposed"
+        }
+      ],
+      "open_questions": []
+    },
+    "tasks": [
+      {
+        "id": "TASK1",
+        "title": "Implement product management",
+        "description": "Implement supported staff operations",
+        "requirement_ids": [
+          "R1"
+        ]
+      },
+      {
+        "id": "TASK2",
+        "title": "Reject empty checkout",
+        "description": "Enforce empty-cart rule",
+        "requirement_ids": [
+          "R2",
+          "R3"
+        ]
+      }
+    ],
+    "acceptance_criteria": [
+      {
+        "id": "AC1",
+        "requirement_id": "R1",
+        "given": "A store staff member",
+        "when": "They manage a product",
+        "then": "The supported product operation succeeds",
+        "source": {
+          "document": "brief",
+          "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+        }
+      },
+      {
+        "id": "AC2",
+        "requirement_id": "R2",
+        "given": "An empty cart",
+        "when": "The customer attempts order submission",
+        "then": "No order is submitted",
+        "source": {
+          "document": "A2",
+          "quote": "An empty cart cannot be submitted."
+        }
+      }
+    ],
+    "raci": [
+      {
+        "id": "RA1",
+        "activity": "Implement and deploy",
+        "task_ids": [
+          "TASK1",
+          "TASK2"
+        ],
+        "accountable": [
+          {
+            "role_id": "T3",
+            "source": {
+              "document": "A3",
+              "quote": "The Full-stack Developer is accountable for implementation and deployment."
+            }
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T3",
+            "source": {
+              "document": "A1",
+              "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            }
+          }
+        ],
+        "consulted": [],
+        "informed": []
+      }
+    ]
+  },
+  "fixture_note": "Hand-authored partial web-store fixture; not a live model response or complete semantic gold answer."
+}

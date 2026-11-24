@@ -1,0 +1,149 @@
+{
+  "quote_checks": [
+    {
+      "path": "result.goals[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "An organization needs a web application to track shared equipment requests."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[0].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "Employees can browse available equipment"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[0].responsibilities[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "submit a request for one item"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[0].responsibilities[2].source",
+      "source": {
+        "document": "brief",
+        "quote": "view their own requests."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[1].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "An equipment coordinator reviews requests."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.users[1].responsibilities[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "Every request must remain pending until the equipment coordinator approves it."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[0].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "The Product Owner makes decisions about the request approval policy."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[1].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "The Business Analyst gathers and documents requirements"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[2].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "the Developer implements the application"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.team_roles[3].responsibilities[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "the QA Engineer tests it."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[0].source",
+      "source": {
+        "document": "brief",
+        "quote": "Employees can browse available equipment"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[1].source",
+      "source": {
+        "document": "brief",
+        "quote": "submit a request for one item"
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[2].source",
+      "source": {
+        "document": "brief",
+        "quote": "view their own requests."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[3].source",
+      "source": {
+        "document": "brief",
+        "quote": "Every request must remain pending until the equipment coordinator approves it."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.requirements[4].source",
+      "source": {
+        "document": "brief",
+        "quote": "Every submitted request must immediately become approved without coordinator review."
+      },
+      "verbatim": true
+    },
+    {
+      "path": "result.resolutions[0].source",
+      "source": {
+        "document": "A1",
+        "quote": "We have not decided whether coordinator approval is required. Keep this decision open. The Product Owner will decide later."
+      },
+      "verbatim": true
+    }
+  ],
+  "verbatim_quotes": {
+    "numerator": 16,
+    "denominator": 16
+  },
+  "semantic_support": "requires_human_review",
+  "extraction_recall_and_precision": "requires_semantic_matching",
+  "counts": {
+    "goals": 1,
+    "users": 2,
+    "team_roles": 4,
+    "requirements": 5,
+    "missing_information": 1,
+    "contradictions": 1,
+    "questions": 2,
+    "assumptions": 0,
+    "resolutions": 1
+  }
+}

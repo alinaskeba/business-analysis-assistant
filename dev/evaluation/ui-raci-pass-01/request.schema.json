@@ -1,0 +1,162 @@
+{
+  "type": "object",
+  "properties": {
+    "raci": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "activity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "task_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "accountable": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "role_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "required": [
+                "role_id",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "responsible": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "role_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "required": [
+                "role_id",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "consulted": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "properties": {
+                "role_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "required": [
+                "role_id",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "informed": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "object",
+              "properties": {
+                "role_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "required": [
+                "role_id",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "activity_type": {
+            "type": "string",
+            "enum": [
+              "requirements_approval",
+              "specification_preparation",
+              "specification_acceptance",
+              "uat_acceptance",
+              "release_decision",
+              "implementation",
+              "testing",
+              "deployment",
+              "other"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "activity",
+          "task_ids",
+          "accountable",
+          "responsible",
+          "consulted",
+          "informed",
+          "activity_type"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "raci"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "additional_scripts_sha256": {
+    "prepare_component_references.py": "4b1629365dfd3dabd2f38bf1bf752433551dea31f60dab41f9708d1447da2d2a",
+    "review_component_pass01.py": "821a60047b7e6d0193d94542447851592cd217dd16f45277bc2ac23c93304c5f"
+  },
+  "reference_sha256": {
+    "PURE_002_without_team\\reference.json": "b2ae8c66c20135de853cf0374fe1e350589be0d8b3acf928c6d4a96f24fdee09",
+    "PURE_002_with_team\\reference.json": "6629ac95d5aad9d04c2b2c241dfd39f260801ef4f70a680cccc1c63c2f636120",
+    "PURE_003_conflict_resolved\\reference.json": "a61d977870e3278a4b3e7697901754c887d73dfb4c4db092329df5806b425b57",
+    "PURE_003_conflict_unresolved\\reference.json": "d16be88a67786a208903d9ee2a80ecc16c92cb4c6558ebd5652232476bfbf672"
+  },
+  "notes": "Reference draft and source-grounded pre-call content review are preserved. Downstream input.json files capture exactly what the model received."
+}

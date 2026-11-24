@@ -1,0 +1,24 @@
+[
+  {
+    "case": "PURE_002_without_team",
+    "saved_run": "pass05",
+    "mode": "offline",
+    "errors": [
+      "raci: task TASK1 has no implementation activity",
+      "raci: task TASK2 has no implementation activity",
+      "raci: task TASK3 has no implementation activity"
+    ],
+    "passed": false
+  },
+  {
+    "case": "PURE_002_without_team",
+    "saved_run": "pass06",
+    "mode": "offline",
+    "errors": [
+      "raci: task TASK1 has no implementation activity",
+      "raci: task TASK2 has no implementation activity",
+      "raci: task TASK3 has no implementation activity"
+    ],
+    "passed": false
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "case_id": "001-meeting-rooms/with-team",
+  "split": "dev",
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "prompt_revision": "brief-analysis-v4-user",
+  "prompt_sha256": "61083bbce471f380b68bb270c92a969ee89b4ddfb9c5a23396409834beef1bd6",
+  "brief_sha256": "a19c11f6ff5cfd5475680223f3bad4d0ade34872daf15ab173137e4bf830f195",
+  "started_at_utc": "2026-11-18T12:54:49.329382+00:00",
+  "evaluation": "exploratory; draft expectations unchanged",
+  "status": "failed",
+  "validation": "failed",
+  "error": "Цитата відсутня у брифі: T1"
+}

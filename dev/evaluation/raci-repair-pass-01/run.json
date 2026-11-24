@@ -1,0 +1,14 @@
+{
+  "origin": "live_api",
+  "case_id": "PURE_002_without_team",
+  "model": "gemini-3.1-flash-lite",
+  "stage_revision": "staged-plan-v1",
+  "prompt_revision": "plan-v4-explicit-implementation-task-coverage",
+  "checkpoint_origin": "reconstructed from preserved live output; not a new user approval",
+  "started_at": "2026-11-21T13:07:42.805118+00:00",
+  "requests": 1,
+  "retries": 0,
+  "status": "passed_automated_checks_pending_semantic_review",
+  "input_sha256": "d229b66c354da0f912f5f88db54ba1a33a5a5a5a3f845d93bfa3079b8825426e",
+  "completed_at": "2026-11-21T13:08:38.784302+00:00"
+}

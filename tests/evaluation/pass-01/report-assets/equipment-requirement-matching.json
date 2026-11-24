@@ -1,0 +1,47 @@
+{
+  "status": "single_assistant_manual_matching",
+  "rule": "Facts must match the full brief; standalone requirement coverage is separate from quote support and atomicity.",
+  "gold_matches": [
+    {
+      "expected": "Browse available equipment.",
+      "output_id": "R1"
+    },
+    {
+      "expected": "Submit a request for one item.",
+      "output_id": "R2"
+    },
+    {
+      "expected": "View own requests.",
+      "output_id": "R3"
+    },
+    {
+      "expected": "Coordinator reviews requests.",
+      "output_id": null
+    },
+    {
+      "expected": "Remain pending until coordinator approval.",
+      "output_id": "R4"
+    },
+    {
+      "expected": "Immediately approve every submitted request without review.",
+      "output_id": "R5"
+    }
+  ],
+  "correct_output_ids": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5"
+  ],
+  "precision": {
+    "numerator": 5,
+    "denominator": 5,
+    "value": 1.0
+  },
+  "recall": {
+    "numerator": 5,
+    "denominator": 6,
+    "value": 0.8333333333333334
+  }
+}

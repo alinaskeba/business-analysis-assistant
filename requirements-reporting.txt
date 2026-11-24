@@ -1,0 +1,4 @@
+# Reporting only; the application runtime uses the Python standard library.
+matplotlib
+numpy
+Pillow

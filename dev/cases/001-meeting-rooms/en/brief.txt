@@ -1,0 +1,9 @@
+We need a small web application for booking meeting rooms in our office.
+The goal is to reduce scheduling clashes in bookings.
+An employee views available rooms by date and time, creates and cancels their own booking.
+An administrator adds rooms, their capacity and equipment.
+The system does not allow the same room to be booked for a time that overlaps another booking.
+All bookings are confirmed automatically and immediately.
+Every booking must be approved by the office manager before confirmation.
+Sign-in uses corporate email. Email booking confirmations are required.
+We want the first version in one month.

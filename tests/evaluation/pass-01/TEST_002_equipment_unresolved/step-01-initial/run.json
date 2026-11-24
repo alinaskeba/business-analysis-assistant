@@ -1,0 +1,17 @@
+{
+  "case_id": "TEST_002_equipment_unresolved",
+  "stage": "initial",
+  "origin": "live_api",
+  "started_at": "2026-11-21T13:58:51.609004+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "api_calls": 1,
+  "status": "validated_result",
+  "blocking_reasons": [
+    "Unresolved contradictions remain",
+    "Blocking question: Q1",
+    "Earlier blocking question needs an explicit resolution: Q1"
+  ],
+  "documents_present": false,
+  "generation_progress": null,
+  "completed_at": "2026-11-21T13:58:55.587623+00:00"
+}

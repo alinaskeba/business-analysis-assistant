@@ -1,0 +1,17 @@
+{
+  "baseline": "v5",
+  "origin": "copy_of_existing_live_run",
+  "source": "../../roles-v3/candidate-v5",
+  "split": "dev",
+  "human_expectations_status": "draft",
+  "files_sha256": {
+    "brief.txt": "a7313add6b8d14f16b222ef72fd54dcc73016939bdef6ecd7a37936aa5d001c0",
+    "business_analysis.py": "e9d5b405a0eff205b369f204468554379925c753cfb3123315b28347950e9d60",
+    "instructions.txt": "4200ad0f62c5aac66b0e95f1d2fcc042b0c366ebd7917cf2758d53ffad6536fa",
+    "model-result.json": "8c7fae91fb045f0a00ce5fefed7d0832fa619b75f210d1b3f0c10db4db5d5159",
+    "run.json": "5aea9bc7e0ebdc9897a234c9b96e99cc7899212cf569a3d02e53a1332c301ce4",
+    "schema.json": "916106fcca2e06ac71631d28fe36dc08d58577b44973e005761999f7c7a03977",
+    "test_business_analysis.py": "5ebf272069e0d14bd0abd44ae23f81ab398df70ef867f6193803620cc51a4ad3",
+    "validation.json": "25a4773d10c3d0deef1856e5cac3fb861dc278e123cad1e40b63d0ca084d3176"
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "reviewer": "assistant-assisted semantic review; owner verification required",
+  "configuration_changes": [
+    "source representation",
+    "plan prompt",
+    "plan schema",
+    "validation"
+  ],
+  "business_facts_unchanged": true,
+  "comparison": {
+    "criteria_id_coverage": {
+      "baseline": [
+        13,
+        13
+      ],
+      "candidate": [
+        13,
+        13
+      ]
+    },
+    "source_failures": {
+      "baseline_bad_quotes": 4,
+      "candidate_unknown_source_ids": 0,
+      "candidate_modified_registry_quotes": 0,
+      "candidate_citation_records": 23
+    },
+    "governance_coverage": {
+      "baseline": [
+        3,
+        5
+      ],
+      "candidate": [
+        5,
+        5
+      ]
+    },
+    "delivery_raci": {
+      "baseline": "Implementation and Deployment plus Test Execution present",
+      "candidate": "Implementation, testing and deployment missing entirely; regression"
+    },
+    "validation": {
+      "baseline": "failed",
+      "candidate": "passed; does not imply semantic completeness"
+    }
+  },
+  "semantic_findings": [
+    {
+      "requirement_id": "R1",
+      "criterion_id": "AC1",
+      "status": "still_present",
+      "problem": "Unconfirmed staff-authentication precondition",
+      "detail": "The source authorizes Store owners and Sales personnel to create/update records but does not explicitly impose staff sign-in. Both actors are now named; the extra authenticated precondition remains an unconfirmed test assumption.",
+      "expected": {
+        "id": "R1",
+        "description": "Store owners and sales personnel create products.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts."
+        }
+      },
+      "generated": {
+        "id": "AC1",
+        "requirement_id": "R1",
+        "given": "a store owner or sales personnel is authenticated",
+        "when": "they create a product",
+        "then": "a new product is added to the system",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "requirement_id": "R2",
+      "criterion_id": "AC2",
+      "status": "still_present",
+      "problem": "Unconfirmed staff-authentication precondition",
+      "detail": "The source authorizes Store owners and Sales personnel to create/update records but does not explicitly impose staff sign-in. Both actors are now named; the extra authenticated precondition remains an unconfirmed test assumption.",
+      "expected": {
+        "id": "R2",
+        "description": "Store owners and sales personnel create customer accounts.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts."
+        }
+      },
+      "generated": {
+        "id": "AC2",
+        "requirement_id": "R2",
+        "given": "a store owner or sales personnel is authenticated",
+        "when": "they create a customer account",
+        "then": "a new customer account is added to the system",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "requirement_id": "R12",
+      "criterion_id": "AC10",
+      "status": "still_present",
+      "problem": "Unconfirmed staff-authentication precondition",
+      "detail": "The source authorizes Store owners and Sales personnel to create/update records but does not explicitly impose staff sign-in. Both actors are now named; the extra authenticated precondition remains an unconfirmed test assumption.",
+      "expected": {
+        "id": "R12",
+        "description": "Store owners and sales personnel update products.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts."
+        }
+      },
+      "generated": {
+        "id": "AC10",
+        "requirement_id": "R12",
+        "given": "a store owner or sales personnel is authenticated",
+        "when": "they update existing product details",
+        "then": "the system reflects the updated product information",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "requirement_id": "R14",
+      "criterion_id": "AC11",
+      "status": "still_present",
+      "problem": "Unconfirmed staff-authentication precondition",
+      "detail": "The source authorizes Store owners and Sales personnel to create/update records but does not explicitly impose staff sign-in. Both actors are now named; the extra authenticated precondition remains an unconfirmed test assumption.",
+      "expected": {
+        "id": "R14",
+        "description": "Store owners and sales personnel update customer accounts.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts."
+        }
+      },
+      "generated": {
+        "id": "AC11",
+        "requirement_id": "R14",
+        "given": "a store owner or sales personnel is authenticated",
+        "when": "they update existing customer account details",
+        "then": "the system reflects the updated account information",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "requirement_id": "R3",
+      "criterion_id": "AC3",
+      "status": "needs_human_review",
+      "problem": "All available products",
+      "detail": "Source says browse available products, not that every available product must be displayed in a single result. Confirm intended interpretation; do not infer a pagination or all-at-once policy.",
+      "expected": {
+        "id": "R3",
+        "description": "Customers browse available products.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+        }
+      },
+      "generated": {
+        "id": "AC3",
+        "requirement_id": "R3",
+        "given": "a customer is visiting the store",
+        "when": "they view the product catalog",
+        "then": "they are presented with all available products",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "brief",
+          "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store.",
+          "start": 126,
+          "end": 342
+        }
+      ]
+    },
+    {
+      "requirement_id": "R4",
+      "criterion_id": "AC4",
+      "status": "fixed",
+      "problem": "Availability and add action preserved",
+      "detail": "The criterion now uses an available product and an explicit add action. Full source sentence S11 names Customers and supports the cart action.",
+      "expected": {
+        "id": "R4",
+        "description": "Customers add available products to the cart.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+        }
+      },
+      "generated": {
+        "id": "AC4",
+        "requirement_id": "R4",
+        "given": "a customer is viewing an available product",
+        "when": "they add the product to their cart",
+        "then": "the product is present in the customer cart",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+          "start": 118,
+          "end": 230
+        }
+      ]
+    },
+    {
+      "requirement_id": "R5",
+      "criterion_id": "AC5",
+      "status": "partly_fixed",
+      "problem": "Sign-in and quantities restored but citation incomplete",
+      "detail": "Given includes signed-in and then preserves specific items and quantities. Only S14 is cited; sign-in is in S10, so cited evidence does not support the full precondition set. Additional source ID is needed.",
+      "expected": {
+        "id": "R5",
+        "description": "Successful submission creates one order with selected items and quantities.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+        }
+      },
+      "generated": {
+        "id": "AC5",
+        "requirement_id": "R5",
+        "given": "a customer has items in their cart and is signed in",
+        "when": "they submit the order",
+        "then": "one order containing those specific items and quantities is created",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+          "start": 434,
+          "end": 548
+        }
+      ]
+    },
+    {
+      "requirement_id": "R7",
+      "criterion_id": "AC7",
+      "status": "still_partial",
+      "problem": "Prompt versus successful sign-in gate",
+      "detail": "The criterion prompts before order placement, but does not explicitly assert no order while signed out or successful sign-in before placement. Its ordering is improved, but exact gate behavior needs review.",
+      "expected": {
+        "id": "R7",
+        "description": "Customers must sign in before order placement.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Customers may browse without signing in but must sign in before placing an order."
+        }
+      },
+      "generated": {
+        "id": "AC7",
+        "requirement_id": "R7",
+        "given": "a customer is not signed in",
+        "when": "they attempt to place an order",
+        "then": "they are prompted to sign in before the order is placed",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Customers may browse without signing in but must sign in before placing an order.",
+          "start": 36,
+          "end": 117
+        }
+      ]
+    },
+    {
+      "requirement_id": "R9",
+      "criterion_id": "AC8",
+      "status": "still_present",
+      "problem": "Negative quantity scenarios missing",
+      "detail": "Only a positive integer update appears. There are no zero, negative or fractional scenarios despite the explicit positive-integer domain and generation instruction. Then also lacks an explicit equality check against the requested new value.",
+      "expected": {
+        "id": "R9",
+        "description": "Customers change cart quantities to positive whole numbers.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+        }
+      },
+      "generated": {
+        "id": "AC8",
+        "requirement_id": "R9",
+        "given": "a customer has an item in their cart",
+        "when": "they update the quantity to a positive whole number",
+        "then": "the cart quantity is successfully updated",
+        "source_ids": [
+          "S11"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+          "start": 118,
+          "end": 230
+        }
+      ]
+    },
+    {
+      "requirement_id": "R16",
+      "criterion_id": "AC12",
+      "status": "still_present",
+      "problem": "Unique reference invented",
+      "detail": "Quote editing is eliminated but the description still strengthens reference to unique. S14 does not specify a uniqueness policy. Display timing now matches successful submission.",
+      "expected": {
+        "id": "R16",
+        "description": "Successful submission displays its order reference.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+        }
+      },
+      "generated": {
+        "id": "AC12",
+        "requirement_id": "R16",
+        "given": "an order has been successfully submitted",
+        "when": "the submission completes",
+        "then": "a unique order reference is displayed to the customer",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+          "start": 434,
+          "end": 548
+        }
+      ]
+    },
+    {
+      "requirement_id": "R17",
+      "criterion_id": "AC13",
+      "status": "still_partial",
+      "problem": "Empty-cart failure isolation",
+      "detail": "The criterion tests empty-cart rejection, but does not isolate it with a signed-in customer; the failure might be due to the independent authentication gate. Quote S15 does support the empty-cart prohibition.",
+      "expected": {
+        "id": "R17",
+        "description": "Reject empty-cart submission without creating an order.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "An empty cart cannot be submitted."
+        }
+      },
+      "generated": {
+        "id": "AC13",
+        "requirement_id": "R17",
+        "given": "a customer has an empty cart",
+        "when": "they attempt to submit the order",
+        "then": "the submission is rejected and no order is created",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      "resolved_sources": [
+        {
+          "document": "A2",
+          "quote": "An empty cart cannot be submitted.",
+          "start": 549,
+          "end": 583
+        }
+      ]
+    }
+  ],
+  "raci_findings": [
+    {
+      "status": "fixed",
+      "activity": "Requirements Approval",
+      "detail": "Separate governance activity with PO A/R and no product-task links."
+    },
+    {
+      "status": "fixed",
+      "activity": "UAT Acceptance",
+      "detail": "Separate acceptance activity with PO A/R, distinct from test execution."
+    },
+    {
+      "status": "fixed",
+      "activity": "Specification preparation and acceptance",
+      "detail": "A4 role assignments are preserved; Python resolves the original A4 text without ellipses."
+    },
+    {
+      "status": "regression",
+      "activity": "Implementation, Test Execution, Deployment",
+      "detail": "All omitted. The new coverage validator enforces explicit governance types but does not enforce delivery types, so semantic review must flag this despite structural validation passing."
+    }
+  ],
+  "conclusion": "Source-ID hydration eliminates model quote-copy errors in this response. Source IDs do not prove semantic entailment: invented/omitted conditions and incomplete delivery RACI remain. One successful generation does not establish stability."
+}

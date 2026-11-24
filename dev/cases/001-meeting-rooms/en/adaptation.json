@@ -1,0 +1,33 @@
+{
+  "family_id": "001-meeting-rooms",
+  "split": "dev",
+  "language": "en",
+  "kind": "translated_adaptation",
+  "translation_review": "pending",
+  "expectations_status": "draft",
+  "live_api_run": false,
+  "files": {
+    "brief.txt": {
+      "source": "../brief.txt",
+      "source_sha256": "a53d16156deede7d7811fea0ab0f02218be2f52f8cb28fd59f7ad47fee41aeea",
+      "translated_sha256": "de31e83b77bb0200c3d4bb080be836e379e25634463b5c5806f2ef86c37ccde9"
+    },
+    "with-team/team-addition.txt": {
+      "source": "../../with-team/team-addition.txt",
+      "source_sha256": "1de896c0830043de29ce1eb9d7fac595c39c76dc32accfa194ed37017efe59b2",
+      "translated_sha256": "1c75d9de311ff1ab3e393a15529f1d60f3a7105e6646f134b4e4e1c481e0659e"
+    },
+    "with-team/brief.txt": {
+      "source": "../../with-team/brief.txt",
+      "source_sha256": "a7313add6b8d14f16b222ef72fd54dcc73016939bdef6ecd7a37936aa5d001c0",
+      "translated_sha256": "4b01fb2b78cdca3845621b76ff7177ea56a45a5c12f02de19a29158a7d29c7f2"
+    }
+  },
+  "terminology": {
+    "booking": "reservation of a room",
+    "scheduling clashes": "overlapping/conflicting room bookings",
+    "office manager": "same named role in process and team",
+    "deployment": "technical deployment, distinct from PO launch decision"
+  },
+  "notes": "No decisions or conflict resolutions added. English variants remain in the same dev family."
+}

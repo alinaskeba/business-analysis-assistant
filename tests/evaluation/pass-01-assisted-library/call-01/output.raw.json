@@ -1,0 +1,185 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Implement Librarian Book Management",
+      "description": "Develop functionality for librarians to add and update book-copy records and record the return of borrowed copies.",
+      "requirement_ids": [
+        "R1",
+        "R9"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Implement Member Browsing and Loan Access",
+      "description": "Develop functionality for browsing available copies and securing member loan access, including sign-in controls and multi-loan restrictions.",
+      "requirement_ids": [
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R15"
+      ]
+    },
+    {
+      "id": "TASK3",
+      "title": "Implement Loan and Availability Logic",
+      "description": "Develop backend logic to prevent duplicate active loans and update availability status upon return.",
+      "requirement_ids": [
+        "R10",
+        "R11"
+      ]
+    },
+    {
+      "id": "TASK4",
+      "title": "Implement Localization",
+      "description": "Configure the web application to support English as the primary language.",
+      "requirement_ids": [
+        "R12"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "a librarian is logged in",
+      "when": "the librarian adds or updates a book-copy record",
+      "then": "the system updates the repository with the new or modified copy details",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "a member is not signed in",
+      "when": "the member accesses the browse available copies page",
+      "then": "the system displays the list of available copies",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "a member is not signed in",
+      "when": "the member attempts to borrow a copy",
+      "then": "the system denies the request and prompts for sign-in",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "a member is not signed in",
+      "when": "the member attempts to view their current loans",
+      "then": "the system denies the request and prompts for sign-in",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "AC5",
+      "requirement_id": "R5",
+      "given": "a signed-in member exists",
+      "when": "the member views their loan list",
+      "then": "the system displays only the records associated with that member ID",
+      "source_ids": [
+        "S17"
+      ]
+    },
+    {
+      "id": "AC6",
+      "requirement_id": "R6",
+      "given": "a member has 3 active loans",
+      "when": "the member attempts to borrow an additional copy",
+      "then": "the system prevents the creation of a fourth loan",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "id": "AC7",
+      "requirement_id": "R7",
+      "given": "a member has 3 active loans",
+      "when": "the member attempts to borrow a fourth copy",
+      "then": "the system refuses the operation",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "id": "AC8",
+      "requirement_id": "R8",
+      "given": "a specific book copy has an existing active loan",
+      "when": "a member attempts to borrow that specific unavailable copy",
+      "then": "the system refuses the borrowing request",
+      "source_ids": [
+        "S20"
+      ]
+    },
+    {
+      "id": "AC9",
+      "requirement_id": "R9",
+      "given": "a librarian is logged in",
+      "when": "the librarian records the return of a borrowed copy",
+      "then": "the system marks the loan as returned",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "id": "AC10",
+      "requirement_id": "R10",
+      "given": "a book copy is already assigned to an active loan",
+      "when": "another member attempts to borrow that same copy",
+      "then": "the system rejects the borrowing request to prevent a second active loan",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "id": "AC11",
+      "requirement_id": "R11",
+      "given": "a borrowed copy has been returned",
+      "when": "the librarian records the return",
+      "then": "the system updates the copy status to available",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "id": "AC12",
+      "requirement_id": "R12",
+      "given": "the system is deployed",
+      "when": "the user interface is rendered",
+      "then": "all text displays in English",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "AC13",
+      "requirement_id": "R15",
+      "given": "an available book copy",
+      "when": "a signed-in member selects to borrow that copy",
+      "then": "a new loan record is created for the member",
+      "source_ids": [
+        "S3"
+      ]
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "OQ1",
+      "requirement_id": "R12",
+      "missing_information": "Quantitative performance target",
+      "question": "Are there specific performance benchmarks required for the application beyond the language constraint?"
+    }
+  ]
+}

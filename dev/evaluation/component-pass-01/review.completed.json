@@ -1,0 +1,4510 @@
+{
+  "mode": "isolated_components",
+  "reviewer": "assistant-assisted semantic adjudication; needs owner verification",
+  "semantic_rubric": "Full credit requires preserved actors, conditions and scope in the description. Partial matches are reported separately, with zero full-match credit. Quotes are checked verbatim separately from semantic support of the full description/role. Category duplication counts as an error, not a new capability.",
+  "limitations": [
+    "One generation per case/stage, not a stability estimate",
+    "No held-out cases",
+    "Reference fixtures were authored/reviewed by the assistant against final facts, not separately signed off by the owner",
+    "Source-support review uses the cited fragment itself, not uncited neighboring text",
+    "Metrics mix label-level recall with output-record precision; one record can cover multiple labels and vice versa"
+  ],
+  "cases": [
+    {
+      "case_id": "PURE_002_without_team",
+      "initial": {
+        "validation": "validation_passed",
+        "requirement_recall_full": {
+          "numerator": 5,
+          "denominator": 5,
+          "fraction": 1.0
+        },
+        "partial_labels": 0,
+        "missing_labels": 0,
+        "requirement_precision_full": {
+          "numerator": 5,
+          "denominator": 5,
+          "fraction": 1.0
+        },
+        "partial_output_records": 0,
+        "quotes_verbatim": {
+          "numerator": 11,
+          "denominator": 11,
+          "fraction": 1.0
+        },
+        "quotes_semantic_support_full": {
+          "numerator": 7,
+          "denominator": 11,
+          "fraction": 0.6363636363636364
+        },
+        "quote_checks": [
+          {
+            "path": "result.goals[0].source",
+            "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[0].responsibilities[0].source",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[1].responsibilities[0].source",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[0].source",
+            "quote": "customers should be able to browse the available products,",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[1].source",
+            "quote": "maintain a shopping cart,",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.users[2].responsibilities[2].source",
+            "quote": "and place orders through the store.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[0].source",
+            "quote": "Store owners and sales personnel should be able to manage products",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[1].source",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[2].source",
+            "quote": "customers should be able to browse the available products,",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[3].source",
+            "quote": "maintain a shopping cart,",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[4].source",
+            "quote": "and place orders through the store.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          }
+        ],
+        "findings": [
+          {
+            "component": "initial_requirements",
+            "expectation_index": 0,
+            "expected": "Store owners and sales personnel can manage products.",
+            "status": "correct",
+            "brief_fragments": [
+              "Store owners and sales personnel should be able to manage products"
+            ],
+            "output_ids": [
+              "R1"
+            ],
+            "output_records": [
+              {
+                "id": "R1",
+                "description": "Allow store owners and sales personnel to manage products.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Store owners and sales personnel should be able to manage products"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 1,
+            "expected": "Store owners and sales personnel can manage customer accounts.",
+            "status": "correct",
+            "brief_fragments": [
+              "Store owners and sales personnel should be able to manage products and customer accounts"
+            ],
+            "output_ids": [
+              "R2"
+            ],
+            "output_records": [
+              {
+                "id": "R2",
+                "description": "Allow store owners and sales personnel to manage customer accounts.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Store owners and sales personnel should be able to manage products and customer accounts"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 2,
+            "expected": "Customers can browse available products.",
+            "status": "correct",
+            "brief_fragments": [
+              "customers should be able to browse the available products,"
+            ],
+            "output_ids": [
+              "R3"
+            ],
+            "output_records": [
+              {
+                "id": "R3",
+                "description": "Allow customers to browse available products.",
+                "source": {
+                  "document": "brief",
+                  "quote": "customers should be able to browse the available products,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 3,
+            "expected": "Customers can maintain a shopping cart.",
+            "status": "correct",
+            "brief_fragments": [
+              "maintain a shopping cart,"
+            ],
+            "output_ids": [
+              "R4"
+            ],
+            "output_records": [
+              {
+                "id": "R4",
+                "description": "Allow customers to maintain a shopping cart.",
+                "source": {
+                  "document": "brief",
+                  "quote": "maintain a shopping cart,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 4,
+            "expected": "Customers can place orders through the store.",
+            "status": "correct",
+            "brief_fragments": [
+              "and place orders through the store."
+            ],
+            "output_ids": [
+              "R5"
+            ],
+            "output_records": [
+              {
+                "id": "R5",
+                "description": "Allow customers to place orders through the store.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and place orders through the store."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          }
+        ],
+        "question_review": [
+          {
+            "id": "Q1",
+            "text": "Could you please specify the members of the project team and identify who holds authority for project decisions, development, and system acceptance?",
+            "status": "correct",
+            "reason": "Addresses a relevant missing decision or the actual contradiction."
+          }
+        ]
+      },
+      "clarification": {
+        "validation": "validation_passed",
+        "validation_errors": [],
+        "resolutions_recorded": 3,
+        "replies_supplied": 3,
+        "conflicts_retained": 0,
+        "findings": [
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Sign-in required for order placement.",
+            "source_fragment": "Customers may browse without signing in but must sign in before placing an order.",
+            "output_path": [
+              "requirements.R7"
+            ],
+            "observed": [
+              {
+                "id": "R7",
+                "description": "Customers may browse without signing in but must sign in before placing an order.",
+                "source": {
+                  "document": "A2",
+                  "quote": "Customers may browse without signing in but must sign in before placing an order."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Product and customer account creation and updating by store owners and sales personnel.",
+            "source_fragment": "Store owners and sales personnel can create and update products and customer accounts.",
+            "output_path": [
+              "requirements.R9"
+            ],
+            "observed": [
+              {
+                "id": "R9",
+                "description": "Store owners and sales personnel can create and update products and customer accounts.",
+                "source": {
+                  "document": "A2",
+                  "quote": "Store owners and sales personnel can create and update products and customer accounts."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Positive whole-number cart quantities; item removal.",
+            "source_fragment": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+            "output_path": [
+              "requirements.R8"
+            ],
+            "observed": [
+              {
+                "id": "R8",
+                "description": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+                "source": {
+                  "document": "A2",
+                  "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "A successful submission creates one order and displays its reference.",
+            "source_fragment": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+            "output_path": [
+              "requirements.R12"
+            ],
+            "observed": [
+              {
+                "id": "R12",
+                "description": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+                "source": {
+                  "document": "A2",
+                  "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Reject empty-cart submission.",
+            "source_fragment": "An empty cart cannot be submitted.",
+            "output_path": [
+              "requirements.R13"
+            ],
+            "observed": [
+              {
+                "id": "R13",
+                "description": "An empty cart cannot be submitted.",
+                "source": {
+                  "document": "A2",
+                  "quote": "An empty cart cannot be submitted."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "atomic_requirements",
+            "status": "partial",
+            "reason": "Independent create/update/cart actions remain bundled rather than separate requirements.",
+            "source_fragment": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project.",
+            "output_path": [
+              "requirements.R8",
+              "requirements.R9"
+            ],
+            "observed": null
+          }
+        ],
+        "expected_additional_fact_coverage": {
+          "numerator": 5,
+          "denominator": 5
+        }
+      },
+      "plan": {
+        "validation": "validation_failed",
+        "validation_errors": [
+          "R1: missing acceptance criteria",
+          "R10: missing acceptance criteria",
+          "R12: missing acceptance criteria",
+          "R14: missing acceptance criteria",
+          "R16: missing acceptance criteria",
+          "R2: missing acceptance criteria",
+          "R3: missing acceptance criteria",
+          "R4: missing acceptance criteria",
+          "R5: missing acceptance criteria",
+          "R6: missing acceptance criteria",
+          "R9: missing acceptance criteria"
+        ],
+        "task_coverage": {
+          "numerator": 13,
+          "denominator": 13,
+          "fraction": 1.0
+        },
+        "criterion_coverage": {
+          "numerator": 2,
+          "denominator": 13,
+          "fraction": 0.15384615384615385
+        },
+        "valid_task_links": {
+          "numerator": 13,
+          "denominator": 13,
+          "fraction": 1.0
+        },
+        "raci_structural_rows": {
+          "numerator": 3,
+          "denominator": 3,
+          "fraction": 1.0
+        },
+        "criteria_count": 2,
+        "missing_criterion_requirements": [
+          {
+            "id": "R1",
+            "description": "Store owners and sales personnel create products.",
+            "source": {
+              "document": "A2",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R2",
+            "description": "Store owners and sales personnel create customer accounts.",
+            "source": {
+              "document": "A2",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R3",
+            "description": "Customers browse available products.",
+            "source": {
+              "document": "brief",
+              "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+            }
+          },
+          {
+            "id": "R4",
+            "description": "Customers add available products to the cart.",
+            "source": {
+              "document": "A2",
+              "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+            }
+          },
+          {
+            "id": "R5",
+            "description": "Successful submission creates one order with selected items and quantities.",
+            "source": {
+              "document": "A2",
+              "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+            }
+          },
+          {
+            "id": "R6",
+            "description": "Customers may browse without signing in.",
+            "source": {
+              "document": "A2",
+              "quote": "Customers may browse without signing in but must sign in before placing an order."
+            }
+          },
+          {
+            "id": "R9",
+            "description": "Customers change cart quantities to positive whole numbers.",
+            "source": {
+              "document": "A2",
+              "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+            }
+          },
+          {
+            "id": "R10",
+            "description": "Customers remove cart items.",
+            "source": {
+              "document": "A2",
+              "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+            }
+          },
+          {
+            "id": "R12",
+            "description": "Store owners and sales personnel update products.",
+            "source": {
+              "document": "A2",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R14",
+            "description": "Store owners and sales personnel update customer accounts.",
+            "source": {
+              "document": "A2",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R16",
+            "description": "Successful submission displays its order reference.",
+            "source": {
+              "document": "A2",
+              "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+            }
+          }
+        ],
+        "raci_missing_governance": [
+          "Approve business requirements",
+          "Accept the specification",
+          "Make the final release decision"
+        ],
+        "raci_expected_semantic_checks_covered": {
+          "numerator": 5,
+          "denominator": 8,
+          "fraction": 0.625
+        },
+        "raci_authority_warning": "Specification Preparation has A=PO citing specification ACCEPTANCE; authority for preparation is not established by that narrower source.",
+        "findings": [
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Approve business requirements",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Accept the specification",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Make the final release decision",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_authority",
+            "status": "needs_human_review",
+            "reason": "Specification acceptance authority is cited for accountability over preparation, which is not identical.",
+            "source_fragment": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+            "output_path": "raci[0].accountable",
+            "observed": {
+              "id": "RA1",
+              "activity": "Specification Preparation",
+              "task_ids": [
+                "TASK1",
+                "TASK2"
+              ],
+              "accountable": [
+                {
+                  "role_id": "T1",
+                  "source": {
+                    "document": "A3",
+                    "quote": "The Product Owner is accountable for specification acceptance"
+                  }
+                }
+              ],
+              "responsible": [
+                {
+                  "role_id": "T2",
+                  "source": {
+                    "document": "A3",
+                    "quote": "The Business Analyst is responsible for preparing the specification."
+                  }
+                }
+              ],
+              "consulted": [],
+              "informed": []
+            }
+          }
+        ]
+      },
+      "specification": {
+        "status": "mechanical_copy_pass",
+        "requirements_preserved": {
+          "numerator": 16,
+          "denominator": 16,
+          "fraction": 1.0
+        },
+        "note": "Verified reference input only; invalid live plan does not produce an accepted final package."
+      }
+    },
+    {
+      "case_id": "PURE_002_with_team",
+      "initial": {
+        "validation": "validation_passed",
+        "requirement_recall_full": {
+          "numerator": 5,
+          "denominator": 5,
+          "fraction": 1.0
+        },
+        "partial_labels": 0,
+        "missing_labels": 0,
+        "requirement_precision_full": {
+          "numerator": 7,
+          "denominator": 7,
+          "fraction": 1.0
+        },
+        "partial_output_records": 0,
+        "quotes_verbatim": {
+          "numerator": 28,
+          "denominator": 28,
+          "fraction": 1.0
+        },
+        "quotes_semantic_support_full": {
+          "numerator": 12,
+          "denominator": 28,
+          "fraction": 0.42857142857142855
+        },
+        "quote_checks": [
+          {
+            "path": "result.goals[0].source",
+            "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[0].responsibilities[0].source",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[1].responsibilities[0].source",
+            "quote": "Store owners and sales personnel should be able to manage products and customer accounts",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[0].source",
+            "quote": "customers should be able to browse the available products",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[1].source",
+            "quote": "maintain a shopping cart",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.users[2].responsibilities[2].source",
+            "quote": "place orders through the store.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.users[3].responsibilities[0].source",
+            "quote": "explains day-to-day sales workflows",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.users[3].responsibilities[1].source",
+            "quote": "participates in user acceptance testing.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[0].source",
+            "quote": "The Product Owner defines priorities",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[1].source",
+            "quote": "approves business requirements",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[2].source",
+            "quote": "makes the final release decision.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[3].source",
+            "quote": "The Product Owner approves the user acceptance testing results.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[0].source",
+            "quote": "The Business Analyst gathers and clarifies requirements",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[1].source",
+            "quote": "prepares the specification",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[2].source",
+            "quote": "maintains links between requirements and implementation tasks.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[0].source",
+            "quote": "The Full-stack Developer makes technical implementation decisions",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[1].source",
+            "quote": "develops the application",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[2].source",
+            "quote": "and deploys releases.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[0].source",
+            "quote": "The QA Engineer prepares and executes tests",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[1].source",
+            "quote": "records defects",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[2].source",
+            "quote": "and reports whether the release meets the agreed acceptance criteria.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[0].source",
+            "quote": "Store owners and sales personnel should be able to manage products",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[1].source",
+            "quote": "and customer accounts,",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[2].source",
+            "quote": "Store owners and sales personnel should be able to manage products",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[3].source",
+            "quote": "and customer accounts,",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[4].source",
+            "quote": "customers should be able to browse the available products,",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[5].source",
+            "quote": "maintain a shopping cart,",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[6].source",
+            "quote": "and place orders through the store.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          }
+        ],
+        "findings": [
+          {
+            "component": "initial_requirements",
+            "expectation_index": 0,
+            "expected": "Store owners and sales personnel can manage products.",
+            "status": "correct",
+            "brief_fragments": [
+              "Store owners and sales personnel should be able to manage products",
+              "Store owners and sales personnel should be able to manage products"
+            ],
+            "output_ids": [
+              "R1",
+              "R3"
+            ],
+            "output_records": [
+              {
+                "id": "R1",
+                "description": "Store owners must be able to manage products.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Store owners and sales personnel should be able to manage products"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R3",
+                "description": "Sales personnel must be able to manage products.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Store owners and sales personnel should be able to manage products"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 1,
+            "expected": "Store owners and sales personnel can manage customer accounts.",
+            "status": "correct",
+            "brief_fragments": [
+              "and customer accounts,",
+              "and customer accounts,"
+            ],
+            "output_ids": [
+              "R2",
+              "R4"
+            ],
+            "output_records": [
+              {
+                "id": "R2",
+                "description": "Store owners must be able to manage customer accounts.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and customer accounts,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R4",
+                "description": "Sales personnel must be able to manage customer accounts.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and customer accounts,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 2,
+            "expected": "Customers can browse available products.",
+            "status": "correct",
+            "brief_fragments": [
+              "customers should be able to browse the available products,"
+            ],
+            "output_ids": [
+              "R5"
+            ],
+            "output_records": [
+              {
+                "id": "R5",
+                "description": "Customers must be able to browse available products.",
+                "source": {
+                  "document": "brief",
+                  "quote": "customers should be able to browse the available products,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 3,
+            "expected": "Customers can maintain a shopping cart.",
+            "status": "correct",
+            "brief_fragments": [
+              "maintain a shopping cart,"
+            ],
+            "output_ids": [
+              "R6"
+            ],
+            "output_records": [
+              {
+                "id": "R6",
+                "description": "Customers must be able to maintain a shopping cart.",
+                "source": {
+                  "document": "brief",
+                  "quote": "maintain a shopping cart,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 4,
+            "expected": "Customers can place orders through the store.",
+            "status": "correct",
+            "brief_fragments": [
+              "and place orders through the store."
+            ],
+            "output_ids": [
+              "R7"
+            ],
+            "output_records": [
+              {
+                "id": "R7",
+                "description": "Customers must be able to place orders.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and place orders through the store."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Set priorities.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Define priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approve business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Make the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the final release decision."
+                }
+              },
+              {
+                "description": "Approve user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Approve business requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Define priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approve business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Make the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the final release decision."
+                }
+              },
+              {
+                "description": "Approve user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Make the final release decision.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Define priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approve business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Make the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the final release decision."
+                }
+              },
+              {
+                "description": "Approve user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Approve user acceptance testing results.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner approves the user acceptance testing results."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Define priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approve business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Make the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the final release decision."
+                }
+              },
+              {
+                "description": "Approve user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Gather requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gather and clarify requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepare the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintain links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Clarify requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gather and clarify requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepare the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintain links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Prepare the specification.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gather and clarify requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepare the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintain links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Maintain links between requirements and implementation tasks.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gather and clarify requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepare the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintain links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Make technical implementation decisions.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Make technical implementation decisions.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions"
+                }
+              },
+              {
+                "description": "Develop the application.",
+                "source": {
+                  "document": "brief",
+                  "quote": "develops the application"
+                }
+              },
+              {
+                "description": "Deploy releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Develop the application.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Make technical implementation decisions.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions"
+                }
+              },
+              {
+                "description": "Develop the application.",
+                "source": {
+                  "document": "brief",
+                  "quote": "develops the application"
+                }
+              },
+              {
+                "description": "Deploy releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Deploy releases.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Make technical implementation decisions.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions"
+                }
+              },
+              {
+                "description": "Develop the application.",
+                "source": {
+                  "document": "brief",
+                  "quote": "develops the application"
+                }
+              },
+              {
+                "description": "Deploy releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Prepare tests.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepare and execute tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Record defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Report whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Execute tests.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepare and execute tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Record defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Report whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Record defects.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepare and execute tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Record defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Report whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Report whether the release meets the agreed acceptance criteria.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepare and execute tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Record defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Report whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Sales representative",
+            "expected": "Act as a business stakeholder.",
+            "status": "missing",
+            "brief_fragments": [
+              "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Sales representative",
+            "expected": "Explain day-to-day sales workflows.",
+            "status": "missing",
+            "brief_fragments": [
+              "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Sales representative",
+            "expected": "Participate in user acceptance testing.",
+            "status": "missing",
+            "brief_fragments": [
+              "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "role_separation",
+            "status": "incorrect_category",
+            "expected": "Sales representative belongs to the project team",
+            "brief_fragments": [
+              "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing.",
+              "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing.",
+              "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+            ],
+            "output_ids": [
+              "U4"
+            ],
+            "reason": "Project workflow explanation/UAT participation does not establish product-user participation."
+          }
+        ],
+        "question_review": [
+          {
+            "id": "Q1",
+            "text": "What interfaces or channels will be provided for store owners, sales personnel, and customers to perform their respective actions within the store?",
+            "status": "partial",
+            "reason": "Broad interface question is less useful than first-release business rules/accountability; blocking judgment needs review."
+          }
+        ]
+      },
+      "clarification": {
+        "validation": "validation_failed",
+        "validation_errors": [
+          "result.team_roles[0].responsibilities[2].source.quote: quote not found in brief or named source"
+        ],
+        "resolutions_recorded": 2,
+        "replies_supplied": 2,
+        "conflicts_retained": 0,
+        "findings": [
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Sign-in required for order placement.",
+            "source_fragment": "must sign in before placing an order.",
+            "output_path": [
+              "requirements.R3"
+            ],
+            "observed": [
+              {
+                "id": "R3",
+                "description": "Customers must sign in before placing an order.",
+                "source": {
+                  "document": "A1",
+                  "quote": "must sign in before placing an order."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Product and customer account creation and updating by store owners and sales personnel.",
+            "source_fragment": "Store owners and sales personnel can create and update products and customer accounts.",
+            "output_path": [
+              "requirements.R7"
+            ],
+            "observed": [
+              {
+                "id": "R7",
+                "description": "Store owners and sales personnel can create and update products and customer accounts.",
+                "source": {
+                  "document": "A1",
+                  "quote": "Store owners and sales personnel can create and update products and customer accounts."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Positive whole-number cart quantities; item removal.",
+            "source_fragment": "change quantities to positive whole numbers,",
+            "output_path": [
+              "requirements.R5",
+              "requirements.R6"
+            ],
+            "observed": [
+              {
+                "id": "R5",
+                "description": "Customers can change quantities to positive whole numbers.",
+                "source": {
+                  "document": "A1",
+                  "quote": "change quantities to positive whole numbers,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R6",
+                "description": "Customers can remove items from the cart.",
+                "source": {
+                  "document": "A1",
+                  "quote": "and remove items."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "A successful submission creates one order and displays its reference.",
+            "source_fragment": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+            "output_path": [
+              "requirements.R10"
+            ],
+            "observed": [
+              {
+                "id": "R10",
+                "description": "Submission creates one order containing the selected items and quantities and displays its reference.",
+                "source": {
+                  "document": "A1",
+                  "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Reject empty-cart submission.",
+            "source_fragment": "An empty cart cannot be submitted.",
+            "output_path": [
+              "requirements.R11"
+            ],
+            "observed": [
+              {
+                "id": "R11",
+                "description": "An empty cart cannot be submitted.",
+                "source": {
+                  "document": "A1",
+                  "quote": "An empty cart cannot be submitted."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "evidence",
+            "status": "invalid_quote",
+            "reason": "Two separate reply sentences are joined with invented ...; rejected by validator.",
+            "source_fragment": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision.",
+            "output_path": "team_roles[0].responsibilities[2]",
+            "observed": {
+              "description": "Accountable for specification acceptance, user acceptance testing, and final release decision.",
+              "source": {
+                "document": "A2",
+                "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. ... The Product Owner is accountable for the final release decision."
+              }
+            }
+          },
+          {
+            "component": "preserve_initial_facts",
+            "status": "partial",
+            "reason": "Initial IDs are reused for different requirements; all requirements now cite A1. Available-product browsing is no longer explicit; stable identity/original evidence is not preserved for unchanged facts.",
+            "source_fragment": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business. Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store.\n\nThe project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing. The Product Owner approves the user acceptance testing results.",
+            "output_path": "requirements",
+            "observed": [
+              {
+                "id": "R1",
+                "description": "The first release serves one store.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The first release serves one store."
+                },
+                "kind": "constraint",
+                "status": "confirmed"
+              },
+              {
+                "id": "R2",
+                "description": "Customers may browse without signing in.",
+                "source": {
+                  "document": "A1",
+                  "quote": "Customers may browse without signing in"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R3",
+                "description": "Customers must sign in before placing an order.",
+                "source": {
+                  "document": "A1",
+                  "quote": "must sign in before placing an order."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R4",
+                "description": "Customers can add available products to the cart.",
+                "source": {
+                  "document": "A1",
+                  "quote": "Customers can add available products to the cart,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R5",
+                "description": "Customers can change quantities to positive whole numbers.",
+                "source": {
+                  "document": "A1",
+                  "quote": "change quantities to positive whole numbers,"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R6",
+                "description": "Customers can remove items from the cart.",
+                "source": {
+                  "document": "A1",
+                  "quote": "and remove items."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R7",
+                "description": "Store owners and sales personnel can create and update products and customer accounts.",
+                "source": {
+                  "document": "A1",
+                  "quote": "Store owners and sales personnel can create and update products and customer accounts."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R8",
+                "description": "Orders are submitted for staff processing.",
+                "source": {
+                  "document": "A1",
+                  "quote": "Orders are submitted for staff processing;"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R9",
+                "description": "Online payments and shipping integrations are excluded from the first release.",
+                "source": {
+                  "document": "A1",
+                  "quote": "online payments and shipping integrations are outside the first release."
+                },
+                "kind": "constraint",
+                "status": "confirmed"
+              },
+              {
+                "id": "R10",
+                "description": "Submission creates one order containing the selected items and quantities and displays its reference.",
+                "source": {
+                  "document": "A1",
+                  "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R11",
+                "description": "An empty cart cannot be submitted.",
+                "source": {
+                  "document": "A1",
+                  "quote": "An empty cart cannot be submitted."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R12",
+                "description": "The first release is due eight weeks after requirements approval.",
+                "source": {
+                  "document": "A1",
+                  "quote": "The first release is due eight weeks after requirements approval."
+                },
+                "kind": "constraint",
+                "status": "confirmed"
+              }
+            ]
+          }
+        ],
+        "expected_additional_fact_coverage": {
+          "numerator": 5,
+          "denominator": 5
+        }
+      },
+      "plan": {
+        "validation": "validation_failed",
+        "validation_errors": [
+          "R1: missing acceptance criteria",
+          "R10: missing acceptance criteria",
+          "R12: missing acceptance criteria",
+          "R14: missing acceptance criteria",
+          "R16: missing acceptance criteria",
+          "R2: missing acceptance criteria",
+          "R3: missing acceptance criteria",
+          "R4: missing acceptance criteria",
+          "R6: missing acceptance criteria",
+          "R9: missing acceptance criteria"
+        ],
+        "task_coverage": {
+          "numerator": 13,
+          "denominator": 13,
+          "fraction": 1.0
+        },
+        "criterion_coverage": {
+          "numerator": 3,
+          "denominator": 13,
+          "fraction": 0.23076923076923078
+        },
+        "valid_task_links": {
+          "numerator": 16,
+          "denominator": 16,
+          "fraction": 1.0
+        },
+        "raci_structural_rows": {
+          "numerator": 3,
+          "denominator": 3,
+          "fraction": 1.0
+        },
+        "criteria_count": 3,
+        "missing_criterion_requirements": [
+          {
+            "id": "R1",
+            "description": "Store owners and sales personnel create products.",
+            "source": {
+              "document": "A1",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R2",
+            "description": "Store owners and sales personnel create customer accounts.",
+            "source": {
+              "document": "A1",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R3",
+            "description": "Customers browse available products.",
+            "source": {
+              "document": "brief",
+              "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+            }
+          },
+          {
+            "id": "R4",
+            "description": "Customers add available products to the cart.",
+            "source": {
+              "document": "A1",
+              "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+            }
+          },
+          {
+            "id": "R6",
+            "description": "Customers may browse without signing in.",
+            "source": {
+              "document": "A1",
+              "quote": "Customers may browse without signing in but must sign in before placing an order."
+            }
+          },
+          {
+            "id": "R9",
+            "description": "Customers change cart quantities to positive whole numbers.",
+            "source": {
+              "document": "A1",
+              "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+            }
+          },
+          {
+            "id": "R10",
+            "description": "Customers remove cart items.",
+            "source": {
+              "document": "A1",
+              "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+            }
+          },
+          {
+            "id": "R12",
+            "description": "Store owners and sales personnel update products.",
+            "source": {
+              "document": "A1",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R14",
+            "description": "Store owners and sales personnel update customer accounts.",
+            "source": {
+              "document": "A1",
+              "quote": "Store owners and sales personnel can create and update products and customer accounts."
+            }
+          },
+          {
+            "id": "R16",
+            "description": "Successful submission displays its order reference.",
+            "source": {
+              "document": "A1",
+              "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+            }
+          }
+        ],
+        "raci_missing_governance": [
+          "Approve business requirements",
+          "Accept the specification",
+          "Make the final release decision"
+        ],
+        "raci_expected_semantic_checks_covered": {
+          "numerator": 5,
+          "denominator": 8,
+          "fraction": 0.625
+        },
+        "raci_authority_warning": "Specification Preparation has A=PO citing specification ACCEPTANCE; authority for preparation is not established by that narrower source.",
+        "findings": [
+          {
+            "component": "tasks",
+            "status": "unsupported",
+            "reason": "CRUD includes deletion although the user supplied only create and update.",
+            "source_fragment": "Store owners and sales personnel can create and update products and customer accounts.",
+            "output_path": "tasks[0]",
+            "observed": {
+              "id": "TASK1",
+              "title": "Develop product and account management features",
+              "description": "Implement CRUD functionality for products and customer accounts for store owners and sales personnel.",
+              "requirement_ids": [
+                "R1",
+                "R2",
+                "R12",
+                "R14"
+              ]
+            }
+          },
+          {
+            "component": "tasks",
+            "status": "unsupported",
+            "reason": "Cart use is restricted to registered customers; the source requires sign-in only before placing an order.",
+            "source_fragment": "Customers may browse without signing in but must sign in before placing an order.",
+            "output_path": "tasks[1]",
+            "observed": {
+              "id": "TASK2",
+              "title": "Implement customer browse and cart functionality",
+              "description": "Develop browse functionality for guests and cart management for registered customers.",
+              "requirement_ids": [
+                "R3",
+                "R4",
+                "R6",
+                "R9",
+                "R10"
+              ]
+            }
+          },
+          {
+            "component": "acceptance_criteria",
+            "status": "partial",
+            "reason": "Order criterion does not explicitly check selected items/quantities, and adds unique to reference wording.",
+            "source_fragment": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+            "output_path": "acceptance_criteria[1]",
+            "observed": {
+              "id": "AC2",
+              "requirement_id": "R5",
+              "given": "a signed-in customer with items in their cart",
+              "when": "the customer submits the order",
+              "then": "the system creates one order and displays a unique order reference",
+              "source": {
+                "document": "A1",
+                "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+              }
+            }
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Approve business requirements",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Accept the specification",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Make the final release decision",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_authority",
+            "status": "needs_human_review",
+            "reason": "Specification acceptance authority is cited for accountability over preparation, which is not identical.",
+            "source_fragment": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+            "output_path": "raci[0].accountable",
+            "observed": {
+              "id": "RA1",
+              "activity": "Specification Preparation",
+              "task_ids": [
+                "TASK1",
+                "TASK2",
+                "TASK3"
+              ],
+              "accountable": [
+                {
+                  "role_id": "T1",
+                  "source": {
+                    "document": "A2",
+                    "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+                  }
+                }
+              ],
+              "responsible": [
+                {
+                  "role_id": "T2",
+                  "source": {
+                    "document": "A2",
+                    "quote": "The Business Analyst is responsible for preparing the specification."
+                  }
+                }
+              ],
+              "consulted": [],
+              "informed": []
+            }
+          }
+        ]
+      },
+      "specification": {
+        "status": "mechanical_copy_pass",
+        "requirements_preserved": {
+          "numerator": 16,
+          "denominator": 16,
+          "fraction": 1.0
+        },
+        "note": "Verified reference input only; invalid live plan does not produce an accepted final package."
+      }
+    },
+    {
+      "case_id": "PURE_003_conflict_resolved",
+      "initial": {
+        "validation": "validation_passed",
+        "requirement_recall_full": {
+          "numerator": 5,
+          "denominator": 8,
+          "fraction": 0.625
+        },
+        "partial_labels": 3,
+        "missing_labels": 0,
+        "requirement_precision_full": {
+          "numerator": 4,
+          "denominator": 7,
+          "fraction": 0.5714285714285714
+        },
+        "partial_output_records": 3,
+        "quotes_verbatim": {
+          "numerator": 17,
+          "denominator": 17,
+          "fraction": 1.0
+        },
+        "quotes_semantic_support_full": {
+          "numerator": 15,
+          "denominator": 17,
+          "fraction": 0.8823529411764706
+        },
+        "quote_checks": [
+          {
+            "path": "result.goals[0].source",
+            "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[0].responsibilities[0].source",
+            "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[1].responsibilities[0].source",
+            "quote": "other users should be able to request assets or reserve spaces for approval by the appropriate administrative level.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[0].source",
+            "quote": "A faculty inventory representative explains asset request and space reservation workflows",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[1].source",
+            "quote": "and participates in user acceptance testing.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[0].source",
+            "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[1].source",
+            "quote": "The Product Owner approves the user acceptance testing results.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[0].source",
+            "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[0].source",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[0].source",
+            "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[0].source",
+            "quote": "combines the inventory databases of three faculties",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[1].source",
+            "quote": "makes the integrated inventory available through a secure web interface.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[2].source",
+            "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[3].source",
+            "quote": "other users should be able to request assets",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[4].source",
+            "quote": "or reserve spaces for approval by the appropriate administrative level.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[5].source",
+            "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[6].source",
+            "quote": "Every room reservation is confirmed immediately without administrator approval.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          }
+        ],
+        "findings": [
+          {
+            "component": "initial_requirements",
+            "expectation_index": 0,
+            "expected": "Combine inventory databases from all three faculties.",
+            "status": "correct",
+            "brief_fragments": [
+              "combines the inventory databases of three faculties"
+            ],
+            "output_ids": [
+              "R1"
+            ],
+            "output_records": [
+              {
+                "id": "R1",
+                "description": "System shall combine inventory databases of three faculties.",
+                "source": {
+                  "document": "brief",
+                  "quote": "combines the inventory databases of three faculties"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 1,
+            "expected": "Make integrated inventory available through a web interface.",
+            "status": "correct",
+            "brief_fragments": [
+              "makes the integrated inventory available through a secure web interface."
+            ],
+            "output_ids": [
+              "R2"
+            ],
+            "output_records": [
+              {
+                "id": "R2",
+                "description": "Integrated inventory shall be available through a secure web interface.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the integrated inventory available through a secure web interface."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 2,
+            "expected": "The web interface must be secure; no provider or numeric security target is specified.",
+            "status": "correct",
+            "brief_fragments": [
+              "makes the integrated inventory available through a secure web interface."
+            ],
+            "output_ids": [
+              "R2"
+            ],
+            "output_records": [
+              {
+                "id": "R2",
+                "description": "Integrated inventory shall be available through a secure web interface.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the integrated inventory available through a secure web interface."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 3,
+            "expected": "University, faculty and department staff can manage assets including rooms, software licences and equipment.",
+            "status": "partial",
+            "brief_fragments": [
+              "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+            ],
+            "output_ids": [
+              "R3"
+            ],
+            "output_records": [
+              {
+                "id": "R3",
+                "description": "Staff shall be able to manage assets.",
+                "source": {
+                  "document": "brief",
+                  "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Named staff/asset examples or administrative-approval conditions are missing from the requirement description."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 4,
+            "expected": "Other users can request assets for approval by the appropriate administrative level.",
+            "status": "partial",
+            "brief_fragments": [
+              "other users should be able to request assets"
+            ],
+            "output_ids": [
+              "R4"
+            ],
+            "output_records": [
+              {
+                "id": "R4",
+                "description": "Other users shall be able to request assets.",
+                "source": {
+                  "document": "brief",
+                  "quote": "other users should be able to request assets"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Named staff/asset examples or administrative-approval conditions are missing from the requirement description."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 5,
+            "expected": "Other users can reserve spaces for approval by the appropriate administrative level.",
+            "status": "partial",
+            "brief_fragments": [
+              "or reserve spaces for approval by the appropriate administrative level."
+            ],
+            "output_ids": [
+              "R5"
+            ],
+            "output_records": [
+              {
+                "id": "R5",
+                "description": "Other users shall be able to reserve spaces.",
+                "source": {
+                  "document": "brief",
+                  "quote": "or reserve spaces for approval by the appropriate administrative level."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Named staff/asset examples or administrative-approval conditions are missing from the requirement description."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 6,
+            "expected": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+            "status": "correct",
+            "brief_fragments": [
+              "Every room reservation must be approved by the owning faculty administrator before confirmation."
+            ],
+            "output_ids": [
+              "R6"
+            ],
+            "output_records": [
+              {
+                "id": "R6",
+                "description": "Room reservations must be approved by the owning faculty administrator before confirmation.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 7,
+            "expected": "Every room reservation is confirmed immediately without administrator approval.",
+            "status": "correct",
+            "brief_fragments": [
+              "Every room reservation is confirmed immediately without administrator approval."
+            ],
+            "output_ids": [
+              "R7"
+            ],
+            "output_records": [
+              {
+                "id": "R7",
+                "description": "Room reservations shall be confirmed immediately without administrator approval.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Every room reservation is confirmed immediately without administrator approval."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Set priorities.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves the user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Approve business requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves the user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Make the final release decision.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves the user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Approve user acceptance testing results.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner approves the user acceptance testing results."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities, approves business requirements, and makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves the user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Gather requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Clarify requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Prepare the specification.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Maintain links between requirements and implementation tasks.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Make technical implementation decisions.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Makes technical implementation decisions, develops the application, and deploys releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Develop the application.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Makes technical implementation decisions, develops the application, and deploys releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Deploy releases.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Makes technical implementation decisions, develops the application, and deploys releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Prepare tests.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Execute tests.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Record defects.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Report whether the release meets the agreed acceptance criteria.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Faculty inventory representative",
+            "expected": "Explain asset request workflows.",
+            "status": "missing",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Faculty inventory representative",
+            "expected": "Explain space reservation workflows.",
+            "status": "missing",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Faculty inventory representative",
+            "expected": "Participate in user acceptance testing.",
+            "status": "missing",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "users",
+            "status": "missing",
+            "expected": "Owning faculty administrator as approval participant",
+            "brief_fragments": [
+              "Every room reservation must be approved by the owning faculty administrator before confirmation."
+            ],
+            "output_ids": [],
+            "reason": "Mentioned in requirements but absent as a business-process role."
+          },
+          {
+            "component": "role_separation",
+            "status": "incorrect_category",
+            "expected": "Faculty inventory representative belongs to the project team",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing.",
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing.",
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [
+              "U3"
+            ],
+            "reason": "Project workflow explanation/UAT participation does not establish product-user participation."
+          }
+        ],
+        "question_review": [
+          {
+            "id": "Q1",
+            "text": "Should room reservations be confirmed automatically or only after approval by an administrator?",
+            "status": "correct",
+            "reason": "Addresses a relevant missing decision or the actual contradiction."
+          },
+          {
+            "id": "Q2",
+            "text": "Could you define the specific roles and permission levels required for users to manage assets versus requesting them?",
+            "status": "correct",
+            "reason": "Addresses a relevant missing decision or the actual contradiction."
+          }
+        ]
+      },
+      "clarification": {
+        "validation": "validation_passed",
+        "validation_errors": [],
+        "resolutions_recorded": 3,
+        "replies_supplied": 3,
+        "conflicts_retained": 0,
+        "findings": [
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "University account sign-in.",
+            "source_fragment": "Members sign in using their university accounts.",
+            "output_path": [
+              "requirements.R4"
+            ],
+            "observed": [
+              {
+                "id": "R4",
+                "description": "Members must sign in using their university accounts.",
+                "source": {
+                  "document": "A2",
+                  "quote": "Members sign in using their university accounts."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "missing",
+            "reason": "Faculty staff maintain their own faculty assets.",
+            "source_fragment": "Faculty staff maintain assets belonging to their faculty.",
+            "output_path": [],
+            "observed": []
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Owning faculty administrator approves requests and reservations before confirmation.",
+            "source_fragment": "Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation.",
+            "output_path": [
+              "requirements.R5"
+            ],
+            "observed": [
+              {
+                "id": "R5",
+                "description": "Each request or room reservation requires approval by the administrator of the faculty that owns the asset before confirmation.",
+                "source": {
+                  "document": "A2",
+                  "quote": "Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Prevent overlapping confirmed room reservations.",
+            "source_fragment": "A room cannot have overlapping confirmed reservations.",
+            "output_path": [
+              "requirements.R6"
+            ],
+            "observed": [
+              {
+                "id": "R6",
+                "description": "A room cannot have overlapping confirmed reservations.",
+                "source": {
+                  "document": "A2",
+                  "quote": "A room cannot have overlapping confirmed reservations."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Use Europe/Kyiv time; end later than start.",
+            "source_fragment": "Start and end times use the Europe/Kyiv time zone",
+            "output_path": [
+              "requirements.R7",
+              "requirements.R8"
+            ],
+            "observed": [
+              {
+                "id": "R7",
+                "description": "Start and end times must use the Europe/Kyiv time zone.",
+                "source": {
+                  "document": "A2",
+                  "quote": "Start and end times use the Europe/Kyiv time zone"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              },
+              {
+                "id": "R8",
+                "description": "End time must be later than the start time.",
+                "source": {
+                  "document": "A2",
+                  "quote": "the end must be later than the start."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "updated_requirements",
+            "status": "correct",
+            "reason": "Rejected requests remain visible to requester.",
+            "source_fragment": "A rejected request remains visible to its requester with a rejected status.",
+            "output_path": [
+              "requirements.R9"
+            ],
+            "observed": [
+              {
+                "id": "R9",
+                "description": "A rejected request must remain visible to its requester with a rejected status.",
+                "source": {
+                  "document": "A2",
+                  "quote": "A rejected request remains visible to its requester with a rejected status."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ]
+          },
+          {
+            "component": "preserve_initial_facts",
+            "status": "missing",
+            "reason": "Secure web interface and original asset management are absent from requirements, despite the reply not withdrawing them.",
+            "source_fragment": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface. University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level.",
+            "output_path": "requirements: no corresponding records",
+            "observed": null
+          },
+          {
+            "component": "apply_reply_exclusions",
+            "status": "missing",
+            "reason": "Manual duplicate handling/no automatic ambiguous merge is absent from active requirements/constraints, although mentioned in users.",
+            "source_fragment": "University staff resolve duplicate source records manually before import; the prototype does not automatically merge ambiguous duplicates.",
+            "output_path": "requirements: absent; users[0].responsibilities[1] contains part",
+            "observed": null
+          },
+          {
+            "component": "resolved_conflict",
+            "status": "correct",
+            "reason": "Immediate unapproved confirmation is removed and prior faculty approval is active.",
+            "source_fragment": "Every room reservation requires approval by the owning faculty administrator before confirmation. Withdraw the immediate confirmation rule.",
+            "output_path": "resolutions[0], requirements.R5",
+            "observed": {
+              "question_id": "Q1",
+              "answer_id": "A1",
+              "outcome": "resolved",
+              "description": "The rule for immediate confirmation was withdrawn in favor of requiring administrator approval.",
+              "source": {
+                "document": "A1",
+                "quote": "Every room reservation requires approval by the owning faculty administrator before confirmation. Withdraw the immediate confirmation rule."
+              }
+            }
+          }
+        ],
+        "expected_additional_fact_coverage": {
+          "numerator": 5,
+          "denominator": 6
+        }
+      },
+      "plan": {
+        "validation": "validation_failed",
+        "validation_errors": [
+          "R1: missing acceptance criteria",
+          "R10: missing acceptance criteria",
+          "R11: missing acceptance criteria",
+          "R12: missing acceptance criteria",
+          "R2: missing acceptance criteria",
+          "R3: missing acceptance criteria",
+          "R4: missing acceptance criteria",
+          "R5: missing acceptance criteria",
+          "R6: missing acceptance criteria",
+          "R8: missing acceptance criteria",
+          "R9: missing acceptance criteria"
+        ],
+        "task_coverage": {
+          "numerator": 15,
+          "denominator": 15,
+          "fraction": 1.0
+        },
+        "criterion_coverage": {
+          "numerator": 4,
+          "denominator": 15,
+          "fraction": 0.26666666666666666
+        },
+        "valid_task_links": {
+          "numerator": 17,
+          "denominator": 17,
+          "fraction": 1.0
+        },
+        "raci_structural_rows": {
+          "numerator": 3,
+          "denominator": 3,
+          "fraction": 1.0
+        },
+        "criteria_count": 4,
+        "missing_criterion_requirements": [
+          {
+            "id": "R1",
+            "description": "Combine inventory databases from three faculties.",
+            "source": {
+              "document": "brief",
+              "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+            }
+          },
+          {
+            "id": "R2",
+            "description": "Provide the integrated inventory through a web interface.",
+            "source": {
+              "document": "brief",
+              "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+            }
+          },
+          {
+            "id": "R3",
+            "description": "The web interface must be secure.",
+            "source": {
+              "document": "brief",
+              "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+            }
+          },
+          {
+            "id": "R4",
+            "description": "University, faculty and department staff manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          },
+          {
+            "id": "R5",
+            "description": "Other users request assets for administrative approval.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          },
+          {
+            "id": "R6",
+            "description": "Other users reserve spaces for administrative approval.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          },
+          {
+            "id": "R8",
+            "description": "Members sign in using their university accounts.",
+            "source": {
+              "document": "A2",
+              "quote": "Members sign in using their university accounts."
+            }
+          },
+          {
+            "id": "R9",
+            "description": "Faculty staff maintain assets belonging to their faculty.",
+            "source": {
+              "document": "A2",
+              "quote": "Faculty staff maintain assets belonging to their faculty."
+            }
+          },
+          {
+            "id": "R10",
+            "description": "University staff can view all faculties.",
+            "source": {
+              "document": "A2",
+              "quote": "University staff can view all faculties."
+            }
+          },
+          {
+            "id": "R11",
+            "description": "Department staff can view their department assets.",
+            "source": {
+              "document": "A2",
+              "quote": "Department staff can view their department assets."
+            }
+          },
+          {
+            "id": "R12",
+            "description": "Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation.",
+            "source": {
+              "document": "A2",
+              "quote": "Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation."
+            }
+          }
+        ],
+        "raci_missing_governance": [
+          "Approve business requirements",
+          "Accept the specification",
+          "Make the final release decision"
+        ],
+        "raci_expected_semantic_checks_covered": {
+          "numerator": 5,
+          "denominator": 8,
+          "fraction": 0.625
+        },
+        "raci_authority_warning": "Specification Preparation has A=PO citing specification ACCEPTANCE; authority for preparation is not established by that narrower source.",
+        "findings": [
+          {
+            "component": "acceptance_criteria",
+            "status": "unsupported",
+            "reason": "Rejects reservation request on overlap instead of preventing overlapping confirmation; this is a stronger unagreed rule.",
+            "source_fragment": "A room cannot have overlapping confirmed reservations.",
+            "output_path": "acceptance_criteria[0]",
+            "observed": {
+              "id": "AC1",
+              "requirement_id": "R13",
+              "given": "a room has a confirmed reservation from 10:00 to 12:00",
+              "when": "a user attempts to reserve the same room from 11:00 to 13:00",
+              "then": "the system rejects the reservation request",
+              "source": {
+                "document": "A2",
+                "quote": "A room cannot have overlapping confirmed reservations."
+              }
+            }
+          },
+          {
+            "component": "acceptance_criteria",
+            "status": "unsupported",
+            "reason": "Introduces a dashboard and changes the mandatory asset-request test to reservation wording.",
+            "source_fragment": "A rejected request remains visible to its requester with a rejected status.",
+            "output_path": "acceptance_criteria[3]",
+            "observed": {
+              "id": "AC4",
+              "requirement_id": "R15",
+              "given": "a rejected reservation request",
+              "when": "the requester views their dashboard",
+              "then": "the request is visible with a rejected status",
+              "source": {
+                "document": "A2",
+                "quote": "A rejected request remains visible to its requester with a rejected status."
+              }
+            }
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Approve business requirements",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Accept the specification",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_coverage",
+            "status": "missing",
+            "reason": "Make the final release decision",
+            "source_fragment": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "output_path": "raci: absent as a corresponding activity",
+            "observed": null
+          },
+          {
+            "component": "raci_authority",
+            "status": "needs_human_review",
+            "reason": "Specification acceptance authority is cited for accountability over preparation, which is not identical.",
+            "source_fragment": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+            "output_path": "raci[0].accountable",
+            "observed": {
+              "id": "RA1",
+              "activity": "Specification Preparation",
+              "task_ids": [
+                "TASK1",
+                "TASK2",
+                "TASK3",
+                "TASK4"
+              ],
+              "accountable": [
+                {
+                  "role_id": "T1",
+                  "source": {
+                    "document": "A3",
+                    "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+                  }
+                }
+              ],
+              "responsible": [
+                {
+                  "role_id": "T2",
+                  "source": {
+                    "document": "A3",
+                    "quote": "The Business Analyst is responsible for preparing the specification."
+                  }
+                }
+              ],
+              "consulted": [],
+              "informed": []
+            }
+          }
+        ]
+      },
+      "specification": {
+        "status": "mechanical_copy_pass",
+        "requirements_preserved": {
+          "numerator": 17,
+          "denominator": 17,
+          "fraction": 1.0
+        },
+        "note": "Verified reference input only; invalid live plan does not produce an accepted final package."
+      }
+    },
+    {
+      "case_id": "PURE_003_conflict_unresolved",
+      "initial": {
+        "validation": "validation_passed",
+        "requirement_recall_full": {
+          "numerator": 4,
+          "denominator": 8,
+          "fraction": 0.5
+        },
+        "partial_labels": 3,
+        "missing_labels": 1,
+        "requirement_precision_full": {
+          "numerator": 3,
+          "denominator": 6,
+          "fraction": 0.5
+        },
+        "partial_output_records": 3,
+        "quotes_verbatim": {
+          "numerator": 24,
+          "denominator": 24,
+          "fraction": 1.0
+        },
+        "quotes_semantic_support_full": {
+          "numerator": 14,
+          "denominator": 24,
+          "fraction": 0.5833333333333334
+        },
+        "quote_checks": [
+          {
+            "path": "result.goals[0].source",
+            "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[0].responsibilities[0].source",
+            "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[1].responsibilities[0].source",
+            "quote": "other users should be able to request assets or reserve spaces for approval by the appropriate administrative level.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[0].source",
+            "quote": "A faculty inventory representative explains asset request and space reservation workflows",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.users[2].responsibilities[1].source",
+            "quote": "and participates in user acceptance testing.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[0].source",
+            "quote": "The Product Owner defines priorities",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[1].source",
+            "quote": "approves business requirements",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[2].source",
+            "quote": "and makes the final release decision.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[0].responsibilities[3].source",
+            "quote": "The Product Owner approves the user acceptance testing results.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[0].source",
+            "quote": "The Business Analyst gathers and clarifies requirements",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[1].source",
+            "quote": "prepares the specification",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[1].responsibilities[2].source",
+            "quote": "and maintains links between requirements and implementation tasks.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[0].source",
+            "quote": "The Full-stack Developer makes technical implementation decisions",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[1].source",
+            "quote": "develops the application",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[2].responsibilities[2].source",
+            "quote": "and deploys releases.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[0].source",
+            "quote": "The QA Engineer prepares and executes tests",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[1].source",
+            "quote": "records defects",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.team_roles[3].responsibilities[2].source",
+            "quote": "and reports whether the release meets the agreed acceptance criteria.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[0].source",
+            "quote": "makes the integrated inventory available through a secure web interface.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[1].source",
+            "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[2].source",
+            "quote": "other users should be able to request assets",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[3].source",
+            "quote": "or reserve spaces for approval by the appropriate administrative level.",
+            "verbatim": true,
+            "semantic_support": "partial",
+            "reason": "Cited fragment omits the actor/role; neighboring text would be needed."
+          },
+          {
+            "path": "result.requirements[4].source",
+            "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          },
+          {
+            "path": "result.requirements[5].source",
+            "quote": "Every room reservation is confirmed immediately without administrator approval.",
+            "verbatim": true,
+            "semantic_support": "supported",
+            "reason": "Cited fragment supports the asserted fact/role."
+          }
+        ],
+        "findings": [
+          {
+            "component": "initial_requirements",
+            "expectation_index": 0,
+            "expected": "Combine inventory databases from all three faculties.",
+            "status": "missing",
+            "brief_fragments": [
+              "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Integration is present only as a goal; no requirement record."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 1,
+            "expected": "Make integrated inventory available through a web interface.",
+            "status": "correct",
+            "brief_fragments": [
+              "makes the integrated inventory available through a secure web interface."
+            ],
+            "output_ids": [
+              "R1"
+            ],
+            "output_records": [
+              {
+                "id": "R1",
+                "description": "The system must be accessible through a secure web interface.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the integrated inventory available through a secure web interface."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 2,
+            "expected": "The web interface must be secure; no provider or numeric security target is specified.",
+            "status": "correct",
+            "brief_fragments": [
+              "makes the integrated inventory available through a secure web interface."
+            ],
+            "output_ids": [
+              "R1"
+            ],
+            "output_records": [
+              {
+                "id": "R1",
+                "description": "The system must be accessible through a secure web interface.",
+                "source": {
+                  "document": "brief",
+                  "quote": "makes the integrated inventory available through a secure web interface."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 3,
+            "expected": "University, faculty and department staff can manage assets including rooms, software licences and equipment.",
+            "status": "partial",
+            "brief_fragments": [
+              "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+            ],
+            "output_ids": [
+              "R2"
+            ],
+            "output_records": [
+              {
+                "id": "R2",
+                "description": "University, faculty, and department staff must be able to manage assets.",
+                "source": {
+                  "document": "brief",
+                  "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Named staff/asset examples or administrative-approval conditions are missing from the requirement description."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 4,
+            "expected": "Other users can request assets for approval by the appropriate administrative level.",
+            "status": "partial",
+            "brief_fragments": [
+              "other users should be able to request assets"
+            ],
+            "output_ids": [
+              "R3"
+            ],
+            "output_records": [
+              {
+                "id": "R3",
+                "description": "Other users must be able to request assets.",
+                "source": {
+                  "document": "brief",
+                  "quote": "other users should be able to request assets"
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Named staff/asset examples or administrative-approval conditions are missing from the requirement description."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 5,
+            "expected": "Other users can reserve spaces for approval by the appropriate administrative level.",
+            "status": "partial",
+            "brief_fragments": [
+              "or reserve spaces for approval by the appropriate administrative level."
+            ],
+            "output_ids": [
+              "R4"
+            ],
+            "output_records": [
+              {
+                "id": "R4",
+                "description": "Other users must be able to reserve spaces.",
+                "source": {
+                  "document": "brief",
+                  "quote": "or reserve spaces for approval by the appropriate administrative level."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Named staff/asset examples or administrative-approval conditions are missing from the requirement description."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 6,
+            "expected": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+            "status": "correct",
+            "brief_fragments": [
+              "Every room reservation must be approved by the owning faculty administrator before confirmation."
+            ],
+            "output_ids": [
+              "R5"
+            ],
+            "output_records": [
+              {
+                "id": "R5",
+                "description": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "initial_requirements",
+            "expectation_index": 7,
+            "expected": "Every room reservation is confirmed immediately without administrator approval.",
+            "status": "correct",
+            "brief_fragments": [
+              "Every room reservation is confirmed immediately without administrator approval."
+            ],
+            "output_ids": [
+              "R6"
+            ],
+            "output_records": [
+              {
+                "id": "R6",
+                "description": "Every room reservation is confirmed immediately without administrator approval.",
+                "source": {
+                  "document": "brief",
+                  "quote": "Every room reservation is confirmed immediately without administrator approval."
+                },
+                "kind": "functional",
+                "status": "confirmed"
+              }
+            ],
+            "reason": "Meaning and conditions covered, allowing equivalent splitting."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Set priorities.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approves business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Approve business requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approves business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Make the final release decision.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approves business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Product Owner",
+            "expected": "Approve user acceptance testing results.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Product Owner approves the user acceptance testing results."
+            ],
+            "output_ids": [
+              "T1"
+            ],
+            "output_records": [
+              {
+                "description": "Defines priorities.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner defines priorities"
+                }
+              },
+              {
+                "description": "Approves business requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "approves business requirements"
+                }
+              },
+              {
+                "description": "Makes the final release decision.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and makes the final release decision."
+                }
+              },
+              {
+                "description": "Approves user acceptance testing results.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Product Owner approves the user acceptance testing results."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Gather requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepares the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Clarify requirements.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepares the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Prepare the specification.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepares the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Business Analyst",
+            "expected": "Maintain links between requirements and implementation tasks.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            ],
+            "output_ids": [
+              "T2"
+            ],
+            "output_records": [
+              {
+                "description": "Gathers and clarifies requirements.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Business Analyst gathers and clarifies requirements"
+                }
+              },
+              {
+                "description": "Prepares the specification.",
+                "source": {
+                  "document": "brief",
+                  "quote": "prepares the specification"
+                }
+              },
+              {
+                "description": "Maintains links between requirements and implementation tasks.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and maintains links between requirements and implementation tasks."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Make technical implementation decisions.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Makes technical implementation decisions.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions"
+                }
+              },
+              {
+                "description": "Develops the application.",
+                "source": {
+                  "document": "brief",
+                  "quote": "develops the application"
+                }
+              },
+              {
+                "description": "Deploys releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Develop the application.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Makes technical implementation decisions.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions"
+                }
+              },
+              {
+                "description": "Develops the application.",
+                "source": {
+                  "document": "brief",
+                  "quote": "develops the application"
+                }
+              },
+              {
+                "description": "Deploys releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Full-stack Developer",
+            "expected": "Deploy releases.",
+            "status": "correct",
+            "brief_fragments": [
+              "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            ],
+            "output_ids": [
+              "T3"
+            ],
+            "output_records": [
+              {
+                "description": "Makes technical implementation decisions.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The Full-stack Developer makes technical implementation decisions"
+                }
+              },
+              {
+                "description": "Develops the application.",
+                "source": {
+                  "document": "brief",
+                  "quote": "develops the application"
+                }
+              },
+              {
+                "description": "Deploys releases.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and deploys releases."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Prepare tests.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Records defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Execute tests.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Records defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Record defects.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Records defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "QA Engineer",
+            "expected": "Report whether the release meets the agreed acceptance criteria.",
+            "status": "correct",
+            "brief_fragments": [
+              "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            ],
+            "output_ids": [
+              "T4"
+            ],
+            "output_records": [
+              {
+                "description": "Prepares and executes tests.",
+                "source": {
+                  "document": "brief",
+                  "quote": "The QA Engineer prepares and executes tests"
+                }
+              },
+              {
+                "description": "Records defects.",
+                "source": {
+                  "document": "brief",
+                  "quote": "records defects"
+                }
+              },
+              {
+                "description": "Reports whether the release meets the agreed acceptance criteria.",
+                "source": {
+                  "document": "brief",
+                  "quote": "and reports whether the release meets the agreed acceptance criteria."
+                }
+              }
+            ],
+            "reason": "Duty retained, possibly combined with other duties."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Faculty inventory representative",
+            "expected": "Explain asset request workflows.",
+            "status": "missing",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Faculty inventory representative",
+            "expected": "Explain space reservation workflows.",
+            "status": "missing",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "team_responsibilities",
+            "role": "Faculty inventory representative",
+            "expected": "Participate in user acceptance testing.",
+            "status": "missing",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [],
+            "output_records": [],
+            "reason": "Stakeholder is incorrectly in users and absent from team_roles."
+          },
+          {
+            "component": "users",
+            "status": "missing",
+            "expected": "Owning faculty administrator as approval participant",
+            "brief_fragments": [
+              "Every room reservation must be approved by the owning faculty administrator before confirmation."
+            ],
+            "output_ids": [],
+            "reason": "Mentioned in requirements but absent as a business-process role."
+          },
+          {
+            "component": "role_separation",
+            "status": "incorrect_category",
+            "expected": "Faculty inventory representative belongs to the project team",
+            "brief_fragments": [
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing.",
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing.",
+              "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            ],
+            "output_ids": [
+              "U3"
+            ],
+            "reason": "Project workflow explanation/UAT participation does not establish product-user participation."
+          }
+        ],
+        "question_review": [
+          {
+            "id": "Q1",
+            "text": "Should room reservations require approval by a faculty administrator, or should they be confirmed immediately upon request?",
+            "status": "correct",
+            "reason": "Addresses a relevant missing decision or the actual contradiction."
+          },
+          {
+            "id": "Q2",
+            "text": "Which roles specifically constitute the 'appropriate administrative level' responsible for approving different types of asset requests and space reservations?",
+            "status": "partial",
+            "reason": "Includes the room-approval issue already represented by the conflict; asset approval remains a legitimate distinct unknown."
+          }
+        ]
+      },
+      "clarification": {
+        "validation": "validation_passed",
+        "validation_errors": [],
+        "resolutions_recorded": 1,
+        "replies_supplied": 1,
+        "conflicts_retained": 1,
+        "findings": [],
+        "stop_check": {
+          "passed": true,
+          "blocking_reasons": [
+            "Unresolved contradictions remain",
+            "Blocking question: Q1",
+            "Earlier blocking question needs an explicit resolution: Q1"
+          ],
+          "source_quote": "The faculties have not agreed on reservation approval. Keep this question open."
+        }
+      },
+      "plan": {
+        "validation": "not_applicable",
+        "validation_errors": []
+      },
+      "specification": {
+        "status": "correctly_blocked_on_reference_and_updated_input"
+      }
+    }
+  ],
+  "aggregate": {
+    "initial_requirements_recall_full": {
+      "numerator": 19,
+      "denominator": 26,
+      "fraction": 0.7307692307692307
+    },
+    "initial_requirements_precision_full": {
+      "numerator": 19,
+      "denominator": 25,
+      "fraction": 0.76
+    },
+    "initial_quotes_verbatim": {
+      "numerator": 80,
+      "denominator": 80,
+      "fraction": 1.0
+    },
+    "initial_quotes_semantic_support_full": {
+      "numerator": 48,
+      "denominator": 80,
+      "fraction": 0.6
+    },
+    "goals_recall": {
+      "numerator": 4,
+      "denominator": 4,
+      "fraction": 1.0
+    },
+    "users_recall": {
+      "numerator": 14,
+      "denominator": 16,
+      "fraction": 0.875
+    },
+    "users_precision": {
+      "numerator": 14,
+      "denominator": 17,
+      "fraction": 0.8235294117647058
+    },
+    "team_roles_recall": {
+      "numerator": 12,
+      "denominator": 15,
+      "fraction": 0.8
+    },
+    "team_roles_precision": {
+      "numerator": 12,
+      "denominator": 12,
+      "fraction": 1.0
+    },
+    "team_responsibilities_recall": {
+      "numerator": 45,
+      "denominator": 54,
+      "fraction": 0.8333333333333334
+    },
+    "conflict_recall": {
+      "numerator": 2,
+      "denominator": 2,
+      "fraction": 1.0
+    },
+    "conflict_precision": {
+      "numerator": 2,
+      "denominator": 2,
+      "fraction": 1.0
+    },
+    "clean_cases_without_false_conflicts": {
+      "numerator": 2,
+      "denominator": 2,
+      "fraction": 1.0
+    },
+    "initial_question_usefulness_full": {
+      "numerator": 4,
+      "denominator": 6,
+      "fraction": 0.6666666666666666
+    },
+    "initial_questions_partial": 2,
+    "reply_outcomes_correct": {
+      "numerator": 9,
+      "denominator": 9,
+      "fraction": 1.0,
+      "note": "Outcome classification only: 8 resolved and 1 still_open. This is NOT a 100% fact-incorporation score."
+    },
+    "tasks_reference_coverage": {
+      "numerator": 41,
+      "denominator": 41,
+      "fraction": 1.0,
+      "note": "Reference coverage is not semantic task correctness: unagreed CRUD and cart restrictions were found."
+    },
+    "criteria_reference_coverage": {
+      "numerator": 9,
+      "denominator": 41,
+      "fraction": 0.21951219512195122
+    },
+    "raci_structural_rows": {
+      "numerator": 9,
+      "denominator": 9,
+      "fraction": 1.0,
+      "note": "Nine rows have one A and at least one R; governance coverage and authority semantics still fail/need review."
+    },
+    "raci_expected_semantic_checks_covered": {
+      "numerator": 15,
+      "denominator": 24,
+      "fraction": 0.625
+    },
+    "generated_tasks": 10,
+    "generated_criteria": 9,
+    "initial_structural_pass": {
+      "numerator": 4,
+      "denominator": 4,
+      "fraction": 1.0
+    },
+    "clarification_structural_pass": {
+      "numerator": 3,
+      "denominator": 4,
+      "fraction": 0.75
+    },
+    "plan_structural_pass": {
+      "numerator": 0,
+      "denominator": 3,
+      "fraction": 0.0
+    },
+    "specification_mechanical_copy": {
+      "numerator": 3,
+      "denominator": 3,
+      "fraction": 1.0
+    },
+    "end_to_end": "not_run; this experiment isolates components",
+    "clarified_additional_fact_coverage": {
+      "numerator": 15,
+      "denominator": 16,
+      "fraction": 0.9375
+    }
+  }
+}

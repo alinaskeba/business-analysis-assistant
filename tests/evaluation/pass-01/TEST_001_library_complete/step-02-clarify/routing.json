@@ -1,0 +1,13 @@
+{
+  "origin": "explicit_operator_supplied_answers",
+  "answers": [
+    {
+      "question_id": "Q1",
+      "text": "Members sign in before borrowing or viewing their own current loans. Browsing available copies does not require sign-in. Each member can have at most three active loans. Borrowing a fourth copy is refused without creating another loan. A member can see only their own current loans. Librarians can add and update copies and record returns. A copy is available when it has no active loan. Borrowing an unavailable copy is refused. For this prototype, a librarian is an authorized product role; staff authentication implementation is left to the Developer. Fines, reservations, renewals, payments and email notifications are outside the first release. The first release is due six weeks after requirements approval. The Product Owner accepts the release when the agreed borrowing, loan-limit, access and return scenarios pass user acceptance testing. No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target. The Developer decides the technical mechanism for identifying members and individual book copies. This technical choice is delegated to the Developer rather than being an unresolved business decision."
+    },
+    {
+      "question_id": "Q2",
+      "text": "The library representative advises the project team and does not require separate access to the web application."
+    }
+  ]
+}

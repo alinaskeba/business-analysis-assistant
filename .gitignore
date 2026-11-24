@@ -1,0 +1,48 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+sessions/
+*.session.json.tmp
+
+# Local tools, private data and editor state
+.local-archive/
+.venv/
+venv/
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+~$*
+
+# Superseded presentation drafts and duplicate bundles
+submission/Final_Report_Draft.*
+submission/Report_Pack.zip
+**/manual-review.json
+tests/history/
+
+# One-off experiment launchers; preserved locally, not part of the public app
+run_plan_pass06.py
+run_office_hours_demo.py
+run_raci_repair_eval.py
+run_ui_raci_case.py
+run_assisted_library_eval.py
+test_ui_raci_live.cjs
+build_reviewed_plan_baseline.py
+prepare_component_references.py
+review_component_pass01.py
+
+submission/
+github-ready.zip
+
+# Superseded working notes; primary public documentation lives in reports/.
+tests/evaluation/**/REVIEW.md
+tests/evaluation/**/pending-review.session.json
+tests/evaluation/**/README.md
+tests/evaluation/pass-01/EVALUATION_REPORT*.md
+dev/evaluation/**/README.md
+!dev/evaluation/final-system/**/README.md

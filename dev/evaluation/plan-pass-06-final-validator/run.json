@@ -1,0 +1,32 @@
+{
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "api_attempts": 1,
+  "retry_policy": "none",
+  "started_at_utc": "2026-11-21T11:16:36.733297+00:00",
+  "status": "validation_failed",
+  "configuration": {
+    "status": "frozen_for_evaluation",
+    "changed": [
+      "validator_only"
+    ],
+    "local_tests_passed": 65,
+    "case_id": "PURE_002_without_team",
+    "prompt_revision": "plan-v3-source-ids-and-governance",
+    "schema_version": 3,
+    "sha256": {
+      "input.json": "e1aa719ccf4a418b3c0e803adf9f41425f93807420c4215fb636c10fbfdfa5bf",
+      "instructions.txt": "7a1a852f90d512354cf27c271fc9df2afeffe9994fc79905184563730fbea6d7",
+      "schema.json": "8e16b73fe6fa8b17b863b2f1ca7a1022302f196d89369ad78ef030949ad3a990",
+      "business_analysis.py": "3e68885616ea6008bb2d3102bcc64ce877b4780ae0422e4b182056972064f57b",
+      "ba_workflow.py": "08034f8cd39bc42e34d6c6960d5159875e09df887f8e7455339c0ddc0f3bf153",
+      "plan_sources.py": "e5b7601ab1aa58d663d1e2c82dda4ab87ba0c4c2e89f169df27a911c0613240a"
+    }
+  },
+  "validation_errors": [
+    "raci: task TASK1 has no implementation activity",
+    "raci: task TASK2 has no implementation activity",
+    "raci: task TASK3 has no implementation activity"
+  ],
+  "completed_at_utc": "2026-11-21T11:16:41.874879+00:00"
+}

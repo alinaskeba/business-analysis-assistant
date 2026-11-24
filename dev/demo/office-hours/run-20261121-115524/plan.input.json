@@ -1,0 +1,182 @@
+{
+  "approved_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Provide office visitors with a way to check office opening hours.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "Office visitor",
+        "responsibilities": [
+          {
+            "description": "Read office opening hours on the public web page.",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Full-stack Developer",
+        "responsibilities": [
+          {
+            "description": "Implement every product requirement and implementation task.",
+            "source_ids": [
+              "S6"
+            ]
+          },
+          {
+            "description": "Test every product requirement.",
+            "source_ids": [
+              "S7"
+            ]
+          },
+          {
+            "description": "Deploy the page.",
+            "source_ids": [
+              "S8"
+            ]
+          },
+          {
+            "description": "Provide the hosting environment and the domain name.",
+            "source_ids": [
+              "S10"
+            ]
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "The page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "R2",
+        "description": "Visitors must be able to read the opening hours without signing in.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "R3",
+        "description": "The application shall not contain editing, booking, accounts or other features.",
+        "kind": "constraint",
+        "status": "confirmed",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "R4",
+        "description": "The page must use the existing company hosting environment and the existing company domain.",
+        "kind": "constraint",
+        "status": "confirmed",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "missing_information": [],
+    "contradictions": [],
+    "questions": [],
+    "assumptions": [],
+    "resolutions": [
+      {
+        "question_id": "Q1",
+        "answer_id": "A1",
+        "outcome": "resolved",
+        "description": "The Full-stack Developer is responsible and accountable for the hosting and domain, utilizing existing company assets.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ]
+  },
+  "source_registry": {
+    "S1": {
+      "document": "brief",
+      "quote": "Build a small public web page so office visitors can check the office opening hours.",
+      "start": 0,
+      "end": 84
+    },
+    "S2": {
+      "document": "brief",
+      "quote": "The page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor.",
+      "start": 86,
+      "end": 172
+    },
+    "S3": {
+      "document": "brief",
+      "quote": "Visitors must be able to read the opening hours without signing in.",
+      "start": 173,
+      "end": 240
+    },
+    "S4": {
+      "document": "brief",
+      "quote": "This version contains only this static information page; it has no editing, booking, accounts or other product features.",
+      "start": 241,
+      "end": 361
+    },
+    "S5": {
+      "document": "brief",
+      "quote": "The project has one team member, a Full-stack Developer.",
+      "start": 363,
+      "end": 419
+    },
+    "S6": {
+      "document": "brief",
+      "quote": "The Full-stack Developer is both Responsible and Accountable for implementing every product requirement and every implementation task.",
+      "start": 420,
+      "end": 554
+    },
+    "S7": {
+      "document": "brief",
+      "quote": "The Full-stack Developer is both Responsible and Accountable for testing every product requirement.",
+      "start": 555,
+      "end": 654
+    },
+    "S8": {
+      "document": "brief",
+      "quote": "The Full-stack Developer is both Responsible and Accountable for deploying the page.",
+      "start": 655,
+      "end": 739
+    },
+    "S9": {
+      "document": "brief",
+      "quote": "There are no separate business-requirements approval, specification preparation, specification acceptance, user acceptance testing or release-decision activities in this small demo project.",
+      "start": 740,
+      "end": 929
+    },
+    "S10": {
+      "document": "A1",
+      "quote": "The Full-stack Developer is both Responsible and Accountable for providing the hosting environment and the domain name.",
+      "start": 0,
+      "end": 119
+    },
+    "S11": {
+      "document": "A1",
+      "quote": "The page will use the existing company hosting environment and the existing company domain; no purchase or new infrastructure is in scope.",
+      "start": 120,
+      "end": 258
+    }
+  },
+  "required_governance": []
+}

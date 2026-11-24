@@ -1,0 +1,40 @@
+[
+  {
+    "criterion_ids": [
+      "AC1",
+      "AC2",
+      "AC10",
+      "AC11"
+    ],
+    "parameter": "actor_role",
+    "values": [
+      "Store owner",
+      "Sales personnel"
+    ],
+    "interpretation": "Run each criterion once per role; do not infer denial for unmentioned roles."
+  },
+  {
+    "criterion_ids": [
+      "AC8"
+    ],
+    "parameter": "quantity",
+    "values": [
+      1,
+      3,
+      5
+    ],
+    "interpretation": "Illustrative valid-domain examples, not an upper bound."
+  },
+  {
+    "criterion_ids": [
+      "AC14"
+    ],
+    "parameter": "quantity",
+    "values": [
+      0,
+      -1,
+      1.5
+    ],
+    "interpretation": "Zero, negative and fractional inputs cannot become cart quantities. Error UX and normalization are not prescribed."
+  }
+]

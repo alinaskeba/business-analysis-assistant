@@ -1,0 +1,130 @@
+{
+  "sources": {
+    "brief": "Build a small public web page so office visitors can check the office opening hours.\n\nThe page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor.\nVisitors must be able to read the opening hours without signing in.\nThis version contains only this static information page; it has no editing, booking, accounts or other product features.\n\nThe project has one team member, a Full-stack Developer. The Full-stack Developer is both Responsible and Accountable for implementing every product requirement and every implementation task. The Full-stack Developer is both Responsible and Accountable for testing every product requirement. The Full-stack Developer is both Responsible and Accountable for deploying the page.\nThere are no separate business-requirements approval, specification preparation, specification acceptance, user acceptance testing or release-decision activities in this small demo project.",
+    "A1": "The Full-stack Developer is both Responsible and Accountable for providing the hosting environment and the domain name. The page will use the existing company hosting environment and the existing company domain; no purchase or new infrastructure is in scope."
+  },
+  "replies": [
+    {
+      "id": "A1",
+      "question_id": "Q1",
+      "text": "The Full-stack Developer is both Responsible and Accountable for providing the hosting environment and the domain name. The page will use the existing company hosting environment and the existing company domain; no purchase or new infrastructure is in scope.",
+      "at": "2026-11-21T11:54:37.810877+00:00"
+    }
+  ],
+  "previous_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Provide office visitors with a way to check office opening hours.",
+        "source": {
+          "document": "brief",
+          "quote": "Build a small public web page so office visitors can check the office opening hours."
+        }
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "Office visitor",
+        "responsibilities": [
+          {
+            "description": "Read office opening hours on the public web page.",
+            "source": {
+              "document": "brief",
+              "quote": "office visitors can check the office opening hours."
+            }
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Full-stack Developer",
+        "responsibilities": [
+          {
+            "description": "Implement every product requirement and implementation task.",
+            "source": {
+              "document": "brief",
+              "quote": "The Full-stack Developer is both Responsible and Accountable for implementing every product requirement and every implementation task."
+            }
+          },
+          {
+            "description": "Test every product requirement.",
+            "source": {
+              "document": "brief",
+              "quote": "The Full-stack Developer is both Responsible and Accountable for testing every product requirement."
+            }
+          },
+          {
+            "description": "Deploy the page.",
+            "source": {
+              "document": "brief",
+              "quote": "The Full-stack Developer is both Responsible and Accountable for deploying the page."
+            }
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "The page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor.",
+        "source": {
+          "document": "brief",
+          "quote": "The page must display the fixed text \"Monday to Friday, 09:00-17:00\" to every visitor."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R2",
+        "description": "Visitors must be able to read the opening hours without signing in.",
+        "source": {
+          "document": "brief",
+          "quote": "Visitors must be able to read the opening hours without signing in."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R3",
+        "description": "The application shall not contain editing, booking, accounts or other features.",
+        "source": {
+          "document": "brief",
+          "quote": "This version contains only this static information page; it has no editing, booking, accounts or other product features."
+        },
+        "kind": "constraint",
+        "status": "confirmed"
+      }
+    ],
+    "missing_information": [
+      {
+        "id": "M1",
+        "topic": "Hosting and domain ownership",
+        "why_needed": "It is not specified who will provision the web server or manage the domain name for the public web page."
+      }
+    ],
+    "contradictions": [],
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "Who is responsible for providing the hosting environment and domain name for the public web page?",
+        "target_type": "gap",
+        "target_id": "M1",
+        "blocks_final_specification": true
+      }
+    ],
+    "assumptions": [],
+    "resolutions": []
+  },
+  "previously_asked_questions": {
+    "Q1": {
+      "id": "Q1",
+      "text": "Who is responsible for providing the hosting environment and domain name for the public web page?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": true
+    }
+  }
+}

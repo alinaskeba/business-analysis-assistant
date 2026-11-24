@@ -1,0 +1,12 @@
+{
+  "origin": "byte_preserved_attempt_07_live_result",
+  "files_sha256": {
+    "ba_workflow.py": "1bba543b0786755481037a115a545dc115334bf822478d91752c14336865117d",
+    "input.json": "bacb3c7e0aa78f83add61dbbe8e98b3aebddccdc6b7199690eb5ab66f374853e",
+    "instructions.txt": "4a513c2eabc46786881c9cbe655f7121b7e1a4a9b50692cd43bc5737162b764c",
+    "output.json": "d33ba079cfa437e5af08098cddff80dd60cf96f8beecc5d2965ab3aab8553993",
+    "review.json": "477ddcc8488df5a3a3aba44f387724f79bff6878463e97dc4c62f66d43726e24",
+    "run.json": "726b5dd66ba59471212d638133be31ad1e82e12775bdc614fb15fc0ae60c3703",
+    "schema.json": "8a4fe049c375c3a3654312985270ec012956c19f19d78cc92dc4948ad1445277"
+  }
+}

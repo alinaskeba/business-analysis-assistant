@@ -1,0 +1,372 @@
+{
+  "dataset_name": "Business Analysis Assistant small final test set",
+  "version": "1.0-final",
+  "language": "en",
+  "expectations_status": "final",
+  "usage": {
+    "purpose": "Two small unseen-domain scenarios for final evaluation after freezing implementation and reviewing expectations.",
+    "holdout_condition": "Treat as held out only if these scenarios and domains have not been used to tune the application. If used for tuning, move to dev and create new final cases.",
+    "before_run": "Owner-approved final expectations. Preserve this version before generation; do not tune implementation on test results.",
+    "model_input": "Only initial brief and actually supplied user replies enter application context. Expected outputs and evaluation metadata remain outside it.",
+    "matching": "Match meaning, actors and conditions; do not require exact generated wording or IDs.",
+    "metrics": "Report component results with numerator/denominator and concrete errors. Report unavailable/unimplemented/skipped stages explicitly. Two cases do not establish broad generalization.",
+    "routing": "Prepared replies require a human operator or topic-aware runner; schema may need adapter to current project.",
+    "provenance": "Both scenarios and stakeholder replies are fully synthetic, not original PURE records.",
+    "execution": "No API calls have been made on this dataset."
+  },
+  "cases": [
+    {
+      "case_id": "TEST_001_library_complete",
+      "group_id": "TEST_LIBRARY",
+      "split": "test",
+      "project_name": "Community Library Loans",
+      "provenance": {
+        "type": "fully_synthetic",
+        "author": "AI-assisted scenario design; owner reviewed and approved",
+        "used_in_supplied_dev_set": false
+      },
+      "input": {
+        "initial_requirements": "A small community library needs an English-language web application to manage book loans and reduce manual loan records. Librarians can add and update book-copy records. Members can browse available copies, borrow an available copy, and view their own current loans. Librarians can record the return of a borrowed copy. The application must prevent a copy from having two active loans. A recorded return makes that copy available again.\n\nThe project team consists of a Product Owner, a Business Analyst, a Developer and a QA Engineer. The Business Analyst is Responsible for preparing the specification and the Product Owner is Accountable for its preparation. The Product Owner is both Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision. The Developer is both Responsible and Accountable for implementation and deployment. The QA Engineer is both Responsible and Accountable for test preparation and execution. A library representative explains library workflows and participates in user acceptance testing as a project adviser."
+      },
+      "conversation": {
+        "delivery_rule": "Send only the initial brief first. Provide the prepared reply when relevant questions are asked. It may answer several related questions together. Do not send expected fields to the application.",
+        "prepared_answers": [
+          {
+            "reply_id": "A1",
+            "topics": [
+              "access",
+              "loan_limit",
+              "availability",
+              "scope",
+              "timeline",
+              "success_criteria"
+            ],
+            "text": "Members sign in before borrowing or viewing their own current loans. Browsing available copies does not require sign-in. Each member can have at most three active loans. Borrowing a fourth copy is refused without creating another loan. A member can see only their own current loans. Librarians can add and update copies and record returns. A copy is available when it has no active loan. Borrowing an unavailable copy is refused. For this prototype, a librarian is an authorized product role; staff authentication implementation is left to the Developer. Fines, reservations, renewals, payments and email notifications are outside the first release. The first release is due six weeks after requirements approval. The Product Owner accepts the release when the agreed borrowing, loan-limit, access and return scenarios pass user acceptance testing. No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target."
+          }
+        ],
+        "uncovered_question_policy": "Record additional relevant questions for owner review. Do not invent answers.",
+        "final_review": {
+          "send_approval_only_if": "The owner has checked the displayed requirements and all blocking questions have been resolved.",
+          "approval_text": "I confirm these requirements. Generate the specification, tasks, acceptance criteria and RACI."
+        }
+      },
+      "expected": {
+        "status": "final",
+        "initial_analysis": {
+          "goals": [
+            "Reduce manual loan records."
+          ],
+          "product_users": [
+            "Librarian",
+            "Member"
+          ],
+          "project_roles": [
+            "Product Owner",
+            "Business Analyst",
+            "Developer",
+            "QA Engineer",
+            "Library representative as project adviser"
+          ],
+          "conflicts": [],
+          "clarifications": [
+            "Ask about borrowing eligibility or member loan limits.",
+            "Ask about access to borrowing and own current loans."
+          ],
+          "must_preserve": [
+            "Copy-level availability and active-loan restriction.",
+            "Own current loans rather than all member loans.",
+            "Librarian return recording."
+          ],
+          "must_not_infer": [
+            "A library representative is a product user solely because they advise the project.",
+            "Fines, reservations, renewal, email or payment as confirmed scope."
+          ]
+        },
+        "after_clarification": {
+          "required_facts": [
+            {
+              "meaning": "Create and update book-copy records as a librarian.",
+              "source_document": "brief"
+            },
+            {
+              "meaning": "Browse available copies as a member or visitor without mandatory sign-in.",
+              "source_document": "A1"
+            },
+            {
+              "meaning": "Borrow an available copy as a signed-in member.",
+              "source_document": "A1"
+            },
+            {
+              "meaning": "View only own current loans as a signed-in member.",
+              "source_document": "A1"
+            },
+            {
+              "meaning": "Record a return as a librarian.",
+              "source_document": "brief"
+            },
+            {
+              "meaning": "Prevent two active loans for the same copy.",
+              "source_document": "brief"
+            },
+            {
+              "meaning": "Make a returned copy available again.",
+              "source_document": "brief"
+            },
+            {
+              "meaning": "Limit members to three active loans and refuse a fourth without creating a loan.",
+              "source_document": "A1"
+            },
+            {
+              "meaning": "Refuse borrowing an unavailable copy.",
+              "source_document": "A1"
+            }
+          ],
+          "preserve_initial_facts": true,
+          "nonblocking_unknown": "No quantitative performance target agreed.",
+          "scope_exclusions": [
+            "Fines",
+            "Reservations",
+            "Renewals",
+            "Payments",
+            "Email notifications"
+          ],
+          "constraint": "First release due six weeks after requirements approval."
+        },
+        "specification": {
+          "must_include": [
+            "Business goal",
+            "Product users",
+            "Confirmed requirements",
+            "Scope exclusions",
+            "Timeline",
+            "Project team",
+            "Explicit assumptions and open questions"
+          ],
+          "must_preserve": "All original and clarified in-scope facts, actors and conditions.",
+          "traceability": "Facts link to the brief or actually supplied user reply. Proposed assumptions are labeled."
+        },
+        "tasks": {
+          "checks": [
+            "Every implementable requirement is covered by a task.",
+            "Every task references existing requirements.",
+            "Tasks preserve role permissions, three-loan limit and copy-level availability.",
+            "No unagreed product features added."
+          ]
+        },
+        "acceptance_criteria": {
+          "coverage": "All implementable requirements have meaningful testable criteria. Below are mandatory scenario meanings, not an exhaustive generated output.",
+          "required_scenarios": [
+            {
+              "check_id": "LAC1",
+              "topic": "Loan creation",
+              "given": "A signed-in member has fewer than three active loans and a copy is available.",
+              "when": "The member borrows that copy.",
+              "then": "One active loan for that member and copy is created, and the copy is no longer available."
+            },
+            {
+              "check_id": "LAC2",
+              "topic": "Loan limit",
+              "given": "A member has three active loans and another copy is available.",
+              "when": "The member tries to borrow that copy.",
+              "then": "The attempt is refused and the member still has exactly three active loans."
+            },
+            {
+              "check_id": "LAC3",
+              "topic": "Own loans",
+              "given": "Members A and B each have an active loan.",
+              "when": "Signed-in member A views their current loans.",
+              "then": "Only member A loans are shown."
+            },
+            {
+              "check_id": "LAC4",
+              "topic": "Return",
+              "given": "A copy has an active loan.",
+              "when": "A librarian records its return.",
+              "then": "The loan is no longer active and the copy is available."
+            },
+            {
+              "check_id": "LAC5",
+              "topic": "Unavailable copy",
+              "given": "A copy has an active loan.",
+              "when": "Another member tries to borrow it.",
+              "then": "No second active loan is created."
+            },
+            {
+              "check_id": "LAC6",
+              "topic": "Guest browsing",
+              "given": "A visitor is signed out and a copy is available.",
+              "when": "The visitor browses available copies.",
+              "then": "The copy is shown without requiring sign-in."
+            },
+            {
+              "check_id": "LAC7",
+              "topic": "Sign-in gating",
+              "given": "A visitor is signed out.",
+              "when": "The visitor attempts to borrow a copy.",
+              "then": "Borrowing cannot complete and no loan is created before sign-in."
+            }
+          ],
+          "additional_checks": [
+            "Creation and updating of book copies both have criteria.",
+            "Avoid invented error message text, automatic redirection, fines or loan due dates."
+          ]
+        },
+        "raci": {
+          "required_activities": [
+            {
+              "activity": "Prepare specification",
+              "responsible": "Business Analyst",
+              "accountable": "Product Owner"
+            },
+            {
+              "activity": "Approve business requirements",
+              "responsible": "Product Owner",
+              "accountable": "Product Owner"
+            },
+            {
+              "activity": "Accept specification",
+              "responsible": "Product Owner",
+              "accountable": "Product Owner"
+            },
+            {
+              "activity": "Implement and deploy",
+              "responsible": "Developer",
+              "accountable": "Developer"
+            },
+            {
+              "activity": "Prepare and execute tests",
+              "responsible": "QA Engineer",
+              "accountable": "QA Engineer"
+            },
+            {
+              "activity": "Accept UAT results",
+              "responsible": "Product Owner",
+              "accountable": "Product Owner"
+            },
+            {
+              "activity": "Make release decision",
+              "responsible": "Product Owner",
+              "accountable": "Product Owner"
+            }
+          ],
+          "structural_checks": [
+            "Exactly one A per activity.",
+            "At least one R per activity; same role may be A and R.",
+            "Role references exist.",
+            "Implementation tasks are covered by implementation responsibility.",
+            "Governance activities may have empty task references."
+          ],
+          "stakeholder_check": "Library representative participation in UAT is preserved. Consulted participation is acceptable; do not invent final approval authority."
+        },
+        "end_to_end": [
+          "Clarification precedes final documents.",
+          "After verified answers and owner approval, all four document outputs are produced.",
+          "Documents consistently enforce the same rules.",
+          "No fabricated source references or edited quotes."
+        ]
+      }
+    },
+    {
+      "case_id": "TEST_002_equipment_unresolved",
+      "group_id": "TEST_EQUIPMENT",
+      "split": "test",
+      "project_name": "Shared Equipment Requests",
+      "provenance": {
+        "type": "fully_synthetic",
+        "author": "AI-assisted scenario design; owner reviewed and approved",
+        "used_in_supplied_dev_set": false
+      },
+      "input": {
+        "initial_requirements": "An organization needs a web application to track shared equipment requests. Employees can browse available equipment, submit a request for one item, and view their own requests. An equipment coordinator reviews requests. Every request must remain pending until the equipment coordinator approves it. Every submitted request must immediately become approved without coordinator review. The Product Owner makes decisions about the request approval policy. The project team consists of a Product Owner, a Business Analyst, a Developer and a QA Engineer. The Business Analyst gathers and documents requirements, the Developer implements the application, and the QA Engineer tests it."
+      },
+      "conversation": {
+        "delivery_rule": "Provide A1 when asked to resolve the incompatible approval rules. No finalization approval is supplied in this trajectory.",
+        "prepared_answers": [
+          {
+            "reply_id": "A1",
+            "topics": [
+              "approval_conflict"
+            ],
+            "text": "We have not decided whether coordinator approval is required. Keep this decision open. The Product Owner will decide later."
+          }
+        ],
+        "uncovered_question_policy": "Record other relevant questions; the conflict is intentionally unresolved.",
+        "final_review": {
+          "approval_text": null,
+          "send_approval_only_if": "Never in this trajectory: stop after the undecided reply."
+        }
+      },
+      "expected": {
+        "status": "final",
+        "initial_analysis": {
+          "goals": [
+            "Track shared equipment requests."
+          ],
+          "product_users": [
+            "Employee",
+            "Equipment coordinator"
+          ],
+          "project_roles": [
+            "Product Owner",
+            "Business Analyst",
+            "Developer",
+            "QA Engineer"
+          ],
+          "requirements_to_cover": [
+            "Browse available equipment.",
+            "Submit a request for one item.",
+            "View own requests.",
+            "Coordinator reviews requests.",
+            "Remain pending until coordinator approval.",
+            "Immediately approve every submitted request without review."
+          ],
+          "conflicts": [
+            {
+              "statement_a": "Every request must remain pending until the equipment coordinator approves it.",
+              "statement_b": "Every submitted request must immediately become approved without coordinator review.",
+              "question_meaning": "Ask which approval policy should apply; keep wording neutral."
+            }
+          ],
+          "must_not_infer": [
+            "Decision authority of PO already resolves the conflict.",
+            "Compromise workflow or post-approval cancellation."
+          ]
+        },
+        "after_clarification": {
+          "conflict_status": "still_open",
+          "preserve_both_positions": true,
+          "must_not_do": [
+            "Select either policy as confirmed.",
+            "Interpret decision deferred as conflict resolved.",
+            "Mark all blocking questions closed."
+          ]
+        },
+        "specification": {
+          "expected_behavior": "Finalization remains blocked. A clearly labeled partial draft may be displayed with the unresolved rules."
+        },
+        "tasks": {
+          "expected_behavior": "If provisional tasks are shown, affected tasks explicitly depend on the unresolved approval decision."
+        },
+        "acceptance_criteria": {
+          "expected_behavior": "Neither incompatible approval policy is presented as a confirmed acceptance criterion."
+        },
+        "raci": {
+          "expected_behavior": "PO decision authority may be recorded, but does not resolve the product conflict. Missing project A/R assignments must not be fabricated."
+        },
+        "end_to_end": [
+          "The assistant asks about the conflict.",
+          "The user gives the undecided answer.",
+          "The conflict remains visible and unresolved.",
+          "Final document generation is blocked or final status withheld with a concrete explanation."
+        ],
+        "applicability": "Full task, criterion and RACI quality is not scored on this intentionally blocked case; report not_applicable rather than zero."
+      }
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "approved_by": "project_owner",
+    "approved_on": "2026-11-21",
+    "basis": "Owner explicitly confirmed reviewing and accepting all supplied test cases and expectations."
+  }
+}

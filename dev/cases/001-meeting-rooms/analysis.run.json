@@ -1,0 +1,8 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "captured_at_utc": "2026-11-17T09:56:10.581313+00:00",
+  "origin": "live_api",
+  "schema_version": 2,
+  "validation": "passed",
+  "brief_sha256": "005e00f817ea0ff187300d775b586c881b5a4cdc1e1008d532202c5b2b33fc1c"
+}

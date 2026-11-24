@@ -1,0 +1,173 @@
+{
+  "goals": [
+    {
+      "id": "G1",
+      "description": "Зменшити кількість накладок у бронюваннях переговорок.",
+      "source": {
+        "document": "brief",
+        "quote": "Мета — зменшити кількість накладок у бронюваннях."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "U1",
+      "description": "Співробітник, який бронює переговорки.",
+      "source": {
+        "document": "brief",
+        "quote": "Співробітник переглядає доступні кімнати за датою і часом, створює та скасовує власне бронювання."
+      }
+    },
+    {
+      "id": "U2",
+      "description": "Адміністратор, що керує інфраструктурою кімнат.",
+      "source": {
+        "document": "brief",
+        "quote": "Адміністратор додає кімнати, їх місткість та обладнання."
+      }
+    },
+    {
+      "id": "U3",
+      "description": "Офіс-менеджер, який погоджує бронювання.",
+      "source": {
+        "document": "brief",
+        "quote": "Кожне бронювання має погодити офіс-менеджер до підтвердження."
+      }
+    }
+  ],
+  "team_roles": [
+    {
+      "id": "T1",
+      "description": "Product Owner",
+      "source": {
+        "document": "brief",
+        "quote": "Product Owner з адміністративного відділу визначає пріоритети й приймає рішення щодо правил бронювання."
+      }
+    },
+    {
+      "id": "T2",
+      "description": "Business Analyst",
+      "source": {
+        "document": "brief",
+        "quote": "Business Analyst збирає вимоги, готує специфікацію та погоджує її з Product Owner."
+      }
+    },
+    {
+      "id": "T3",
+      "description": "Full-stack Developer",
+      "source": {
+        "document": "brief",
+        "quote": "Full-stack Developer відповідає за технічну реалізацію й розгортання."
+      }
+    },
+    {
+      "id": "T4",
+      "description": "QA Engineer",
+      "source": {
+        "document": "brief",
+        "quote": "QA Engineer відповідає за тестування, зокрема за перевірку одночасних бронювань однієї кімнати."
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "Автоматичне підтвердження бронювань.",
+      "source": {
+        "document": "brief",
+        "quote": "Усі бронювання одразу підтверджуються автоматично."
+      },
+      "kind": "functional"
+    },
+    {
+      "id": "R2",
+      "description": "Погодження бронювань офіс-менеджером перед підтвердженням.",
+      "source": {
+        "document": "brief",
+        "quote": "Кожне бронювання має погодити офіс-менеджер до підтвердження."
+      },
+      "kind": "functional"
+    },
+    {
+      "id": "R3",
+      "description": "Заборона перетину часу бронювань для однієї кімнати.",
+      "source": {
+        "document": "brief",
+        "quote": "Система не дозволяє бронювати одну кімнату на час, що перетинається з іншим бронюванням."
+      },
+      "kind": "functional"
+    },
+    {
+      "id": "R4",
+      "description": "Автентифікація через корпоративну пошту.",
+      "source": {
+        "document": "brief",
+        "quote": "Вхід — через корпоративну пошту."
+      },
+      "kind": "functional"
+    },
+    {
+      "id": "R5",
+      "description": "Надсилання email-підтверджень бронювання.",
+      "source": {
+        "document": "brief",
+        "quote": "Потрібні email-підтвердження бронювання."
+      },
+      "kind": "functional"
+    },
+    {
+      "id": "R6",
+      "description": "Термін реалізації першої версії - один місяць.",
+      "source": {
+        "document": "brief",
+        "quote": "Першу версію хочемо за місяць."
+      },
+      "kind": "constraint"
+    }
+  ],
+  "missing_information": [
+    {
+      "id": "M1",
+      "topic": "Технічний стек",
+      "why_needed": "Необхідно для розуміння інфраструктури та обмежень розгортання, які впливають на швидкість розробки (один місяць)."
+    },
+    {
+      "id": "M2",
+      "topic": "Корпоративний домен/провайдер пошти",
+      "why_needed": "Важливо для інтеграції автентифікації та налаштування відправки email-повідомлень."
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "C1",
+      "description": "Конфлікт між автоматичним підтвердженням та необхідністю погодження офіс-менеджером.",
+      "requirement_ids": [
+        "R1",
+        "R2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Чи мають бронювання підтверджуватися автоматично (R1), чи через ручне погодження офіс-менеджером (R2)?",
+      "target_type": "conflict",
+      "target_id": "C1",
+      "blocks_final_specification": true
+    },
+    {
+      "id": "Q2",
+      "text": "Який саме технічний стек планується використовувати?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": false
+    },
+    {
+      "id": "Q3",
+      "text": "Який сервіс використовується для корпоративної пошти (наприклад, Google Workspace, Outlook)?",
+      "target_type": "gap",
+      "target_id": "M2",
+      "blocks_final_specification": true
+    }
+  ]
+}

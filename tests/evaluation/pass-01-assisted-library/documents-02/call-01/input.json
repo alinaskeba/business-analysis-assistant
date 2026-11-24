@@ -1,0 +1,546 @@
+{
+  "approved_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Manage book loans in a small community library via a web application.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "G2",
+        "description": "Reduce manual loan records.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "Librarian",
+        "responsibilities": [
+          {
+            "description": "Add and update book-copy records.",
+            "source_ids": [
+              "S2"
+            ]
+          },
+          {
+            "description": "Record the return of a borrowed copy.",
+            "source_ids": [
+              "S4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "name": "Member",
+        "responsibilities": [
+          {
+            "description": "Sign in to the application.",
+            "source_ids": [
+              "S13"
+            ]
+          },
+          {
+            "description": "Browse available copies.",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "description": "Borrow an available copy.",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "description": "View their own current loans.",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Product Owner",
+        "responsibilities": [
+          {
+            "description": "Accountable for specification preparation.",
+            "source_ids": [
+              "S8"
+            ]
+          },
+          {
+            "description": "Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision.",
+            "source_ids": [
+              "S9"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "name": "Business Analyst",
+        "responsibilities": [
+          {
+            "description": "Responsible for preparing the specification.",
+            "source_ids": [
+              "S8"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "name": "Developer",
+        "responsibilities": [
+          {
+            "description": "Responsible and Accountable for implementation and deployment.",
+            "source_ids": [
+              "S10"
+            ]
+          },
+          {
+            "description": "Decides the technical mechanism for identifying members and individual book copies.",
+            "source_ids": [
+              "S26"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "name": "QA Engineer",
+        "responsibilities": [
+          {
+            "description": "Responsible and Accountable for test preparation and execution.",
+            "source_ids": [
+              "S11"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "T5",
+        "name": "Library representative",
+        "responsibilities": [
+          {
+            "description": "Explains library workflows.",
+            "source_ids": [
+              "S12"
+            ]
+          },
+          {
+            "description": "Participates in user acceptance testing as a project adviser.",
+            "source_ids": [
+              "S12"
+            ]
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Librarians can add and update book-copy records.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "R2",
+        "description": "Members can browse available copies without sign-in.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S14"
+        ]
+      },
+      {
+        "id": "R3",
+        "description": "Members must sign in before borrowing.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "id": "R4",
+        "description": "Members must sign in before viewing their own current loans.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S13"
+        ]
+      },
+      {
+        "id": "R5",
+        "description": "Members can view only their own current loans.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S17"
+        ]
+      },
+      {
+        "id": "R6",
+        "description": "Each member can have at most three active loans.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S15"
+        ]
+      },
+      {
+        "id": "R7",
+        "description": "Borrowing a fourth copy is refused without creating another loan.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S16"
+        ]
+      },
+      {
+        "id": "R8",
+        "description": "Borrowing an unavailable copy is refused.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S20"
+        ]
+      },
+      {
+        "id": "R9",
+        "description": "Librarians can record the return of a borrowed copy.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "id": "R10",
+        "description": "Prevent a copy from having two active loans.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "id": "R11",
+        "description": "A recorded return makes that copy available again.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "id": "R12",
+        "description": "Application must be in English.",
+        "kind": "non_functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "R13",
+        "description": "The first release is due six weeks after requirements approval.",
+        "kind": "constraint",
+        "status": "confirmed",
+        "source_ids": [
+          "S23"
+        ]
+      },
+      {
+        "id": "R14",
+        "description": "Fines, reservations, renewals, payments and email notifications are outside the first release.",
+        "kind": "constraint",
+        "status": "confirmed",
+        "source_ids": [
+          "S22"
+        ]
+      },
+      {
+        "id": "R15",
+        "description": "Members can borrow an available copy.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "missing_information": [],
+    "contradictions": [],
+    "questions": [],
+    "assumptions": [],
+    "resolutions": [
+      {
+        "question_id": "Q1",
+        "answer_id": "A1",
+        "outcome": "resolved",
+        "description": "The Developer decides the technical mechanism for identifying members and individual book copies.",
+        "source_ids": [
+          "S26"
+        ]
+      },
+      {
+        "question_id": "Q2",
+        "answer_id": "A2",
+        "outcome": "resolved",
+        "description": "The library representative does not require direct access to the web application.",
+        "source_ids": [
+          "S28"
+        ]
+      },
+      {
+        "question_id": "Q3",
+        "answer_id": "A3",
+        "outcome": "resolved",
+        "description": "No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target.",
+        "source_ids": [
+          "S29"
+        ]
+      }
+    ]
+  },
+  "source_registry": {
+    "S1": {
+      "document": "brief",
+      "quote": "A small community library needs an English-language web application to manage book loans and reduce manual loan records.",
+      "start": 0,
+      "end": 120
+    },
+    "S2": {
+      "document": "brief",
+      "quote": "Librarians can add and update book-copy records.",
+      "start": 121,
+      "end": 169
+    },
+    "S3": {
+      "document": "brief",
+      "quote": "Members can browse available copies, borrow an available copy, and view their own current loans.",
+      "start": 170,
+      "end": 266
+    },
+    "S4": {
+      "document": "brief",
+      "quote": "Librarians can record the return of a borrowed copy.",
+      "start": 267,
+      "end": 319
+    },
+    "S5": {
+      "document": "brief",
+      "quote": "The application must prevent a copy from having two active loans.",
+      "start": 320,
+      "end": 385
+    },
+    "S6": {
+      "document": "brief",
+      "quote": "A recorded return makes that copy available again.",
+      "start": 386,
+      "end": 436
+    },
+    "S7": {
+      "document": "brief",
+      "quote": "The project team consists of a Product Owner, a Business Analyst, a Developer and a QA Engineer.",
+      "start": 438,
+      "end": 534
+    },
+    "S8": {
+      "document": "brief",
+      "quote": "The Business Analyst is Responsible for preparing the specification and the Product Owner is Accountable for its preparation.",
+      "start": 535,
+      "end": 660
+    },
+    "S9": {
+      "document": "brief",
+      "quote": "The Product Owner is both Responsible and Accountable for approving business requirements, accepting the specification, accepting user acceptance testing results, and making the release decision.",
+      "start": 661,
+      "end": 856
+    },
+    "S10": {
+      "document": "brief",
+      "quote": "The Developer is both Responsible and Accountable for implementation and deployment.",
+      "start": 857,
+      "end": 941
+    },
+    "S11": {
+      "document": "brief",
+      "quote": "The QA Engineer is both Responsible and Accountable for test preparation and execution.",
+      "start": 942,
+      "end": 1029
+    },
+    "S12": {
+      "document": "brief",
+      "quote": "A library representative explains library workflows and participates in user acceptance testing as a project adviser.",
+      "start": 1030,
+      "end": 1147
+    },
+    "S13": {
+      "document": "A1",
+      "quote": "Members sign in before borrowing or viewing their own current loans.",
+      "start": 0,
+      "end": 68
+    },
+    "S14": {
+      "document": "A1",
+      "quote": "Browsing available copies does not require sign-in.",
+      "start": 69,
+      "end": 120
+    },
+    "S15": {
+      "document": "A1",
+      "quote": "Each member can have at most three active loans.",
+      "start": 121,
+      "end": 169
+    },
+    "S16": {
+      "document": "A1",
+      "quote": "Borrowing a fourth copy is refused without creating another loan.",
+      "start": 170,
+      "end": 235
+    },
+    "S17": {
+      "document": "A1",
+      "quote": "A member can see only their own current loans.",
+      "start": 236,
+      "end": 282
+    },
+    "S18": {
+      "document": "A1",
+      "quote": "Librarians can add and update copies and record returns.",
+      "start": 283,
+      "end": 339
+    },
+    "S19": {
+      "document": "A1",
+      "quote": "A copy is available when it has no active loan.",
+      "start": 340,
+      "end": 387
+    },
+    "S20": {
+      "document": "A1",
+      "quote": "Borrowing an unavailable copy is refused.",
+      "start": 388,
+      "end": 429
+    },
+    "S21": {
+      "document": "A1",
+      "quote": "For this prototype, a librarian is an authorized product role; staff authentication implementation is left to the Developer.",
+      "start": 430,
+      "end": 554
+    },
+    "S22": {
+      "document": "A1",
+      "quote": "Fines, reservations, renewals, payments and email notifications are outside the first release.",
+      "start": 555,
+      "end": 649
+    },
+    "S23": {
+      "document": "A1",
+      "quote": "The first release is due six weeks after requirements approval.",
+      "start": 650,
+      "end": 713
+    },
+    "S24": {
+      "document": "A1",
+      "quote": "The Product Owner accepts the release when the agreed borrowing, loan-limit, access and return scenarios pass user acceptance testing.",
+      "start": 714,
+      "end": 848
+    },
+    "S25": {
+      "document": "A1",
+      "quote": "No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target.",
+      "start": 849,
+      "end": 974
+    },
+    "S26": {
+      "document": "A1",
+      "quote": "The Developer decides the technical mechanism for identifying members and individual book copies.",
+      "start": 975,
+      "end": 1072
+    },
+    "S27": {
+      "document": "A1",
+      "quote": "This technical choice is delegated to the Developer rather than being an unresolved business decision.",
+      "start": 1073,
+      "end": 1175
+    },
+    "S28": {
+      "document": "A2",
+      "quote": "The library representative advises the project team and does not require separate access to the web application.",
+      "start": 0,
+      "end": 112
+    },
+    "S29": {
+      "document": "A3",
+      "quote": "No quantitative performance target has been agreed; record this as an open nonblocking detail rather than inventing a target.",
+      "start": 0,
+      "end": 125
+    }
+  },
+  "required_governance": [
+    {
+      "activity_type": "requirements_approval",
+      "evidence": [
+        {
+          "role_id": "T1",
+          "source_id": "S9"
+        }
+      ]
+    },
+    {
+      "activity_type": "specification_preparation",
+      "evidence": [
+        {
+          "role_id": "T1",
+          "source_id": "S8"
+        },
+        {
+          "role_id": "T2",
+          "source_id": "S8"
+        }
+      ]
+    },
+    {
+      "activity_type": "uat_acceptance",
+      "evidence": [
+        {
+          "role_id": "T1",
+          "source_id": "S24"
+        },
+        {
+          "role_id": "T1",
+          "source_id": "S9"
+        },
+        {
+          "role_id": "T5",
+          "source_id": "S12"
+        }
+      ]
+    },
+    {
+      "activity_type": "release_decision",
+      "evidence": [
+        {
+          "role_id": "T1",
+          "source_id": "S9"
+        }
+      ]
+    }
+  ]
+}

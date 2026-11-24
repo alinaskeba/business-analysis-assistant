@@ -1,0 +1,312 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Implement Product Management Functions",
+      "description": "Develop functionality allowing store owners and sales personnel to create and update product records.",
+      "requirement_ids": [
+        "R1",
+        "R12"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Implement Customer Account Management",
+      "description": "Develop functionality allowing store owners and sales personnel to create and update customer account records.",
+      "requirement_ids": [
+        "R2",
+        "R14"
+      ]
+    },
+    {
+      "id": "TASK3",
+      "title": "Implement Catalog Browsing",
+      "description": "Develop catalog browsing interface accessible to users without mandatory sign-in.",
+      "requirement_ids": [
+        "R3",
+        "R6"
+      ]
+    },
+    {
+      "id": "TASK4",
+      "title": "Implement Shopping Cart Logic",
+      "description": "Develop shopping cart capabilities including addition of products, quantity adjustment to positive integers, and item removal.",
+      "requirement_ids": [
+        "R4",
+        "R9",
+        "R10"
+      ]
+    },
+    {
+      "id": "TASK5",
+      "title": "Implement Order Submission Flow",
+      "description": "Develop order submission logic that forces sign-in, prevents empty cart submission, creates an order record, and displays a reference number.",
+      "requirement_ids": [
+        "R5",
+        "R7",
+        "R16",
+        "R17"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "A user with Store owner or Sales personnel role",
+      "when": "they save a new product definition",
+      "then": "the system stores the product record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "A user with Store owner or Sales personnel role",
+      "when": "they save a new customer account",
+      "then": "the system creates the customer record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "An unauthenticated user",
+      "when": "they navigate to the product catalog",
+      "then": "the system displays the available products",
+      "source": {
+        "document": "brief",
+        "quote": "customers should be able to browse the available products"
+      }
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "A product exists in the catalog",
+      "when": "a customer selects the product",
+      "then": "the item is added to the customer's cart",
+      "source": {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart"
+      }
+    },
+    {
+      "id": "AC5",
+      "requirement_id": "R5",
+      "given": "A customer has items in the cart",
+      "when": "the customer submits the order",
+      "then": "the system creates one order containing selected items and quantities",
+      "source": {
+        "document": "A2",
+        "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+      }
+    },
+    {
+      "id": "AC6",
+      "requirement_id": "R6",
+      "given": "A customer is not signed in",
+      "when": "the customer accesses the product list",
+      "then": "the system displays the list without requiring credentials",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in"
+      }
+    },
+    {
+      "id": "AC7",
+      "requirement_id": "R7",
+      "given": "A customer has items in the cart",
+      "when": "the customer attempts to place an order without a valid session",
+      "then": "the system forces a sign-in process",
+      "source": {
+        "document": "A2",
+        "quote": "must sign in before placing an order."
+      }
+    },
+    {
+      "id": "AC8",
+      "requirement_id": "R9",
+      "given": "A customer has an item in the cart with quantity 1",
+      "when": "the customer updates the quantity to 5",
+      "then": "the system accepts the value 5",
+      "source": {
+        "document": "A2",
+        "quote": "change quantities to positive whole numbers"
+      }
+    },
+    {
+      "id": "AC9",
+      "requirement_id": "R10",
+      "given": "A customer has an item in the cart",
+      "when": "the customer removes the item",
+      "then": "the item is no longer in the cart",
+      "source": {
+        "document": "A2",
+        "quote": "remove items"
+      }
+    },
+    {
+      "id": "AC10",
+      "requirement_id": "R12",
+      "given": "An existing product",
+      "when": "a Store owner updates the product attributes",
+      "then": "the system updates the product record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    {
+      "id": "AC11",
+      "requirement_id": "R14",
+      "given": "An existing customer account",
+      "when": "a Sales personnel updates the account details",
+      "then": "the system updates the customer record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    {
+      "id": "AC12",
+      "requirement_id": "R16",
+      "given": "A successful order submission",
+      "when": "the order is processed",
+      "then": "the system displays a unique order reference",
+      "source": {
+        "document": "A2",
+        "quote": "displays its reference."
+      }
+    },
+    {
+      "id": "AC13",
+      "requirement_id": "R17",
+      "given": "An empty shopping cart",
+      "when": "a customer attempts to submit",
+      "then": "the system rejects the submission and does not create an order",
+      "source": {
+        "document": "A2",
+        "quote": "An empty cart cannot be submitted."
+      }
+    }
+  ],
+  "open_questions": [],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Specification Preparation",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance"
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source": {
+            "document": "A3",
+            "quote": "The Business Analyst is responsible for preparing the specification."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA2",
+      "activity": "Implementation",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4",
+        "TASK5"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A3",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A1",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application"
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA3",
+      "activity": "Test Execution",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4",
+        "TASK5"
+      ],
+      "accountable": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A3",
+            "quote": "The QA Engineer is accountable for test execution."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A1",
+            "quote": "The QA Engineer prepares and executes tests"
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA4",
+      "activity": "Release Decision",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for the final release decision."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A1",
+            "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  ]
+}

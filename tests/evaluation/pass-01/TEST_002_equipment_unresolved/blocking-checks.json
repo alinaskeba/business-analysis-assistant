@@ -1,0 +1,19 @@
+{
+  "approval": {
+    "blocked": true,
+    "errors": [
+      "Unresolved contradictions remain",
+      "Blocking question: Q1",
+      "Earlier blocking question needs an explicit resolution: Q1"
+    ]
+  },
+  "generation": {
+    "blocked": true,
+    "errors": [
+      "Unresolved contradictions remain",
+      "Blocking question: Q1",
+      "Earlier blocking question needs an explicit resolution: Q1"
+    ]
+  },
+  "api_calls": 0
+}

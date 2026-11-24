@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "brief": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business. Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store.\n\nThe project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing. The Product Owner approves the user acceptance testing results."
+  },
+  "replies": [],
+  "previous_analysis": null,
+  "previously_asked_questions": {}
+}

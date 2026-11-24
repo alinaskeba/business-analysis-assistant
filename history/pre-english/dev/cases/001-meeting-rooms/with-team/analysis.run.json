@@ -1,0 +1,23 @@
+{
+  "case_id": "001-meeting-rooms/with-team",
+  "split": "dev",
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "schema_version": 2,
+  "evaluation": "exploratory; draft expectations not approved",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed",
+      "http_status": 503
+    },
+    {
+      "attempt": 2,
+      "status": "completed"
+    }
+  ],
+  "brief_sha256": "a19c11f6ff5cfd5475680223f3bad4d0ade34872daf15ab173137e4bf830f195",
+  "prompt_sha256": "74ddb2833855b2df1eba01b1e8e5ad7f46d39d99458385978aa5a7d088302be4",
+  "captured_at_utc": "2026-11-18T12:33:09.204220+00:00",
+  "validation": "passed"
+}

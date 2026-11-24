@@ -1,0 +1,11 @@
+{
+  "configuration_hashes": "passed",
+  "reference_validators": "passed",
+  "initial_input_label_leakage_check": "passed",
+  "live_api_attempts": 11,
+  "retry_attempts": 0,
+  "stage_records": 12,
+  "not_applicable_unresolved_plans": 1,
+  "new_production_prompt_changes": 0,
+  "new_production_schema_changes": 0
+}

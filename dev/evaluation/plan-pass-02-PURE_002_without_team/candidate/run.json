@@ -1,0 +1,22 @@
+{
+  "case_id": "PURE_002_without_team",
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "prompt_revision": "plan-v2-complete-criteria",
+  "schema_version": 2,
+  "input_sha256": "34a604de2252623b07cb5b381f67f44cd9d001a0e10fdf9e207d83692c591e6c",
+  "same_input_as_baseline": true,
+  "changed_together": [
+    "plan_prompt",
+    "plan_schema",
+    "plan_validation"
+  ],
+  "max_output_tokens": 16000,
+  "started_at_utc": "2026-11-21T09:02:02.902358+00:00",
+  "retry_policy": "none; exactly one attempt",
+  "status": "execution_failure",
+  "error": "API returned HTTP 503; check access, model and quota",
+  "elapsed_seconds": 4.845,
+  "completed_at_utc": "2026-11-21T09:02:07.747060+00:00",
+  "api_attempts": 1
+}

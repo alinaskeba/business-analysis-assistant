@@ -1,0 +1,13 @@
+{
+  "case_id": "PURE_002_without_team",
+  "origin": "copy_of_existing_live_run",
+  "files_sha256": {
+    "ba_workflow.py": "66ed744c341befed2d9f3bb24d18199dec9d74f10270a5cb72c58b2fdd83a600",
+    "input.json": "ffadd2c18f6356d5431c3b2034edb5c61f485c43eaaa10172584cd5e3b84507f",
+    "instructions.txt": "5ffe04c08f9195126fc0132f99323a6219771b099bdf665a6d0668fdf399bb59",
+    "output.json": "b353ea01717468670493632a466c9f6bcd47402ab6815a585514cba2a879e327",
+    "run.json": "6e9bd278d46f837d4f3e502dae110e88149aba7f36c2145b9eee96d628f425d3",
+    "schema.json": "52521494e989d35f442b3d5be08b26a66cf08d32ac67310bffec44c65be97e15"
+  },
+  "notes": "Raw previous run, input, instructions, schema and current validator code are preserved."
+}

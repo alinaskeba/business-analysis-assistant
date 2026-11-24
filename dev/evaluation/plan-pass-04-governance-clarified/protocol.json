@@ -1,0 +1,17 @@
+{
+  "coverage": "Each of 13 implementable IDs needs a substantive criterion; open questions are separate, not coverage.",
+  "checks": [
+    "available product and explicit add-to-cart",
+    "signed-in successful nonempty order preserves items and quantities",
+    "no order before successful sign-in",
+    "positive integer quantities and zero/negative/fractional negative cases",
+    "create/update tested for both Store owner and Sales personnel",
+    "reference shown on submission without numeric/unique format assumptions",
+    "source excerpts support full description and actors",
+    "separate requirements approval, specification preparation, specification acceptance and release",
+    "preparation A=PO,R=BA; acceptance A=PO,R=PO from A4",
+    "no hidden delete capability or cart sign-in restriction"
+  ],
+  "reviewer": "assistant-assisted source-grounded review; owner verification available",
+  "retry_policy": "maximum three API attempts, stop on first model response even if invalid"
+}

@@ -1,0 +1,187 @@
+{
+  "baseline_errors": [
+    "raci: task TASK1 has no implementation activity",
+    "raci: task TASK2 has no implementation activity",
+    "raci: task TASK3 has no implementation activity"
+  ],
+  "candidate_errors": [],
+  "work_unchanged": true,
+  "work_note": "Frozen from the baseline, not regenerated or semantically repaired.",
+  "baseline_activity_types": [
+    "requirements_approval",
+    "specification_preparation",
+    "specification_acceptance",
+    "uat_acceptance",
+    "release_decision"
+  ],
+  "candidate_raci": {
+    "raci": [
+      {
+        "id": "RA1",
+        "activity": "Requirements Approval",
+        "task_ids": [],
+        "accountable": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S4"
+            ]
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S4"
+            ]
+          }
+        ],
+        "consulted": [],
+        "informed": [],
+        "activity_type": "requirements_approval"
+      },
+      {
+        "id": "RA2",
+        "activity": "Specification Preparation",
+        "task_ids": [],
+        "accountable": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S26"
+            ]
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T2",
+            "source_ids": [
+              "S21",
+              "S25",
+              "S5"
+            ]
+          }
+        ],
+        "consulted": [],
+        "informed": [],
+        "activity_type": "specification_preparation"
+      },
+      {
+        "id": "RA3",
+        "activity": "Specification Acceptance",
+        "task_ids": [],
+        "accountable": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S20",
+              "S27"
+            ]
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S27"
+            ]
+          }
+        ],
+        "consulted": [],
+        "informed": [],
+        "activity_type": "specification_acceptance"
+      },
+      {
+        "id": "RA4",
+        "activity": "User Acceptance Testing",
+        "task_ids": [],
+        "accountable": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S20"
+            ]
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S17",
+              "S8"
+            ]
+          }
+        ],
+        "consulted": [],
+        "informed": [],
+        "activity_type": "uat_acceptance"
+      },
+      {
+        "id": "RA5",
+        "activity": "Final Release Decision",
+        "task_ids": [],
+        "accountable": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S24",
+              "S4"
+            ]
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T1",
+            "source_ids": [
+              "S4"
+            ]
+          }
+        ],
+        "consulted": [],
+        "informed": [],
+        "activity_type": "release_decision"
+      },
+      {
+        "id": "RA6",
+        "activity": "Implementation of Core Business Functionality",
+        "task_ids": [
+          "TASK1",
+          "TASK2",
+          "TASK3"
+        ],
+        "accountable": [
+          {
+            "role_id": "T3",
+            "source_ids": [
+              "S22"
+            ]
+          }
+        ],
+        "responsible": [
+          {
+            "role_id": "T3",
+            "source_ids": [
+              "S6"
+            ]
+          }
+        ],
+        "consulted": [],
+        "informed": [],
+        "activity_type": "implementation"
+      }
+    ]
+  },
+  "semantic_review": "assistant_review_pending_owner_confirmation",
+  "retained_governance_unchanged": true,
+  "implementation_covered_task_ids": [
+    "TASK1",
+    "TASK2",
+    "TASK3"
+  ],
+  "remaining_semantic_findings": [
+    "Separate test-execution activity missing",
+    "Separate deployment activity missing",
+    "Frozen task and criterion semantic defects remain as recorded for pass06"
+  ],
+  "comparison_limit": "Historical baseline used v3; repair uses v4 and RACI-only prompting with feedback. No causal control."
+}

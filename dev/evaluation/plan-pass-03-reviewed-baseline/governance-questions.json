@@ -1,0 +1,34 @@
+[
+  {
+    "id": "GQ1",
+    "activity_id": "RA1",
+    "assignment": "accountable",
+    "blocks_finalization": true,
+    "known": "Business Analyst is Responsible for preparing the specification; PO is Accountable for acceptance, not explicitly for preparation.",
+    "question": "Which project role is Accountable for preparing the specification, separately from accepting it?",
+    "context_sources": [
+      {
+        "document": "A1",
+        "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+      },
+      {
+        "document": "A3",
+        "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+      }
+    ]
+  },
+  {
+    "id": "GQ2",
+    "activity_id": "RA6",
+    "assignment": "responsible",
+    "blocks_finalization": true,
+    "known": "Product Owner is explicitly Accountable for specification acceptance. The role performing the acceptance activity is not explicitly assigned.",
+    "question": "Does the Product Owner also perform specification acceptance as Responsible, or does another named project role perform that activity?",
+    "context_sources": [
+      {
+        "document": "A3",
+        "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+      }
+    ]
+  }
+]

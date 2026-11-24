@@ -1,0 +1,23 @@
+{
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "case_id": "PURE_002_without_team",
+  "prompt_revision": "plan-v3-source-ids-and-governance",
+  "schema_version": 3,
+  "started_at_utc": "2026-11-21T11:04:09.069167+00:00",
+  "api_attempts": 1,
+  "retry_policy": "none; one requested generation",
+  "input_sha256": "c07bb3615f6e078c509963a413e398c31f880f7d2322c0a98652155c948ee7ac",
+  "prompt_sha256": "1b2d0a4899dd4fcdec8c2e69866f75e55918d4e9f0474a676806827f384e4156",
+  "schema_sha256": "d11da96c364cd2801a9c3316ea296587c5edd438842c7c91852ea003f15f8e74",
+  "changed_together": [
+    "source_representation",
+    "plan_prompt",
+    "plan_schema",
+    "validation"
+  ],
+  "status": "validation_passed",
+  "validation_errors": [],
+  "elapsed_seconds": 4.8,
+  "completed_at_utc": "2026-11-21T11:04:13.869096+00:00"
+}

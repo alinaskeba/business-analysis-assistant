@@ -1,0 +1,6 @@
+{
+  "stage": "plan",
+  "status": "not_applicable",
+  "reason": "Unresolved conflict: final document generation must not run",
+  "api_calls": 0
+}

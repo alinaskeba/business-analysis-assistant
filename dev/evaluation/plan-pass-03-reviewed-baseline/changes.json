@@ -1,0 +1,711 @@
+[
+  {
+    "category": "tasks",
+    "id": "TASK5",
+    "change": "modified",
+    "before": {
+      "id": "TASK5",
+      "title": "Implement Order Submission Flow",
+      "description": "Develop order submission logic that forces sign-in, prevents empty cart submission, creates an order record, and displays a reference number.",
+      "requirement_ids": [
+        "R5",
+        "R7",
+        "R16",
+        "R17"
+      ]
+    },
+    "after": {
+      "id": "TASK5",
+      "title": "Implement Order Submission Flow",
+      "description": "Implement order placement requiring successful sign-in before placement, rejecting empty-cart submission, creating one order with the selected products and quantities, and displaying its reference on successful submission. No numeric reference format is specified.",
+      "requirement_ids": [
+        "R5",
+        "R7",
+        "R16",
+        "R17"
+      ]
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC1",
+    "change": "modified",
+    "before": {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "A user with Store owner or Sales personnel role",
+      "when": "they save a new product definition",
+      "then": "the system stores the product record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    "after": {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "Run separately for each actor role in {Store owner, Sales personnel}",
+      "when": "the actor creates a new product using permitted product data",
+      "then": "the new product record is created for each tested actor role",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC2",
+    "change": "modified",
+    "before": {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "A user with Store owner or Sales personnel role",
+      "when": "they save a new customer account",
+      "then": "the system creates the customer record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    "after": {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "Run separately for each actor role in {Store owner, Sales personnel}",
+      "when": "the actor creates a new customer account using permitted account data",
+      "then": "the new customer-account record is created for each tested actor role",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC3",
+    "change": "modified",
+    "before": {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "An unauthenticated user",
+      "when": "they navigate to the product catalog",
+      "then": "the system displays the available products",
+      "source": {
+        "document": "brief",
+        "quote": "customers should be able to browse the available products"
+      }
+    },
+    "after": {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "A customer and available products in the store",
+      "when": "the customer browses the product catalog",
+      "then": "the store displays the available products",
+      "source": {
+        "document": "brief",
+        "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC4",
+    "change": "modified",
+    "before": {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "A product exists in the catalog",
+      "when": "a customer selects the product",
+      "then": "the item is added to the customer's cart",
+      "source": {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart"
+      }
+    },
+    "after": {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "A customer and a product that is available for addition to the cart",
+      "when": "the customer performs the add-to-cart action for that available product",
+      "then": "the selected available product is present in that customer's cart",
+      "source": {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC5",
+    "change": "modified",
+    "before": {
+      "id": "AC5",
+      "requirement_id": "R5",
+      "given": "A customer has items in the cart",
+      "when": "the customer submits the order",
+      "then": "the system creates one order containing selected items and quantities",
+      "source": {
+        "document": "A2",
+        "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+      }
+    },
+    "after": {
+      "id": "AC5",
+      "requirement_id": "R5",
+      "given": "A signed-in customer has a nonempty cart containing available selected products with positive whole-number quantities",
+      "when": "the customer successfully submits the cart as an order",
+      "then": "exactly one order is created containing the same selected products and quantities; the successful-submission result displays that order's reference",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC6",
+    "change": "modified",
+    "before": {
+      "id": "AC6",
+      "requirement_id": "R6",
+      "given": "A customer is not signed in",
+      "when": "the customer accesses the product list",
+      "then": "the system displays the list without requiring credentials",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in"
+      }
+    },
+    "after": {
+      "id": "AC6",
+      "requirement_id": "R6",
+      "given": "A customer is not signed in",
+      "when": "the customer browses the store",
+      "then": "the customer can browse without being required to sign in",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC7",
+    "change": "modified",
+    "before": {
+      "id": "AC7",
+      "requirement_id": "R7",
+      "given": "A customer has items in the cart",
+      "when": "the customer attempts to place an order without a valid session",
+      "then": "the system forces a sign-in process",
+      "source": {
+        "document": "A2",
+        "quote": "must sign in before placing an order."
+      }
+    },
+    "after": {
+      "id": "AC7",
+      "requirement_id": "R7",
+      "given": "A customer is not signed in and has a nonempty cart",
+      "when": "the customer attempts to place an order before signing in",
+      "then": "no order is placed before successful sign-in; the attempt cannot complete order placement while the customer remains signed out",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC8",
+    "change": "modified",
+    "before": {
+      "id": "AC8",
+      "requirement_id": "R9",
+      "given": "A customer has an item in the cart with quantity 1",
+      "when": "the customer updates the quantity to 5",
+      "then": "the system accepts the value 5",
+      "source": {
+        "document": "A2",
+        "quote": "change quantities to positive whole numbers"
+      }
+    },
+    "after": {
+      "id": "AC8",
+      "requirement_id": "R9",
+      "given": "A customer has an available product in the cart; run separately for each quantity in {1, 3, 5}",
+      "when": "the customer sets the cart item's quantity to the selected positive whole-number example",
+      "then": "that cart item has exactly the selected positive whole-number quantity",
+      "source": {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC9",
+    "change": "modified",
+    "before": {
+      "id": "AC9",
+      "requirement_id": "R10",
+      "given": "A customer has an item in the cart",
+      "when": "the customer removes the item",
+      "then": "the item is no longer in the cart",
+      "source": {
+        "document": "A2",
+        "quote": "remove items"
+      }
+    },
+    "after": {
+      "id": "AC9",
+      "requirement_id": "R10",
+      "given": "A customer has an item in the cart",
+      "when": "the customer removes that item from the cart",
+      "then": "that item is no longer present in the customer's cart",
+      "source": {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC10",
+    "change": "modified",
+    "before": {
+      "id": "AC10",
+      "requirement_id": "R12",
+      "given": "An existing product",
+      "when": "a Store owner updates the product attributes",
+      "then": "the system updates the product record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    "after": {
+      "id": "AC10",
+      "requirement_id": "R12",
+      "given": "An existing product; run separately for each actor role in {Store owner, Sales personnel}",
+      "when": "the actor updates that product's permitted product data",
+      "then": "the existing product record reflects the requested changes for each tested actor role",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC11",
+    "change": "modified",
+    "before": {
+      "id": "AC11",
+      "requirement_id": "R14",
+      "given": "An existing customer account",
+      "when": "a Sales personnel updates the account details",
+      "then": "the system updates the customer record",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    },
+    "after": {
+      "id": "AC11",
+      "requirement_id": "R14",
+      "given": "An existing customer account; run separately for each actor role in {Store owner, Sales personnel}",
+      "when": "the actor updates that account's permitted customer-account data",
+      "then": "the existing customer-account record reflects the requested changes for each tested actor role",
+      "source": {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC12",
+    "change": "modified",
+    "before": {
+      "id": "AC12",
+      "requirement_id": "R16",
+      "given": "A successful order submission",
+      "when": "the order is processed",
+      "then": "the system displays a unique order reference",
+      "source": {
+        "document": "A2",
+        "quote": "displays its reference."
+      }
+    },
+    "after": {
+      "id": "AC12",
+      "requirement_id": "R16",
+      "given": "A signed-in customer has a nonempty cart with selected available products and positive whole-number quantities",
+      "when": "the customer successfully submits the order",
+      "then": "the successful-submission result displays the reference of the order just created",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC13",
+    "change": "modified",
+    "before": {
+      "id": "AC13",
+      "requirement_id": "R17",
+      "given": "An empty shopping cart",
+      "when": "a customer attempts to submit",
+      "then": "the system rejects the submission and does not create an order",
+      "source": {
+        "document": "A2",
+        "quote": "An empty cart cannot be submitted."
+      }
+    },
+    "after": {
+      "id": "AC13",
+      "requirement_id": "R17",
+      "given": "A signed-in customer has an empty cart",
+      "when": "the customer attempts to submit that empty cart",
+      "then": "submission is rejected and no order is created from the empty cart",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC14",
+    "change": "added",
+    "before": null,
+    "after": {
+      "id": "AC14",
+      "requirement_id": "R9",
+      "given": "A customer has a cart item with a positive whole-number quantity; run separately for each input in {0, -1, 1.5}",
+      "when": "the customer attempts to set that item's quantity to the selected invalid-domain example",
+      "then": "the supplied zero, negative or fractional number is not accepted as the resulting cart quantity; cart quantities remain positive whole numbers",
+      "source": {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+      }
+    }
+  },
+  {
+    "category": "acceptance_criteria",
+    "id": "AC15",
+    "change": "added",
+    "before": null,
+    "after": {
+      "id": "AC15",
+      "requirement_id": "R7",
+      "given": "A customer has a nonempty cart of available products with positive whole-number quantities; the order attempt is gated because the customer is signed out",
+      "when": "the customer successfully signs in and explicitly submits the order",
+      "then": "the sign-in precondition is satisfied and the successful explicit submission creates one order with the selected items and quantities",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference."
+      }
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA1",
+    "change": "modified",
+    "before": {
+      "id": "RA1",
+      "activity": "Specification Preparation",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance"
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source": {
+            "document": "A3",
+            "quote": "The Business Analyst is responsible for preparing the specification."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    "after": {
+      "id": "RA1",
+      "activity": "Specification Preparation",
+      "task_ids": [],
+      "accountable": [],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source": {
+            "document": "A1",
+            "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA2",
+    "change": "modified",
+    "before": {
+      "id": "RA2",
+      "activity": "Implementation",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4",
+        "TASK5"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A3",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A1",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application"
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    "after": {
+      "id": "RA2",
+      "activity": "Implementation",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4",
+        "TASK5"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A3",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A1",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA3",
+    "change": "modified",
+    "before": {
+      "id": "RA3",
+      "activity": "Test Execution",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4",
+        "TASK5"
+      ],
+      "accountable": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A3",
+            "quote": "The QA Engineer is accountable for test execution."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A1",
+            "quote": "The QA Engineer prepares and executes tests"
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    "after": {
+      "id": "RA3",
+      "activity": "Test Execution",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3",
+        "TASK4",
+        "TASK5"
+      ],
+      "accountable": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A3",
+            "quote": "The QA Engineer is accountable for test execution."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A1",
+            "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA5",
+    "change": "added",
+    "before": null,
+    "after": {
+      "id": "RA5",
+      "activity": "Approve Business Requirements",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A1",
+            "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A1",
+            "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA6",
+    "change": "added",
+    "before": null,
+    "after": {
+      "id": "RA6",
+      "activity": "Accept the Specification",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+          }
+        }
+      ],
+      "responsible": [],
+      "consulted": [],
+      "informed": []
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA7",
+    "change": "added",
+    "before": null,
+    "after": {
+      "id": "RA7",
+      "activity": "Deployment",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A3",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A1",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  },
+  {
+    "category": "raci",
+    "id": "RA8",
+    "change": "added",
+    "before": null,
+    "after": {
+      "id": "RA8",
+      "activity": "Accept User Acceptance Testing Results",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A1",
+            "quote": "The Product Owner approves the user acceptance testing results."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  }
+]

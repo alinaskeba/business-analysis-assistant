@@ -1,0 +1,232 @@
+{
+  "sources": {
+    "brief": "An organization needs a web application to track shared equipment requests. Employees can browse available equipment, submit a request for one item, and view their own requests. An equipment coordinator reviews requests. Every request must remain pending until the equipment coordinator approves it. Every submitted request must immediately become approved without coordinator review. The Product Owner makes decisions about the request approval policy. The project team consists of a Product Owner, a Business Analyst, a Developer and a QA Engineer. The Business Analyst gathers and documents requirements, the Developer implements the application, and the QA Engineer tests it.",
+    "A1": "We have not decided whether coordinator approval is required. Keep this decision open. The Product Owner will decide later."
+  },
+  "replies": [
+    {
+      "id": "A1",
+      "question_id": "Q1",
+      "text": "We have not decided whether coordinator approval is required. Keep this decision open. The Product Owner will decide later.",
+      "at": "2026-11-21T13:59:37.969151+00:00"
+    }
+  ],
+  "previous_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Track shared equipment requests using a web application.",
+        "source": {
+          "document": "brief",
+          "quote": "An organization needs a web application to track shared equipment requests."
+        }
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "Employees",
+        "responsibilities": [
+          {
+            "description": "Browse available equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "Employees can browse available equipment"
+            }
+          },
+          {
+            "description": "Submit a request for one item.",
+            "source": {
+              "document": "brief",
+              "quote": "submit a request for one item"
+            }
+          },
+          {
+            "description": "View their own requests.",
+            "source": {
+              "document": "brief",
+              "quote": "view their own requests."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "name": "Equipment coordinator",
+        "responsibilities": [
+          {
+            "description": "Review equipment requests.",
+            "source": {
+              "document": "brief",
+              "quote": "An equipment coordinator reviews requests."
+            }
+          },
+          {
+            "description": "Approve requests.",
+            "source": {
+              "document": "brief",
+              "quote": "Every request must remain pending until the equipment coordinator approves it."
+            }
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Product Owner",
+        "responsibilities": [
+          {
+            "description": "Makes decisions about the request approval policy.",
+            "source": {
+              "document": "brief",
+              "quote": "The Product Owner makes decisions about the request approval policy."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "name": "Business Analyst",
+        "responsibilities": [
+          {
+            "description": "Gathers and documents requirements.",
+            "source": {
+              "document": "brief",
+              "quote": "The Business Analyst gathers and documents requirements"
+            }
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "name": "Developer",
+        "responsibilities": [
+          {
+            "description": "Implements the application.",
+            "source": {
+              "document": "brief",
+              "quote": "the Developer implements the application"
+            }
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "name": "QA Engineer",
+        "responsibilities": [
+          {
+            "description": "Tests the application.",
+            "source": {
+              "document": "brief",
+              "quote": "the QA Engineer tests it."
+            }
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Employees shall be able to browse available equipment.",
+        "source": {
+          "document": "brief",
+          "quote": "Employees can browse available equipment"
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R2",
+        "description": "Employees shall be able to submit a request for one item.",
+        "source": {
+          "document": "brief",
+          "quote": "submit a request for one item"
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R3",
+        "description": "Employees shall be able to view their own requests.",
+        "source": {
+          "document": "brief",
+          "quote": "view their own requests."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R4",
+        "description": "Every request must remain pending until the equipment coordinator approves it.",
+        "source": {
+          "document": "brief",
+          "quote": "Every request must remain pending until the equipment coordinator approves it."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      },
+      {
+        "id": "R5",
+        "description": "Every submitted request must immediately become approved without coordinator review.",
+        "source": {
+          "document": "brief",
+          "quote": "Every submitted request must immediately become approved without coordinator review."
+        },
+        "kind": "functional",
+        "status": "confirmed"
+      }
+    ],
+    "missing_information": [
+      {
+        "id": "M1",
+        "topic": "Interaction interfaces",
+        "why_needed": "The ways users interact with the application are not specified, hindering UI/UX design."
+      }
+    ],
+    "contradictions": [
+      {
+        "id": "C1",
+        "description": "The request approval state upon submission is defined as both 'pending until coordinator approval' and 'immediately approved'.",
+        "requirement_ids": [
+          "R4",
+          "R5"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "Should equipment requests remain in a 'pending' state requiring coordinator approval, or should they be automatically approved upon submission?",
+        "target_type": "conflict",
+        "target_id": "C1",
+        "blocks_final_specification": true
+      },
+      {
+        "id": "Q2",
+        "text": "What are the preferred interfaces for employees to browse equipment, submit requests, and view their history?",
+        "target_type": "gap",
+        "target_id": "M1",
+        "blocks_final_specification": false
+      }
+    ],
+    "assumptions": [],
+    "resolutions": []
+  },
+  "previously_asked_questions": {
+    "Q1": {
+      "id": "Q1",
+      "text": "Should equipment requests remain in a 'pending' state requiring coordinator approval, or should they be automatically approved upon submission?",
+      "target_type": "conflict",
+      "target_id": "C1",
+      "blocks_final_specification": true
+    },
+    "Q2": {
+      "id": "Q2",
+      "text": "What are the preferred interfaces for employees to browse equipment, submit requests, and view their history?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": false
+    }
+  }
+}

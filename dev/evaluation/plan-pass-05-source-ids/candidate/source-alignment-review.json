@@ -1,0 +1,398 @@
+[
+  {
+    "path": "acceptance_criteria[0]",
+    "source_ids": [
+      "S12"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+        "start": 231,
+        "end": 317
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[1]",
+    "source_ids": [
+      "S12"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+        "start": 231,
+        "end": 317
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[2]",
+    "source_ids": [
+      "S2"
+    ],
+    "evidence": [
+      {
+        "document": "brief",
+        "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store.",
+        "start": 126,
+        "end": 342
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[3]",
+    "source_ids": [
+      "S11"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+        "start": 118,
+        "end": 230
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[4]",
+    "source_ids": [
+      "S14"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+        "start": 434,
+        "end": 548
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[5]",
+    "source_ids": [
+      "S10"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order.",
+        "start": 36,
+        "end": 117
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[6]",
+    "source_ids": [
+      "S10"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order.",
+        "start": 36,
+        "end": 117
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[7]",
+    "source_ids": [
+      "S11"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+        "start": 118,
+        "end": 230
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[8]",
+    "source_ids": [
+      "S11"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+        "start": 118,
+        "end": 230
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[9]",
+    "source_ids": [
+      "S12"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+        "start": 231,
+        "end": 317
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[10]",
+    "source_ids": [
+      "S12"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+        "start": 231,
+        "end": 317
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[11]",
+    "source_ids": [
+      "S14"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+        "start": 434,
+        "end": 548
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "acceptance_criteria[12]",
+    "source_ids": [
+      "S15"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "An empty cart cannot be submitted.",
+        "start": 549,
+        "end": 583
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[0].accountable[0]",
+    "source_ids": [
+      "S4"
+    ],
+    "evidence": [
+      {
+        "document": "A1",
+        "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+        "start": 109,
+        "end": 216
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[0].responsible[0]",
+    "source_ids": [
+      "S4"
+    ],
+    "evidence": [
+      {
+        "document": "A1",
+        "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+        "start": 109,
+        "end": 216
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[1].accountable[0]",
+    "source_ids": [
+      "S26"
+    ],
+    "evidence": [
+      {
+        "document": "A4",
+        "quote": "The Product Owner is Accountable for specification preparation.",
+        "start": 69,
+        "end": 132
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[1].responsible[0]",
+    "source_ids": [
+      "S21",
+      "S25",
+      "S5"
+    ],
+    "evidence": [
+      {
+        "document": "A3",
+        "quote": "The Business Analyst is responsible for preparing the specification.",
+        "start": 91,
+        "end": 159
+      },
+      {
+        "document": "A4",
+        "quote": "The Business Analyst is Responsible for preparing the specification.",
+        "start": 0,
+        "end": 68
+      },
+      {
+        "document": "A1",
+        "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+        "start": 217,
+        "end": 368
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[2].accountable[0]",
+    "source_ids": [
+      "S20",
+      "S27"
+    ],
+    "evidence": [
+      {
+        "document": "A3",
+        "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+        "start": 0,
+        "end": 90
+      },
+      {
+        "document": "A4",
+        "quote": "The Product Owner reviews and approves the specification and is both Responsible and Accountable for its acceptance.",
+        "start": 133,
+        "end": 249
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[2].responsible[0]",
+    "source_ids": [
+      "S27"
+    ],
+    "evidence": [
+      {
+        "document": "A4",
+        "quote": "The Product Owner reviews and approves the specification and is both Responsible and Accountable for its acceptance.",
+        "start": 133,
+        "end": 249
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[3].accountable[0]",
+    "source_ids": [
+      "S20"
+    ],
+    "evidence": [
+      {
+        "document": "A3",
+        "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+        "start": 0,
+        "end": 90
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[3].responsible[0]",
+    "source_ids": [
+      "S17",
+      "S8"
+    ],
+    "evidence": [
+      {
+        "document": "A2",
+        "quote": "The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing.",
+        "start": 700,
+        "end": 814
+      },
+      {
+        "document": "A1",
+        "quote": "The Product Owner approves the user acceptance testing results.",
+        "start": 616,
+        "end": 679
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[4].accountable[0]",
+    "source_ids": [
+      "S24"
+    ],
+    "evidence": [
+      {
+        "document": "A3",
+        "quote": "The Product Owner is accountable for the final release decision.",
+        "start": 286,
+        "end": 350
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  },
+  {
+    "path": "raci[4].responsible[0]",
+    "source_ids": [
+      "S4"
+    ],
+    "evidence": [
+      {
+        "document": "A1",
+        "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+        "start": 109,
+        "end": 216
+      }
+    ],
+    "status": "needs_semantic_review",
+    "check": "Verify full actor/action/conditions/scope or actual RACI authority against these fragments."
+  }
+]

@@ -1,0 +1,286 @@
+{
+  "type": "object",
+  "properties": {
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "enum": [
+                  "brief"
+                ]
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "enum": [
+                  "brief"
+                ]
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "team_roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "enum": [
+                  "brief"
+                ]
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "enum": [
+                  "brief"
+                ]
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "functional",
+              "non_functional",
+              "constraint"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "source",
+          "kind"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_needed": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "topic",
+          "why_needed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 2
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "requirement_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_type": {
+            "type": "string",
+            "enum": [
+              "conflict",
+              "gap"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "blocks_final_specification": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "target_type",
+          "target_id",
+          "blocks_final_specification"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "goals",
+    "users",
+    "team_roles",
+    "requirements",
+    "missing_information",
+    "contradictions",
+    "questions"
+  ],
+  "additionalProperties": false
+}

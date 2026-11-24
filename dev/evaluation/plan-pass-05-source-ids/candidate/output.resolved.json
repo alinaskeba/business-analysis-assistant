@@ -1,0 +1,532 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Implement Product and Account Management",
+      "description": "Develop features allowing store owners and sales personnel to create and update products and customer accounts.",
+      "requirement_ids": [
+        "R1",
+        "R2",
+        "R12",
+        "R14"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Implement Catalog Browsing and Shopping Cart",
+      "description": "Develop UI for customer product browsing without login and shopping cart management including adding, removing, and quantity updates.",
+      "requirement_ids": [
+        "R3",
+        "R4",
+        "R6",
+        "R9",
+        "R10"
+      ]
+    },
+    {
+      "id": "TASK3",
+      "title": "Implement Order Submission Flow",
+      "description": "Develop the ordering process requiring user sign-in, order creation, reference display, and empty-cart submission prevention.",
+      "requirement_ids": [
+        "R5",
+        "R7",
+        "R16",
+        "R17"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "a store owner or sales personnel is authenticated",
+      "when": "they create a product",
+      "then": "a new product is added to the system",
+      "source_ids": [
+        "S12"
+      ],
+      "sources": [
+        {
+          "source_id": "S12",
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "a store owner or sales personnel is authenticated",
+      "when": "they create a customer account",
+      "then": "a new customer account is added to the system",
+      "source_ids": [
+        "S12"
+      ],
+      "sources": [
+        {
+          "source_id": "S12",
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "a customer is visiting the store",
+      "when": "they view the product catalog",
+      "then": "they are presented with all available products",
+      "source_ids": [
+        "S2"
+      ],
+      "sources": [
+        {
+          "source_id": "S2",
+          "document": "brief",
+          "quote": "Store owners and sales personnel should be able to manage products and customer accounts, while customers should be able to browse the available products, maintain a shopping cart, and place orders through the store.",
+          "start": 126,
+          "end": 342
+        }
+      ]
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "a customer is viewing an available product",
+      "when": "they add the product to their cart",
+      "then": "the product is present in the customer cart",
+      "source_ids": [
+        "S11"
+      ],
+      "sources": [
+        {
+          "source_id": "S11",
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+          "start": 118,
+          "end": 230
+        }
+      ]
+    },
+    {
+      "id": "AC5",
+      "requirement_id": "R5",
+      "given": "a customer has items in their cart and is signed in",
+      "when": "they submit the order",
+      "then": "one order containing those specific items and quantities is created",
+      "source_ids": [
+        "S14"
+      ],
+      "sources": [
+        {
+          "source_id": "S14",
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+          "start": 434,
+          "end": 548
+        }
+      ]
+    },
+    {
+      "id": "AC6",
+      "requirement_id": "R6",
+      "given": "a visitor is not signed in",
+      "when": "they navigate to the store",
+      "then": "they are permitted to browse products",
+      "source_ids": [
+        "S10"
+      ],
+      "sources": [
+        {
+          "source_id": "S10",
+          "document": "A2",
+          "quote": "Customers may browse without signing in but must sign in before placing an order.",
+          "start": 36,
+          "end": 117
+        }
+      ]
+    },
+    {
+      "id": "AC7",
+      "requirement_id": "R7",
+      "given": "a customer is not signed in",
+      "when": "they attempt to place an order",
+      "then": "they are prompted to sign in before the order is placed",
+      "source_ids": [
+        "S10"
+      ],
+      "sources": [
+        {
+          "source_id": "S10",
+          "document": "A2",
+          "quote": "Customers may browse without signing in but must sign in before placing an order.",
+          "start": 36,
+          "end": 117
+        }
+      ]
+    },
+    {
+      "id": "AC8",
+      "requirement_id": "R9",
+      "given": "a customer has an item in their cart",
+      "when": "they update the quantity to a positive whole number",
+      "then": "the cart quantity is successfully updated",
+      "source_ids": [
+        "S11"
+      ],
+      "sources": [
+        {
+          "source_id": "S11",
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+          "start": 118,
+          "end": 230
+        }
+      ]
+    },
+    {
+      "id": "AC9",
+      "requirement_id": "R10",
+      "given": "a customer has items in their cart",
+      "when": "they select an item to remove",
+      "then": "the item is removed from the cart",
+      "source_ids": [
+        "S11"
+      ],
+      "sources": [
+        {
+          "source_id": "S11",
+          "document": "A2",
+          "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items.",
+          "start": 118,
+          "end": 230
+        }
+      ]
+    },
+    {
+      "id": "AC10",
+      "requirement_id": "R12",
+      "given": "a store owner or sales personnel is authenticated",
+      "when": "they update existing product details",
+      "then": "the system reflects the updated product information",
+      "source_ids": [
+        "S12"
+      ],
+      "sources": [
+        {
+          "source_id": "S12",
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "id": "AC11",
+      "requirement_id": "R14",
+      "given": "a store owner or sales personnel is authenticated",
+      "when": "they update existing customer account details",
+      "then": "the system reflects the updated account information",
+      "source_ids": [
+        "S12"
+      ],
+      "sources": [
+        {
+          "source_id": "S12",
+          "document": "A2",
+          "quote": "Store owners and sales personnel can create and update products and customer accounts.",
+          "start": 231,
+          "end": 317
+        }
+      ]
+    },
+    {
+      "id": "AC12",
+      "requirement_id": "R16",
+      "given": "an order has been successfully submitted",
+      "when": "the submission completes",
+      "then": "a unique order reference is displayed to the customer",
+      "source_ids": [
+        "S14"
+      ],
+      "sources": [
+        {
+          "source_id": "S14",
+          "document": "A2",
+          "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference.",
+          "start": 434,
+          "end": 548
+        }
+      ]
+    },
+    {
+      "id": "AC13",
+      "requirement_id": "R17",
+      "given": "a customer has an empty cart",
+      "when": "they attempt to submit the order",
+      "then": "the submission is rejected and no order is created",
+      "source_ids": [
+        "S15"
+      ],
+      "sources": [
+        {
+          "source_id": "S15",
+          "document": "A2",
+          "quote": "An empty cart cannot be submitted.",
+          "start": 549,
+          "end": 583
+        }
+      ]
+    }
+  ],
+  "open_questions": [],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Requirements Approval",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ],
+          "sources": [
+            {
+              "source_id": "S4",
+              "document": "A1",
+              "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+              "start": 109,
+              "end": 216
+            }
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ],
+          "sources": [
+            {
+              "source_id": "S4",
+              "document": "A1",
+              "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+              "start": 109,
+              "end": 216
+            }
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "requirements_approval"
+    },
+    {
+      "id": "RA2",
+      "activity": "Specification Preparation",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S26"
+          ],
+          "sources": [
+            {
+              "source_id": "S26",
+              "document": "A4",
+              "quote": "The Product Owner is Accountable for specification preparation.",
+              "start": 69,
+              "end": 132
+            }
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source_ids": [
+            "S21",
+            "S25",
+            "S5"
+          ],
+          "sources": [
+            {
+              "source_id": "S21",
+              "document": "A3",
+              "quote": "The Business Analyst is responsible for preparing the specification.",
+              "start": 91,
+              "end": 159
+            },
+            {
+              "source_id": "S25",
+              "document": "A4",
+              "quote": "The Business Analyst is Responsible for preparing the specification.",
+              "start": 0,
+              "end": 68
+            },
+            {
+              "source_id": "S5",
+              "document": "A1",
+              "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+              "start": 217,
+              "end": 368
+            }
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "specification_preparation"
+    },
+    {
+      "id": "RA3",
+      "activity": "Specification Acceptance",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S20",
+            "S27"
+          ],
+          "sources": [
+            {
+              "source_id": "S20",
+              "document": "A3",
+              "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+              "start": 0,
+              "end": 90
+            },
+            {
+              "source_id": "S27",
+              "document": "A4",
+              "quote": "The Product Owner reviews and approves the specification and is both Responsible and Accountable for its acceptance.",
+              "start": 133,
+              "end": 249
+            }
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S27"
+          ],
+          "sources": [
+            {
+              "source_id": "S27",
+              "document": "A4",
+              "quote": "The Product Owner reviews and approves the specification and is both Responsible and Accountable for its acceptance.",
+              "start": 133,
+              "end": 249
+            }
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "specification_acceptance"
+    },
+    {
+      "id": "RA4",
+      "activity": "UAT Acceptance",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S20"
+          ],
+          "sources": [
+            {
+              "source_id": "S20",
+              "document": "A3",
+              "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+              "start": 0,
+              "end": 90
+            }
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S17",
+            "S8"
+          ],
+          "sources": [
+            {
+              "source_id": "S17",
+              "document": "A2",
+              "quote": "The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing.",
+              "start": 700,
+              "end": 814
+            },
+            {
+              "source_id": "S8",
+              "document": "A1",
+              "quote": "The Product Owner approves the user acceptance testing results.",
+              "start": 616,
+              "end": 679
+            }
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "uat_acceptance"
+    },
+    {
+      "id": "RA5",
+      "activity": "Final Release Decision",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S24"
+          ],
+          "sources": [
+            {
+              "source_id": "S24",
+              "document": "A3",
+              "quote": "The Product Owner is accountable for the final release decision.",
+              "start": 286,
+              "end": 350
+            }
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ],
+          "sources": [
+            {
+              "source_id": "S4",
+              "document": "A1",
+              "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+              "start": 109,
+              "end": 216
+            }
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "release_decision"
+    }
+  ]
+}

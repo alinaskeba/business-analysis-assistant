@@ -1,0 +1,15 @@
+{
+  "case_id": "001-meeting-rooms/with-team",
+  "split": "dev",
+  "model": "gemini-3.1-flash-lite",
+  "prompt_revision": "brief-analysis-v3-coverage",
+  "brief_sha256": "a19c11f6ff5cfd5475680223f3bad4d0ade34872daf15ab173137e4bf830f195",
+  "prompt_sha256": "23d06fdcb8ecbbf859b3251194ea1a2f690397c79a10d993c969c26b31a962b1",
+  "origin": "live_api",
+  "evaluation": "exploratory; draft expectations unchanged and not approved",
+  "started_at_utc": "2026-11-18T12:37:36.189690+00:00",
+  "status": "failed",
+  "failure_stage": "local_validation",
+  "failure_reason": "source quote not found in brief: T1",
+  "raw_response_saved": false
+}

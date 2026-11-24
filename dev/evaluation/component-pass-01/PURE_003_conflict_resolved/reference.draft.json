@@ -1,0 +1,766 @@
+{
+  "origin": "evaluator_authored_reference_fixture_not_model_output",
+  "review_status": "assistant_checked_against_final_source_text; owner_review_available",
+  "purpose": "Isolate downstream components from initial model omissions; not a live conversation or human requirements approval.",
+  "sources": {
+    "brief": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface. University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level.\n\nThe project team consists of a Product Owner, a Business Analyst, a Full-stack Developer, and a QA Engineer. The Product Owner defines priorities, approves business requirements, and makes the final release decision. The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks. The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases. The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria. A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing. The Product Owner approves the user acceptance testing results.\n\nEvery room reservation must be approved by the owning faculty administrator before confirmation. Every room reservation is confirmed immediately without administrator approval.",
+    "A1": "Every room reservation requires approval by the owning faculty administrator before confirmation. Withdraw the immediate confirmation rule.",
+    "A2": "The first release integrates inventory from three faculties and allows university members to request assets and reserve rooms. Members sign in using their university accounts. Faculty staff maintain assets belonging to their faculty. University staff can view all faculties. Department staff can view their department assets. Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation. A room cannot have overlapping confirmed reservations. Start and end times use the Europe/Kyiv time zone and the end must be later than the start. A rejected request remains visible to its requester with a rejected status. University staff resolve duplicate source records manually before import; the prototype does not automatically merge ambiguous duplicates. The goal is to provide a shared view of inventory and a clear request approval workflow. The Product Owner accepts the release after the agreed inventory and reservation scenarios pass user acceptance testing. The first release is due eight weeks after requirements approval.",
+    "A3": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+  },
+  "replies": [
+    {
+      "id": "A1",
+      "question_id": "Q1",
+      "text": "Every room reservation requires approval by the owning faculty administrator before confirmation. Withdraw the immediate confirmation rule.",
+      "at": "reference_fixture"
+    },
+    {
+      "id": "A2",
+      "question_id": "Q2",
+      "text": "The first release integrates inventory from three faculties and allows university members to request assets and reserve rooms. Members sign in using their university accounts. Faculty staff maintain assets belonging to their faculty. University staff can view all faculties. Department staff can view their department assets. Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation. A room cannot have overlapping confirmed reservations. Start and end times use the Europe/Kyiv time zone and the end must be later than the start. A rejected request remains visible to its requester with a rejected status. University staff resolve duplicate source records manually before import; the prototype does not automatically merge ambiguous duplicates. The goal is to provide a shared view of inventory and a clear request approval workflow. The Product Owner accepts the release after the agreed inventory and reservation scenarios pass user acceptance testing. The first release is due eight weeks after requirements approval.",
+      "at": "reference_fixture"
+    },
+    {
+      "id": "A3",
+      "question_id": "Q3",
+      "text": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision.",
+      "at": "reference_fixture"
+    }
+  ],
+  "question_history": {
+    "Q1": {
+      "id": "Q1",
+      "text": "Should room confirmation require faculty administrator approval or occur immediately without approval?",
+      "target_type": "conflict",
+      "target_id": "C1",
+      "blocks_final_specification": true
+    },
+    "Q2": {
+      "id": "Q2",
+      "text": "What first-release scope, business rules, acceptance expectations and constraints should apply?",
+      "target_type": "gap",
+      "target_id": "M2",
+      "blocks_final_specification": true
+    },
+    "Q3": {
+      "id": "Q3",
+      "text": "Who is accountable for specification acceptance, implementation, testing, deployment and release?",
+      "target_type": "gap",
+      "target_id": "M3",
+      "blocks_final_specification": true
+    }
+  },
+  "delivery_mapping": [
+    {
+      "reference_question_id": "Q1",
+      "runtime_source_id": "A1",
+      "prepared_reply_id": "C_REPLY",
+      "routing": "explicit evaluator-authored reference mapping, not automatic topic matching"
+    },
+    {
+      "reference_question_id": "Q2",
+      "runtime_source_id": "A2",
+      "prepared_reply_id": "A1",
+      "routing": "explicit evaluator-authored reference mapping, not automatic topic matching"
+    },
+    {
+      "reference_question_id": "Q3",
+      "runtime_source_id": "A3",
+      "prepared_reply_id": "A2",
+      "routing": "explicit evaluator-authored reference mapping, not automatic topic matching"
+    }
+  ],
+  "initial_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Combine inventory databases of three faculties.",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "University staff",
+        "responsibilities": [
+          {
+            "description": "Manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "name": "Faculty staff",
+        "responsibilities": [
+          {
+            "description": "Manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U3",
+        "name": "Department staff",
+        "responsibilities": [
+          {
+            "description": "Manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U4",
+        "name": "Other university users",
+        "responsibilities": [
+          {
+            "description": "Request assets.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          },
+          {
+            "description": "Reserve spaces for approval.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U5",
+        "name": "Owning faculty administrator",
+        "responsibilities": [
+          {
+            "description": "Approve every room reservation before confirmation.",
+            "source": {
+              "document": "brief",
+              "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+            }
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Product Owner",
+        "responsibilities": [
+          {
+            "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "source": {
+              "document": "brief",
+              "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            }
+          },
+          {
+            "description": "The Product Owner approves the user acceptance testing results.",
+            "source": {
+              "document": "brief",
+              "quote": "The Product Owner approves the user acceptance testing results."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "name": "Business Analyst",
+        "responsibilities": [
+          {
+            "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+            "source": {
+              "document": "brief",
+              "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "name": "Full-stack Developer",
+        "responsibilities": [
+          {
+            "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+            "source": {
+              "document": "brief",
+              "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "name": "QA Engineer",
+        "responsibilities": [
+          {
+            "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+            "source": {
+              "document": "brief",
+              "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T5",
+        "name": "Faculty Inventory Representative",
+        "responsibilities": [
+          {
+            "description": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing.",
+            "source": {
+              "document": "brief",
+              "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            }
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Combine inventory databases from three faculties.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      },
+      {
+        "id": "R2",
+        "description": "Provide the integrated inventory through a web interface.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      },
+      {
+        "id": "R3",
+        "description": "The web interface must be secure.",
+        "kind": "non_functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      },
+      {
+        "id": "R4",
+        "description": "University, faculty and department staff manage rooms, software licences and equipment.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+        }
+      },
+      {
+        "id": "R5",
+        "description": "Other users request assets for administrative approval.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+        }
+      },
+      {
+        "id": "R6",
+        "description": "Other users reserve spaces for administrative approval.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+        }
+      },
+      {
+        "id": "R7",
+        "description": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+        }
+      },
+      {
+        "id": "R8",
+        "description": "Every room reservation is confirmed immediately without administrator approval.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "Every room reservation is confirmed immediately without administrator approval."
+        }
+      }
+    ],
+    "missing_information": [
+      {
+        "id": "M2",
+        "topic": "business_rules, scope, acceptance, constraints",
+        "why_needed": "Needed to define reviewed scope, behavior or project responsibilities."
+      },
+      {
+        "id": "M3",
+        "topic": "raci_accountability",
+        "why_needed": "Needed to define reviewed scope, behavior or project responsibilities."
+      }
+    ],
+    "contradictions": [
+      {
+        "id": "C1",
+        "description": "Every reservation needs prior approval yet every reservation is confirmed without it.",
+        "requirement_ids": [
+          "R7",
+          "R8"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "Should room confirmation require faculty administrator approval or occur immediately without approval?",
+        "target_type": "conflict",
+        "target_id": "C1",
+        "blocks_final_specification": true
+      },
+      {
+        "id": "Q2",
+        "text": "What first-release scope, business rules, acceptance expectations and constraints should apply?",
+        "target_type": "gap",
+        "target_id": "M2",
+        "blocks_final_specification": true
+      },
+      {
+        "id": "Q3",
+        "text": "Who is accountable for specification acceptance, implementation, testing, deployment and release?",
+        "target_type": "gap",
+        "target_id": "M3",
+        "blocks_final_specification": true
+      }
+    ],
+    "assumptions": [],
+    "resolutions": []
+  },
+  "clarified_analysis": {
+    "goals": [
+      {
+        "id": "G1",
+        "description": "Combine inventory databases of three faculties.",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      }
+    ],
+    "users": [
+      {
+        "id": "U1",
+        "name": "University staff",
+        "responsibilities": [
+          {
+            "description": "Manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U2",
+        "name": "Faculty staff",
+        "responsibilities": [
+          {
+            "description": "Manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U3",
+        "name": "Department staff",
+        "responsibilities": [
+          {
+            "description": "Manage rooms, software licences and equipment.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U4",
+        "name": "Other university users",
+        "responsibilities": [
+          {
+            "description": "Request assets.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          },
+          {
+            "description": "Reserve spaces for approval.",
+            "source": {
+              "document": "brief",
+              "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+            }
+          }
+        ]
+      },
+      {
+        "id": "U5",
+        "name": "Owning faculty administrator",
+        "responsibilities": [
+          {
+            "description": "Approve every room reservation before confirmation.",
+            "source": {
+              "document": "brief",
+              "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+            }
+          }
+        ]
+      }
+    ],
+    "team_roles": [
+      {
+        "id": "T1",
+        "name": "Product Owner",
+        "responsibilities": [
+          {
+            "description": "The Product Owner defines priorities, approves business requirements, and makes the final release decision.",
+            "source": {
+              "document": "brief",
+              "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+            }
+          },
+          {
+            "description": "The Product Owner approves the user acceptance testing results.",
+            "source": {
+              "document": "brief",
+              "quote": "The Product Owner approves the user acceptance testing results."
+            }
+          },
+          {
+            "description": "The Product Owner is accountable for specification acceptance and user acceptance testing.",
+            "source": {
+              "document": "A3",
+              "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing."
+            }
+          },
+          {
+            "description": "The Product Owner is accountable for the final release decision.",
+            "source": {
+              "document": "A3",
+              "quote": "The Product Owner is accountable for the final release decision."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T2",
+        "name": "Business Analyst",
+        "responsibilities": [
+          {
+            "description": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+            "source": {
+              "document": "brief",
+              "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+            }
+          },
+          {
+            "description": "The Business Analyst is responsible for preparing the specification.",
+            "source": {
+              "document": "A3",
+              "quote": "The Business Analyst is responsible for preparing the specification."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T3",
+        "name": "Full-stack Developer",
+        "responsibilities": [
+          {
+            "description": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases.",
+            "source": {
+              "document": "brief",
+              "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+            }
+          },
+          {
+            "description": "The Full-stack Developer is accountable for implementation and deployment.",
+            "source": {
+              "document": "A3",
+              "quote": "The Full-stack Developer is accountable for implementation and deployment."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T4",
+        "name": "QA Engineer",
+        "responsibilities": [
+          {
+            "description": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+            "source": {
+              "document": "brief",
+              "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+            }
+          },
+          {
+            "description": "The QA Engineer is accountable for test execution.",
+            "source": {
+              "document": "A3",
+              "quote": "The QA Engineer is accountable for test execution."
+            }
+          }
+        ]
+      },
+      {
+        "id": "T5",
+        "name": "Faculty Inventory Representative",
+        "responsibilities": [
+          {
+            "description": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing.",
+            "source": {
+              "document": "brief",
+              "quote": "A faculty inventory representative explains asset request and space reservation workflows and participates in user acceptance testing."
+            }
+          }
+        ]
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "description": "Combine inventory databases from three faculties.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      },
+      {
+        "id": "R2",
+        "description": "Provide the integrated inventory through a web interface.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      },
+      {
+        "id": "R3",
+        "description": "The web interface must be secure.",
+        "kind": "non_functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+        }
+      },
+      {
+        "id": "R4",
+        "description": "University, faculty and department staff manage rooms, software licences and equipment.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+        }
+      },
+      {
+        "id": "R5",
+        "description": "Other users request assets for administrative approval.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+        }
+      },
+      {
+        "id": "R6",
+        "description": "Other users reserve spaces for administrative approval.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "brief",
+          "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment, while other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+        }
+      },
+      {
+        "id": "R7",
+        "description": "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A1",
+          "quote": "Every room reservation requires approval by the owning faculty administrator before confirmation."
+        }
+      },
+      {
+        "id": "R8",
+        "description": "Members sign in using their university accounts.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Members sign in using their university accounts."
+        }
+      },
+      {
+        "id": "R9",
+        "description": "Faculty staff maintain assets belonging to their faculty.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Faculty staff maintain assets belonging to their faculty."
+        }
+      },
+      {
+        "id": "R10",
+        "description": "University staff can view all faculties.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "University staff can view all faculties."
+        }
+      },
+      {
+        "id": "R11",
+        "description": "Department staff can view their department assets.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Department staff can view their department assets."
+        }
+      },
+      {
+        "id": "R12",
+        "description": "Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation."
+        }
+      },
+      {
+        "id": "R13",
+        "description": "A room cannot have overlapping confirmed reservations.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "A room cannot have overlapping confirmed reservations."
+        }
+      },
+      {
+        "id": "R14",
+        "description": "Start and end times use the Europe/Kyiv time zone and the end must be later than the start.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "Start and end times use the Europe/Kyiv time zone and the end must be later than the start."
+        }
+      },
+      {
+        "id": "R15",
+        "description": "A rejected request remains visible to its requester with a rejected status.",
+        "kind": "functional",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "A rejected request remains visible to its requester with a rejected status."
+        }
+      },
+      {
+        "id": "R16",
+        "description": "University staff resolve duplicate source records manually before import; the prototype does not automatically merge ambiguous duplicates.",
+        "kind": "constraint",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "University staff resolve duplicate source records manually before import; the prototype does not automatically merge ambiguous duplicates."
+        }
+      },
+      {
+        "id": "R17",
+        "description": "The first release is due eight weeks after requirements approval.",
+        "kind": "constraint",
+        "status": "confirmed",
+        "source": {
+          "document": "A2",
+          "quote": "The first release is due eight weeks after requirements approval."
+        }
+      }
+    ],
+    "missing_information": [],
+    "contradictions": [],
+    "questions": [],
+    "assumptions": [],
+    "resolutions": [
+      {
+        "question_id": "Q1",
+        "answer_id": "A1",
+        "outcome": "resolved",
+        "description": "The supplied answer provides the requested facts or decision.",
+        "source": {
+          "document": "A1",
+          "quote": "Every room reservation requires approval by the owning faculty administrator before confirmation. Withdraw the immediate confirmation rule."
+        }
+      },
+      {
+        "question_id": "Q2",
+        "answer_id": "A2",
+        "outcome": "resolved",
+        "description": "The supplied answer provides the requested facts or decision.",
+        "source": {
+          "document": "A2",
+          "quote": "The first release integrates inventory from three faculties and allows university members to request assets and reserve rooms. Members sign in using their university accounts. Faculty staff maintain assets belonging to their faculty. University staff can view all faculties. Department staff can view their department assets. Each request or room reservation is approved by the administrator of the faculty that owns the asset; approval is required before confirmation. A room cannot have overlapping confirmed reservations. Start and end times use the Europe/Kyiv time zone and the end must be later than the start. A rejected request remains visible to its requester with a rejected status. University staff resolve duplicate source records manually before import; the prototype does not automatically merge ambiguous duplicates. The goal is to provide a shared view of inventory and a clear request approval workflow. The Product Owner accepts the release after the agreed inventory and reservation scenarios pass user acceptance testing. The first release is due eight weeks after requirements approval."
+        }
+      },
+      {
+        "question_id": "Q3",
+        "answer_id": "A3",
+        "outcome": "resolved",
+        "description": "The supplied answer provides the requested facts or decision.",
+        "source": {
+          "document": "A3",
+          "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+        }
+      }
+    ]
+  }
+}

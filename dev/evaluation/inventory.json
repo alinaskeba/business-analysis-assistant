@@ -1,0 +1,2956 @@
+{
+  "mode": "offline_artifact_review",
+  "expectations_status": "draft",
+  "semantic_quality": "not_measured; human review required",
+  "api_calls": 0,
+  "cases": [
+    {
+      "case_id": "PURE_002_without_team",
+      "group_id": "PURE_002",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Enable people new to online commerce to set up and operate an online retail business."
+          ],
+          "users_to_cover": [
+            "Store owners",
+            "Sales personnel",
+            "Customers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Manage products.",
+            "Manage customer accounts.",
+            "Browse available products.",
+            "Maintain a shopping cart.",
+            "Place orders through the store."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "empty",
+            "roles": [],
+            "additional_stakeholder": null
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask for project team roles and decision responsibilities needed to prepare RACI."
+          ],
+          "must_avoid": [
+            "Do not infer payment methods, delivery rules, refunds, or inventory synchronization as confirmed requirements."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Online payment processing",
+              "Shipping provider integration"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Cart quantity",
+                "given": "A customer has an available product in the cart.",
+                "when": "The customer changes its quantity to 3.",
+                "then": "The cart displays quantity 3 for that product."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Empty order",
+                "given": "The cart is empty.",
+                "when": "The customer attempts to submit an order.",
+                "then": "Submission is rejected and no order is created."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Order submission",
+                "given": "A signed-in customer has a nonempty valid cart.",
+                "when": "The customer submits the order.",
+                "then": "One order with the selected items and quantities is created and its reference is displayed."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_002_with_team",
+      "group_id": "PURE_002",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Enable people new to online commerce to set up and operate an online retail business."
+          ],
+          "users_to_cover": [
+            "Store owners",
+            "Sales personnel",
+            "Customers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Manage products.",
+            "Manage customer accounts.",
+            "Browse available products.",
+            "Maintain a shopping cart.",
+            "Place orders through the store."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Sales representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer payment methods, delivery rules, refunds, or inventory synchronization as confirmed requirements."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Online payment processing",
+              "Shipping provider integration"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Cart quantity",
+                "given": "A customer has an available product in the cart.",
+                "when": "The customer changes its quantity to 3.",
+                "then": "The cart displays quantity 3 for that product."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Empty order",
+                "given": "The cart is empty.",
+                "when": "The customer attempts to submit an order.",
+                "then": "Submission is rejected and no order is created."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Order submission",
+                "given": "A signed-in customer has a nonempty valid cart.",
+                "when": "The customer submits the order.",
+                "then": "One order with the selected items and quantities is created and its reference is displayed."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_022_without_team",
+      "group_id": "PURE_022",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Support transition from old paint numbers to a new product line while preserving continuity in color selection."
+          ],
+          "users_to_cover": [
+            "Customers",
+            "Distributors",
+            "Authorized staff"
+          ],
+          "requirement_meanings_to_cover": [
+            "Translate previous paint numbers.",
+            "Explore available colors.",
+            "Find suitable products near a chosen color.",
+            "Maintain offered color information.",
+            "Maintain offered product information."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "empty",
+            "roles": [],
+            "additional_stakeholder": null
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask for project team roles and decision responsibilities needed to prepare RACI."
+          ],
+          "must_avoid": [
+            "Do not infer checkout, payment or delivery capabilities."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Visitors can browse and search without signing in.",
+              "Only authorized staff can maintain colours, products and mappings.",
+              "Show all mapped products for an old number.",
+              "Report absent mappings explicitly.",
+              "Similar-colour results use the approved association list."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Visitors can browse and search without signing in.",
+              "Only authorized staff can maintain colours, products and mappings.",
+              "Show all mapped products for an old number.",
+              "Report absent mappings explicitly.",
+              "Similar-colour results use the approved association list."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Checkout",
+              "Online payments",
+              "Computed colour similarity scores"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Multiple mappings",
+                "given": "An old paint number has two approved mapped products.",
+                "when": "A visitor searches for that number.",
+                "then": "Both mapped products are displayed."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Missing mapping",
+                "given": "An old paint number has no mapping.",
+                "when": "A visitor searches for that number.",
+                "then": "The application reports that no mapping was found."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Update access",
+                "given": "A visitor is not authorized staff.",
+                "when": "The visitor attempts to update a mapping.",
+                "then": "The update is denied and the mapping remains unchanged."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_022_with_team",
+      "group_id": "PURE_022",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Support transition from old paint numbers to a new product line while preserving continuity in color selection."
+          ],
+          "users_to_cover": [
+            "Customers",
+            "Distributors",
+            "Authorized staff"
+          ],
+          "requirement_meanings_to_cover": [
+            "Translate previous paint numbers.",
+            "Explore available colors.",
+            "Find suitable products near a chosen color.",
+            "Maintain offered color information.",
+            "Maintain offered product information."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Product catalogue specialist"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer checkout, payment or delivery capabilities."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Visitors can browse and search without signing in.",
+              "Only authorized staff can maintain colours, products and mappings.",
+              "Show all mapped products for an old number.",
+              "Report absent mappings explicitly.",
+              "Similar-colour results use the approved association list."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Visitors can browse and search without signing in.",
+              "Only authorized staff can maintain colours, products and mappings.",
+              "Show all mapped products for an old number.",
+              "Report absent mappings explicitly.",
+              "Similar-colour results use the approved association list."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Checkout",
+              "Online payments",
+              "Computed colour similarity scores"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Multiple mappings",
+                "given": "An old paint number has two approved mapped products.",
+                "when": "A visitor searches for that number.",
+                "then": "Both mapped products are displayed."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Missing mapping",
+                "given": "An old paint number has no mapping.",
+                "when": "A visitor searches for that number.",
+                "then": "The application reports that no mapping was found."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Update access",
+                "given": "A visitor is not authorized staff.",
+                "when": "The visitor attempts to update a mapping.",
+                "then": "The update is denied and the mapping remains unchanged."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_003_without_team",
+      "group_id": "PURE_003",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Combine the inventory databases of three faculties."
+          ],
+          "users_to_cover": [
+            "University staff",
+            "Faculty staff",
+            "Department staff",
+            "Other users requesting assets or reserving spaces"
+          ],
+          "requirement_meanings_to_cover": [
+            "Provide integrated inventory through a secure web interface.",
+            "Manage assets including rooms, software licences and equipment.",
+            "Request assets.",
+            "Reserve spaces.",
+            "Support approval by the appropriate administrative level."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "empty",
+            "roles": [],
+            "additional_stakeholder": null
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask for project team roles and decision responsibilities needed to prepare RACI.",
+            "Clarify which administrative level approves each kind of asset request or space reservation."
+          ],
+          "must_avoid": [
+            "Do not invent which administrative level approves a particular request.",
+            "Do not infer a specific authentication provider or quantitative security target."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Automatic merging of ambiguous duplicate inventory records",
+              "Immediate room confirmation without approval"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Approval",
+                "given": "A member has submitted a valid room reservation.",
+                "when": "The owning faculty administrator has not approved it.",
+                "then": "The reservation remains pending and is not confirmed."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Overlap",
+                "given": "A room has a confirmed reservation from 10:00 to 11:00 Europe/Kyiv.",
+                "when": "A reservation for the same room from 10:30 to 11:30 is submitted for confirmation.",
+                "then": "The system prevents overlapping confirmation."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Rejected request",
+                "given": "A member has a pending asset request.",
+                "when": "The owning faculty administrator rejects it.",
+                "then": "The requester can still see the request with rejected status."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_003_with_team",
+      "group_id": "PURE_003",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Combine the inventory databases of three faculties."
+          ],
+          "users_to_cover": [
+            "University staff",
+            "Faculty staff",
+            "Department staff",
+            "Other users requesting assets or reserving spaces"
+          ],
+          "requirement_meanings_to_cover": [
+            "Provide integrated inventory through a secure web interface.",
+            "Manage assets including rooms, software licences and equipment.",
+            "Request assets.",
+            "Reserve spaces.",
+            "Support approval by the appropriate administrative level."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Faculty inventory representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Clarify which administrative level approves each kind of asset request or space reservation."
+          ],
+          "must_avoid": [
+            "Do not invent which administrative level approves a particular request.",
+            "Do not infer a specific authentication provider or quantitative security target."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Automatic merging of ambiguous duplicate inventory records",
+              "Immediate room confirmation without approval"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Approval",
+                "given": "A member has submitted a valid room reservation.",
+                "when": "The owning faculty administrator has not approved it.",
+                "then": "The reservation remains pending and is not confirmed."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Overlap",
+                "given": "A room has a confirmed reservation from 10:00 to 11:00 Europe/Kyiv.",
+                "when": "A reservation for the same room from 10:30 to 11:30 is submitted for confirmation.",
+                "then": "The system prevents overlapping confirmation."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Rejected request",
+                "given": "A member has a pending asset request.",
+                "when": "The owning faculty administrator rejects it.",
+                "then": "The requester can still see the request with rejected status."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_068_without_team",
+      "group_id": "PURE_068",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Reduce effort coordinating marketing and customer engagement across social networks."
+          ],
+          "users_to_cover": [
+            "Staff",
+            "Contributors",
+            "Approvers",
+            "Publishers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Connect external accounts.",
+            "Prepare campaigns.",
+            "Schedule content for simultaneous publication.",
+            "Manage contributor, approver and publisher roles.",
+            "Respond to audience activity.",
+            "Monitor keywords.",
+            "Monitor campaign history."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "empty",
+            "roles": [],
+            "additional_stakeholder": null
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Ask for project team roles and decision responsibilities needed to prepare RACI.",
+            "Clarify the permissions and approval workflow of contributors, approvers and publishers."
+          ],
+          "must_avoid": [
+            "Contributor, approver and publisher are product workflow roles; their names alone do not establish development team roles.",
+            "Do not invent supported networks or approval rules."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "LinkedIn and Facebook supported in first release.",
+              "Contributors draft; approvers approve or reject; publishers schedule.",
+              "Approval required before scheduling.",
+              "Editing approved content resets it to draft.",
+              "Use Europe/Kyiv for scheduling.",
+              "Separate outcomes and manual retry after partial failure.",
+              "History includes draft, approval, scheduling and publication events."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "LinkedIn and Facebook supported in first release.",
+              "Contributors draft; approvers approve or reject; publishers schedule.",
+              "Approval required before scheduling.",
+              "Editing approved content resets it to draft.",
+              "Use Europe/Kyiv for scheduling.",
+              "Separate outcomes and manual retry after partial failure.",
+              "History includes draft, approval, scheduling and publication events."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Guaranteed identical publication completion times across platforms",
+              "Publishing to unsupported networks",
+              "Automatic retries as a confirmed requirement"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Unapproved content",
+                "given": "A publisher selects a draft without approval.",
+                "when": "The publisher tries to schedule it.",
+                "then": "Scheduling is rejected."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Editing approved content",
+                "given": "Content has approved status.",
+                "when": "A contributor edits the content.",
+                "then": "Its status returns to draft and a new approval is required."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Partial publication",
+                "given": "Approved content is scheduled for both supported networks.",
+                "when": "One network accepts publication and the other rejects it.",
+                "then": "The system shows separate outcomes and retains the failed item for manual retry."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_068_with_team",
+      "group_id": "PURE_068",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Reduce effort coordinating marketing and customer engagement across social networks."
+          ],
+          "users_to_cover": [
+            "Staff",
+            "Contributors",
+            "Approvers",
+            "Publishers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Connect external accounts.",
+            "Prepare campaigns.",
+            "Schedule content for simultaneous publication.",
+            "Manage contributor, approver and publisher roles.",
+            "Respond to audience activity.",
+            "Monitor keywords.",
+            "Monitor campaign history."
+          ],
+          "expected_conflicts": [],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Marketing representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Clarify the permissions and approval workflow of contributors, approvers and publishers."
+          ],
+          "must_avoid": [
+            "Contributor, approver and publisher are product workflow roles; their names alone do not establish development team roles.",
+            "Do not invent supported networks or approval rules."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "LinkedIn and Facebook supported in first release.",
+              "Contributors draft; approvers approve or reject; publishers schedule.",
+              "Approval required before scheduling.",
+              "Editing approved content resets it to draft.",
+              "Use Europe/Kyiv for scheduling.",
+              "Separate outcomes and manual retry after partial failure.",
+              "History includes draft, approval, scheduling and publication events."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "LinkedIn and Facebook supported in first release.",
+              "Contributors draft; approvers approve or reject; publishers schedule.",
+              "Approval required before scheduling.",
+              "Editing approved content resets it to draft.",
+              "Use Europe/Kyiv for scheduling.",
+              "Separate outcomes and manual retry after partial failure.",
+              "History includes draft, approval, scheduling and publication events."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Guaranteed identical publication completion times across platforms",
+              "Publishing to unsupported networks",
+              "Automatic retries as a confirmed requirement"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Unapproved content",
+                "given": "A publisher selects a draft without approval.",
+                "when": "The publisher tries to schedule it.",
+                "then": "Scheduling is rejected."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Editing approved content",
+                "given": "Content has approved status.",
+                "when": "A contributor edits the content.",
+                "then": "Its status returns to draft and a new approval is required."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Partial publication",
+                "given": "Approved content is scheduled for both supported networks.",
+                "when": "One network accepts publication and the other rejects it.",
+                "then": "The system shows separate outcomes and retains the failed item for manual retry."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_002_conflict_resolved",
+      "group_id": "PURE_002",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Enable people new to online commerce to set up and operate an online retail business."
+          ],
+          "users_to_cover": [
+            "Store owners",
+            "Sales personnel",
+            "Customers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Manage products.",
+            "Manage customer accounts.",
+            "Browse available products.",
+            "Maintain a shopping cart.",
+            "Place orders through the store."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Customers must sign in before placing an order.",
+                "Customers must be able to place an order without signing in."
+              ],
+              "required_question_meaning": "Clarify whether sign-in is required for order placement."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Sales representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer payment methods, delivery rules, refunds, or inventory synchronization as confirmed requirements."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "conflict_resolution": "Require sign-in to place an order; exclude guest checkout."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Sign-in required for order placement.",
+              "Product and customer account creation and updating by store owners and sales personnel.",
+              "Positive whole-number cart quantities; item removal.",
+              "A successful submission creates one order and displays its reference.",
+              "Reject empty-cart submission."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Online payment processing",
+              "Shipping provider integration"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Cart quantity",
+                "given": "A customer has an available product in the cart.",
+                "when": "The customer changes its quantity to 3.",
+                "then": "The cart displays quantity 3 for that product."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Empty order",
+                "given": "The cart is empty.",
+                "when": "The customer attempts to submit an order.",
+                "then": "Submission is rejected and no order is created."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Order submission",
+                "given": "A signed-in customer has a nonempty valid cart.",
+                "when": "The customer submits the order.",
+                "then": "One order with the selected items and quantities is created and its reference is displayed."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures.",
+            "Use the selected rule in all final documents; retain the rejected rule only as historical conflict context."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_002_conflict_unresolved",
+      "group_id": "PURE_002",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Enable people new to online commerce to set up and operate an online retail business."
+          ],
+          "users_to_cover": [
+            "Store owners",
+            "Sales personnel",
+            "Customers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Manage products.",
+            "Manage customer accounts.",
+            "Browse available products.",
+            "Maintain a shopping cart.",
+            "Place orders through the store."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Customers must sign in before placing an order.",
+                "Customers must be able to place an order without signing in."
+              ],
+              "required_question_meaning": "Clarify whether sign-in is required for order placement."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Sales representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer payment methods, delivery rules, refunds, or inventory synchronization as confirmed requirements."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "clarification": [
+            "Detect both incompatible rules and ask a neutral question.",
+            "The undecided reply leaves the conflict open."
+          ],
+          "updated_requirements": {
+            "conflict_status": "unresolved",
+            "must_preserve_both_positions": true
+          },
+          "specification": {
+            "expected_behavior": "Explain the unresolved decision. A clearly marked partial draft may be offered, with both positions retained."
+          },
+          "tasks": {
+            "expected_behavior": "Any provisional task affected by the conflict must show its dependency on the open decision."
+          },
+          "acceptance_criteria": {
+            "expected_behavior": "Do not present either incompatible rule as an agreed acceptance condition."
+          },
+          "raci": {
+            "expected_behavior": "Assigning a decision owner does not resolve the product rule."
+          },
+          "end_to_end": [
+            "Do not claim a finalized specification or silently select either rule.",
+            "Allow the user to return later and resolve the conflict."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_022_conflict_resolved",
+      "group_id": "PURE_022",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Support transition from old paint numbers to a new product line while preserving continuity in color selection."
+          ],
+          "users_to_cover": [
+            "Customers",
+            "Distributors",
+            "Authorized staff"
+          ],
+          "requirement_meanings_to_cover": [
+            "Translate previous paint numbers.",
+            "Explore available colors.",
+            "Find suitable products near a chosen color.",
+            "Maintain offered color information.",
+            "Maintain offered product information."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Only authorized staff may update old-to-new paint number mappings.",
+                "Every visitor, including unauthenticated customers, may update old-to-new paint number mappings."
+              ],
+              "required_question_meaning": "Clarify who is authorized to update paint number mappings."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Product catalogue specialist"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer checkout, payment or delivery capabilities."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "Visitors can browse and search without signing in.",
+              "Only authorized staff can maintain colours, products and mappings.",
+              "Show all mapped products for an old number.",
+              "Report absent mappings explicitly.",
+              "Similar-colour results use the approved association list."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "conflict_resolution": "Only authorized staff may update mappings."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "Visitors can browse and search without signing in.",
+              "Only authorized staff can maintain colours, products and mappings.",
+              "Show all mapped products for an old number.",
+              "Report absent mappings explicitly.",
+              "Similar-colour results use the approved association list."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Checkout",
+              "Online payments",
+              "Computed colour similarity scores"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Multiple mappings",
+                "given": "An old paint number has two approved mapped products.",
+                "when": "A visitor searches for that number.",
+                "then": "Both mapped products are displayed."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Missing mapping",
+                "given": "An old paint number has no mapping.",
+                "when": "A visitor searches for that number.",
+                "then": "The application reports that no mapping was found."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Update access",
+                "given": "A visitor is not authorized staff.",
+                "when": "The visitor attempts to update a mapping.",
+                "then": "The update is denied and the mapping remains unchanged."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures.",
+            "Use the selected rule in all final documents; retain the rejected rule only as historical conflict context."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_022_conflict_unresolved",
+      "group_id": "PURE_022",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Support transition from old paint numbers to a new product line while preserving continuity in color selection."
+          ],
+          "users_to_cover": [
+            "Customers",
+            "Distributors",
+            "Authorized staff"
+          ],
+          "requirement_meanings_to_cover": [
+            "Translate previous paint numbers.",
+            "Explore available colors.",
+            "Find suitable products near a chosen color.",
+            "Maintain offered color information.",
+            "Maintain offered product information."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Only authorized staff may update old-to-new paint number mappings.",
+                "Every visitor, including unauthenticated customers, may update old-to-new paint number mappings."
+              ],
+              "required_question_meaning": "Clarify who is authorized to update paint number mappings."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Product catalogue specialist"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable."
+          ],
+          "must_avoid": [
+            "Do not infer checkout, payment or delivery capabilities."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "clarification": [
+            "Detect both incompatible rules and ask a neutral question.",
+            "The undecided reply leaves the conflict open."
+          ],
+          "updated_requirements": {
+            "conflict_status": "unresolved",
+            "must_preserve_both_positions": true
+          },
+          "specification": {
+            "expected_behavior": "Explain the unresolved decision. A clearly marked partial draft may be offered, with both positions retained."
+          },
+          "tasks": {
+            "expected_behavior": "Any provisional task affected by the conflict must show its dependency on the open decision."
+          },
+          "acceptance_criteria": {
+            "expected_behavior": "Do not present either incompatible rule as an agreed acceptance condition."
+          },
+          "raci": {
+            "expected_behavior": "Assigning a decision owner does not resolve the product rule."
+          },
+          "end_to_end": [
+            "Do not claim a finalized specification or silently select either rule.",
+            "Allow the user to return later and resolve the conflict."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_003_conflict_resolved",
+      "group_id": "PURE_003",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Combine the inventory databases of three faculties."
+          ],
+          "users_to_cover": [
+            "University staff",
+            "Faculty staff",
+            "Department staff",
+            "Other users requesting assets or reserving spaces"
+          ],
+          "requirement_meanings_to_cover": [
+            "Provide integrated inventory through a secure web interface.",
+            "Manage assets including rooms, software licences and equipment.",
+            "Request assets.",
+            "Reserve spaces.",
+            "Support approval by the appropriate administrative level."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+                "Every room reservation is confirmed immediately without administrator approval."
+              ],
+              "required_question_meaning": "Clarify whether administrator approval precedes reservation confirmation."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Faculty inventory representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Clarify which administrative level approves each kind of asset request or space reservation."
+          ],
+          "must_avoid": [
+            "Do not invent which administrative level approves a particular request.",
+            "Do not infer a specific authentication provider or quantitative security target."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "conflict_resolution": "Faculty administrator approval is required before room reservation confirmation."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "University account sign-in.",
+              "Faculty staff maintain their own faculty assets.",
+              "Owning faculty administrator approves requests and reservations before confirmation.",
+              "Prevent overlapping confirmed room reservations.",
+              "Use Europe/Kyiv time; end later than start.",
+              "Rejected requests remain visible to requester."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Automatic merging of ambiguous duplicate inventory records",
+              "Immediate room confirmation without approval"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Approval",
+                "given": "A member has submitted a valid room reservation.",
+                "when": "The owning faculty administrator has not approved it.",
+                "then": "The reservation remains pending and is not confirmed."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Overlap",
+                "given": "A room has a confirmed reservation from 10:00 to 11:00 Europe/Kyiv.",
+                "when": "A reservation for the same room from 10:30 to 11:30 is submitted for confirmation.",
+                "then": "The system prevents overlapping confirmation."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Rejected request",
+                "given": "A member has a pending asset request.",
+                "when": "The owning faculty administrator rejects it.",
+                "then": "The requester can still see the request with rejected status."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures.",
+            "Use the selected rule in all final documents; retain the rejected rule only as historical conflict context."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_003_conflict_unresolved",
+      "group_id": "PURE_003",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Combine the inventory databases of three faculties."
+          ],
+          "users_to_cover": [
+            "University staff",
+            "Faculty staff",
+            "Department staff",
+            "Other users requesting assets or reserving spaces"
+          ],
+          "requirement_meanings_to_cover": [
+            "Provide integrated inventory through a secure web interface.",
+            "Manage assets including rooms, software licences and equipment.",
+            "Request assets.",
+            "Reserve spaces.",
+            "Support approval by the appropriate administrative level."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Every room reservation must be approved by the owning faculty administrator before confirmation.",
+                "Every room reservation is confirmed immediately without administrator approval."
+              ],
+              "required_question_meaning": "Clarify whether administrator approval precedes reservation confirmation."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Faculty inventory representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Clarify which administrative level approves each kind of asset request or space reservation."
+          ],
+          "must_avoid": [
+            "Do not invent which administrative level approves a particular request.",
+            "Do not infer a specific authentication provider or quantitative security target."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "clarification": [
+            "Detect both incompatible rules and ask a neutral question.",
+            "The undecided reply leaves the conflict open."
+          ],
+          "updated_requirements": {
+            "conflict_status": "unresolved",
+            "must_preserve_both_positions": true
+          },
+          "specification": {
+            "expected_behavior": "Explain the unresolved decision. A clearly marked partial draft may be offered, with both positions retained."
+          },
+          "tasks": {
+            "expected_behavior": "Any provisional task affected by the conflict must show its dependency on the open decision."
+          },
+          "acceptance_criteria": {
+            "expected_behavior": "Do not present either incompatible rule as an agreed acceptance condition."
+          },
+          "raci": {
+            "expected_behavior": "Assigning a decision owner does not resolve the product rule."
+          },
+          "end_to_end": [
+            "Do not claim a finalized specification or silently select either rule.",
+            "Allow the user to return later and resolve the conflict."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_068_conflict_resolved",
+      "group_id": "PURE_068",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Reduce effort coordinating marketing and customer engagement across social networks."
+          ],
+          "users_to_cover": [
+            "Staff",
+            "Contributors",
+            "Approvers",
+            "Publishers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Connect external accounts.",
+            "Prepare campaigns.",
+            "Schedule content for simultaneous publication.",
+            "Manage contributor, approver and publisher roles.",
+            "Respond to audience activity.",
+            "Monitor keywords.",
+            "Monitor campaign history."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Only approved content may be scheduled for publication.",
+                "Publishers may schedule content for publication before it is approved."
+              ],
+              "required_question_meaning": "Clarify whether approval is required before scheduling content."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Marketing representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Clarify the permissions and approval workflow of contributors, approvers and publishers."
+          ],
+          "must_avoid": [
+            "Contributor, approver and publisher are product workflow roles; their names alone do not establish development team roles.",
+            "Do not invent supported networks or approval rules."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "initial_analysis": "Use expected_initial_analysis.",
+          "clarification": [
+            "Ask about the domain rules needed to complete the documents.",
+            "Ask about project team when absent from the initial brief.",
+            "Ask before producing final documents.",
+            "Do not repeat a question already answered unless the answer is ambiguous or inconsistent."
+          ],
+          "updated_requirements": {
+            "preserve_initial_requirements": true,
+            "additional_facts_to_cover": [
+              "LinkedIn and Facebook supported in first release.",
+              "Contributors draft; approvers approve or reject; publishers schedule.",
+              "Approval required before scheduling.",
+              "Editing approved content resets it to draft.",
+              "Use Europe/Kyiv for scheduling.",
+              "Separate outcomes and manual retry after partial failure.",
+              "History includes draft, approval, scheduling and publication events."
+            ],
+            "constraints": [
+              "First release due eight weeks after requirements approval."
+            ],
+            "traceability": "New confirmed facts must cite the actual supplied answer. Retain the origin of unchanged brief facts.",
+            "conflict_resolution": "Approval is required before content scheduling."
+          },
+          "specification": {
+            "required_sections": [
+              "Business goal",
+              "Product users",
+              "Scope and exclusions",
+              "Functional requirements",
+              "Quality requirements and constraints supplied by the user",
+              "Project team",
+              "Confirmed decisions",
+              "Explicitly labeled proposed assumptions",
+              "Open questions"
+            ],
+            "must_preserve": [
+              "LinkedIn and Facebook supported in first release.",
+              "Contributors draft; approvers approve or reject; publishers schedule.",
+              "Approval required before scheduling.",
+              "Editing approved content resets it to draft.",
+              "Use Europe/Kyiv for scheduling.",
+              "Separate outcomes and manual retry after partial failure.",
+              "History includes draft, approval, scheduling and publication events."
+            ],
+            "must_exclude_from_confirmed_scope": [
+              "Guaranteed identical publication completion times across platforms",
+              "Publishing to unsupported networks",
+              "Automatic retries as a confirmed requirement"
+            ],
+            "completion_rule": "Known blocking decisions must be resolved before the document is presented as ready for approval."
+          },
+          "tasks": {
+            "coverage": "Every in-scope implementable requirement must be covered by one or more tasks; assess by meaning, not task count.",
+            "links": "Every task has at least one valid requirement reference.",
+            "support": "Tasks may elaborate implementation work but must not silently add unrequested product features."
+          },
+          "acceptance_criteria": {
+            "coverage": "Every implementable requirement has testable acceptance criteria.",
+            "semantic_checks": [
+              {
+                "check_id": "AC1",
+                "topic": "Unapproved content",
+                "given": "A publisher selects a draft without approval.",
+                "when": "The publisher tries to schedule it.",
+                "then": "Scheduling is rejected."
+              },
+              {
+                "check_id": "AC2",
+                "topic": "Editing approved content",
+                "given": "Content has approved status.",
+                "when": "A contributor edits the content.",
+                "then": "Its status returns to draft and a new approval is required."
+              },
+              {
+                "check_id": "AC3",
+                "topic": "Partial publication",
+                "given": "Approved content is scheduled for both supported networks.",
+                "when": "One network accepts publication and the other rejects it.",
+                "then": "The system shows separate outcomes and retains the failed item for manual retry."
+              }
+            ],
+            "note": "These are mandatory example scenarios, not an exhaustive set of criteria. Equivalent testable wording is acceptable."
+          },
+          "raci": {
+            "structural_checks": [
+              "Exactly one Accountable per activity.",
+              "At least one Responsible per activity; a combined A/R assignment is allowed.",
+              "All assigned roles exist in confirmed team data."
+            ],
+            "semantic_checks": [
+              {
+                "activity": "Approve business requirements",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Prepare the specification",
+                "responsible_includes": [
+                  "Business Analyst"
+                ],
+                "evidence_quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+              },
+              {
+                "activity": "Implement and deploy the application",
+                "responsible_includes": [
+                  "Full-stack Developer"
+                ],
+                "evidence_quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+              },
+              {
+                "activity": "Prepare and execute tests",
+                "responsible_includes": [
+                  "QA Engineer"
+                ],
+                "evidence_quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+              },
+              {
+                "activity": "Make the final release decision",
+                "accountable": "Product Owner",
+                "evidence_quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+              },
+              {
+                "activity": "Accept the specification",
+                "accountable": "Product Owner",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Execute tests",
+                "accountable": "QA Engineer",
+                "evidence_reply_id": "A2"
+              },
+              {
+                "activity": "Implement and deploy",
+                "accountable": "Full-stack Developer",
+                "evidence_reply_id": "A2"
+              }
+            ],
+            "other_assignments": "Consulted and Informed assignments may vary if supported. New proposed assignments must be labeled and reviewed."
+          },
+          "end_to_end": [
+            "Produce specification, linked tasks, acceptance criteria and RACI after clarification and human approval.",
+            "Generated documents agree with each other on scope, rules and roles.",
+            "Show traceable sources and surface validation failures.",
+            "Use the selected rule in all final documents; retain the rejected rule only as historical conflict context."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    },
+    {
+      "case_id": "PURE_068_conflict_unresolved",
+      "group_id": "PURE_068",
+      "split": "dev",
+      "components": {
+        "initial_analysis": "not_run",
+        "clarification": "not_run",
+        "updated_requirements": "not_run",
+        "specification": "not_run",
+        "tasks": "not_run",
+        "acceptance_criteria": "not_run",
+        "raci": "not_run",
+        "end_to_end": "not_run"
+      },
+      "errors": [],
+      "human_checks": {
+        "initial_analysis": {
+          "status": "draft",
+          "reviewed_by": null,
+          "goals_to_cover": [
+            "Reduce effort coordinating marketing and customer engagement across social networks."
+          ],
+          "users_to_cover": [
+            "Staff",
+            "Contributors",
+            "Approvers",
+            "Publishers"
+          ],
+          "requirement_meanings_to_cover": [
+            "Connect external accounts.",
+            "Prepare campaigns.",
+            "Schedule content for simultaneous publication.",
+            "Manage contributor, approver and publisher roles.",
+            "Respond to audience activity.",
+            "Monitor keywords.",
+            "Monitor campaign history."
+          ],
+          "expected_conflicts": [
+            {
+              "statements": [
+                "Only approved content may be scheduled for publication.",
+                "Publishers may schedule content for publication before it is approved."
+              ],
+              "required_question_meaning": "Clarify whether approval is required before scheduling content."
+            }
+          ],
+          "team_expectation": {
+            "mode": "explicit_roles_and_responsibilities",
+            "roles": [
+              "Product Owner",
+              "Business Analyst",
+              "Full-stack Developer",
+              "QA Engineer"
+            ],
+            "additional_stakeholder": "Marketing representative"
+          },
+          "clarification_checks": [
+            "Ask relevant questions tied to missing information; equivalent wording is acceptable.",
+            "Clarify the permissions and approval workflow of contributors, approvers and publishers."
+          ],
+          "must_avoid": [
+            "Contributor, approver and publisher are product workflow roles; their names alone do not establish development team roles.",
+            "Do not invent supported networks or approval rules."
+          ],
+          "evidence_checks": [
+            "Every extracted fact must be supported by an exact nonempty substring of the input.",
+            "The quoted text must support the full meaning and conditions of the associated description."
+          ]
+        },
+        "journey": {
+          "status": "draft",
+          "clarification": [
+            "Detect both incompatible rules and ask a neutral question.",
+            "The undecided reply leaves the conflict open."
+          ],
+          "updated_requirements": {
+            "conflict_status": "unresolved",
+            "must_preserve_both_positions": true
+          },
+          "specification": {
+            "expected_behavior": "Explain the unresolved decision. A clearly marked partial draft may be offered, with both positions retained."
+          },
+          "tasks": {
+            "expected_behavior": "Any provisional task affected by the conflict must show its dependency on the open decision."
+          },
+          "acceptance_criteria": {
+            "expected_behavior": "Do not present either incompatible rule as an agreed acceptance condition."
+          },
+          "raci": {
+            "expected_behavior": "Assigning a decision owner does not resolve the product rule."
+          },
+          "end_to_end": [
+            "Do not claim a finalized specification or silently select either rule.",
+            "Allow the user to return later and resolve the conflict."
+          ]
+        }
+      },
+      "findings": {
+        "correct": [],
+        "omissions": [],
+        "unsupported_facts": [],
+        "status": "awaiting_human_review"
+      }
+    }
+  ]
+}

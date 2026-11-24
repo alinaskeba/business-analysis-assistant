@@ -1,0 +1,21 @@
+{
+  "case_id": "PURE_003_conflict_resolved",
+  "stage": "clarification",
+  "model": "gemini-3.1-flash-lite",
+  "origin": "live_api",
+  "started_at_utc": "2026-11-21T08:39:16.545255+00:00",
+  "input_sha256": "2911dfe9318d1e3b9ff20b2f66a267b05abe6953322bcaefa159863a89fa7c1d",
+  "prompt_sha256": "3f970527eba855f0a22777e3a2196870d0dfeee3df789a548fa98503dc255fc0",
+  "schema_sha256": "f63390037eb7055235f2263d93b0fef84412e2f3b1344f8c548b8fa80138770b",
+  "prompt_revision": "full-workflow-v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "response_received",
+      "elapsed_seconds": 6.025
+    }
+  ],
+  "status": "validation_passed",
+  "validation_errors": [],
+  "completed_at_utc": "2026-11-21T08:39:22.572828+00:00"
+}

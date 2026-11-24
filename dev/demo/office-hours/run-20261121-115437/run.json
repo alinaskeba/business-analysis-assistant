@@ -1,0 +1,16 @@
+{
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "approval_kind": "simulated_demo_approval_not_user_approval",
+  "analysis_prompt": "full-workflow-v1",
+  "plan_prompt": "plan-v3-source-ids-and-governance",
+  "started_at": "2026-11-21T11:54:37.785363+00:00",
+  "status": "failed",
+  "clarification_kind": "synthetic_demo_answer_not_user_reply",
+  "stage": "plan",
+  "errors": [
+    "raci: task TASK2 has no implementation activity",
+    "raci: task TASK3 has no implementation activity"
+  ],
+  "completed_at": "2026-11-21T11:54:44.826221+00:00"
+}

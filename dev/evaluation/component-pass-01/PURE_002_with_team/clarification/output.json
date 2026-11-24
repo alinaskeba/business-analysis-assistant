@@ -1,0 +1,346 @@
+{
+  "goals": [
+    {
+      "id": "G1",
+      "description": "Enable beginners to set up and operate online retail businesses.",
+      "source": {
+        "document": "brief",
+        "quote": "GAMMA-J needs a web store that enables people who are new to online commerce to set up and operate an online retail business."
+      }
+    },
+    {
+      "id": "G2",
+      "description": "Let store staff receive and process orders without manually transcribing customer messages.",
+      "source": {
+        "document": "A1",
+        "quote": "The business goal is to let store staff receive and process orders without manually transcribing customer messages."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "U1",
+      "name": "Store owners",
+      "responsibilities": [
+        {
+          "description": "Manage products and customer accounts.",
+          "source": {
+            "document": "A1",
+            "quote": "Store owners and sales personnel can create and update products and customer accounts."
+          }
+        },
+        {
+          "description": "Receive and process orders.",
+          "source": {
+            "document": "A1",
+            "quote": "The business goal is to let store staff receive and process orders without manually transcribing customer messages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "U2",
+      "name": "Sales personnel",
+      "responsibilities": [
+        {
+          "description": "Manage products and customer accounts.",
+          "source": {
+            "document": "A1",
+            "quote": "Store owners and sales personnel can create and update products and customer accounts."
+          }
+        },
+        {
+          "description": "Receive and process orders.",
+          "source": {
+            "document": "A1",
+            "quote": "The business goal is to let store staff receive and process orders without manually transcribing customer messages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "U3",
+      "name": "Customers",
+      "responsibilities": [
+        {
+          "description": "Browse products.",
+          "source": {
+            "document": "A1",
+            "quote": "Customers may browse without signing in but must sign in before placing an order."
+          }
+        },
+        {
+          "description": "Maintain a shopping cart.",
+          "source": {
+            "document": "A1",
+            "quote": "Customers can add available products to the cart, change quantities to positive whole numbers, and remove items."
+          }
+        },
+        {
+          "description": "Place orders.",
+          "source": {
+            "document": "A1",
+            "quote": "Customers may browse without signing in but must sign in before placing an order."
+          }
+        }
+      ]
+    }
+  ],
+  "team_roles": [
+    {
+      "id": "T1",
+      "name": "Product Owner",
+      "responsibilities": [
+        {
+          "description": "Define priorities, approve business requirements, and make the final release decision.",
+          "source": {
+            "document": "brief",
+            "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+          }
+        },
+        {
+          "description": "Accept the first release upon successful user acceptance testing.",
+          "source": {
+            "document": "A1",
+            "quote": "The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing."
+          }
+        },
+        {
+          "description": "Accountable for specification acceptance, user acceptance testing, and final release decision.",
+          "source": {
+            "document": "A2",
+            "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. ... The Product Owner is accountable for the final release decision."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "name": "Business Analyst",
+      "responsibilities": [
+        {
+          "description": "Gather and clarify requirements, prepare the specification, and maintain links between requirements and implementation tasks.",
+          "source": {
+            "document": "brief",
+            "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+          }
+        },
+        {
+          "description": "Responsible for preparing the specification.",
+          "source": {
+            "document": "A2",
+            "quote": "The Business Analyst is responsible for preparing the specification."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "name": "Full-stack Developer",
+      "responsibilities": [
+        {
+          "description": "Make technical implementation decisions, develop the application, and deploy releases.",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+          }
+        },
+        {
+          "description": "Accountable for implementation and deployment.",
+          "source": {
+            "document": "A2",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T4",
+      "name": "QA Engineer",
+      "responsibilities": [
+        {
+          "description": "Prepare and execute tests, record defects, and report whether the release meets the agreed acceptance criteria.",
+          "source": {
+            "document": "brief",
+            "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+          }
+        },
+        {
+          "description": "Accountable for test execution.",
+          "source": {
+            "document": "A2",
+            "quote": "The QA Engineer is accountable for test execution."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T5",
+      "name": "Sales representative",
+      "responsibilities": [
+        {
+          "description": "Acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing.",
+          "source": {
+            "document": "brief",
+            "quote": "A sales representative acts as a business stakeholder, explains day-to-day sales workflows, and participates in user acceptance testing."
+          }
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "The first release serves one store.",
+      "source": {
+        "document": "A1",
+        "quote": "The first release serves one store."
+      },
+      "kind": "constraint",
+      "status": "confirmed"
+    },
+    {
+      "id": "R2",
+      "description": "Customers may browse without signing in.",
+      "source": {
+        "document": "A1",
+        "quote": "Customers may browse without signing in"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R3",
+      "description": "Customers must sign in before placing an order.",
+      "source": {
+        "document": "A1",
+        "quote": "must sign in before placing an order."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R4",
+      "description": "Customers can add available products to the cart.",
+      "source": {
+        "document": "A1",
+        "quote": "Customers can add available products to the cart,"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R5",
+      "description": "Customers can change quantities to positive whole numbers.",
+      "source": {
+        "document": "A1",
+        "quote": "change quantities to positive whole numbers,"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R6",
+      "description": "Customers can remove items from the cart.",
+      "source": {
+        "document": "A1",
+        "quote": "and remove items."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R7",
+      "description": "Store owners and sales personnel can create and update products and customer accounts.",
+      "source": {
+        "document": "A1",
+        "quote": "Store owners and sales personnel can create and update products and customer accounts."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R8",
+      "description": "Orders are submitted for staff processing.",
+      "source": {
+        "document": "A1",
+        "quote": "Orders are submitted for staff processing;"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R9",
+      "description": "Online payments and shipping integrations are excluded from the first release.",
+      "source": {
+        "document": "A1",
+        "quote": "online payments and shipping integrations are outside the first release."
+      },
+      "kind": "constraint",
+      "status": "confirmed"
+    },
+    {
+      "id": "R10",
+      "description": "Submission creates one order containing the selected items and quantities and displays its reference.",
+      "source": {
+        "document": "A1",
+        "quote": "A successful submission creates one order containing the selected items and quantities and displays its reference."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R11",
+      "description": "An empty cart cannot be submitted.",
+      "source": {
+        "document": "A1",
+        "quote": "An empty cart cannot be submitted."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R12",
+      "description": "The first release is due eight weeks after requirements approval.",
+      "source": {
+        "document": "A1",
+        "quote": "The first release is due eight weeks after requirements approval."
+      },
+      "kind": "constraint",
+      "status": "confirmed"
+    }
+  ],
+  "missing_information": [],
+  "contradictions": [],
+  "questions": [],
+  "assumptions": [
+    {
+      "id": "P1",
+      "description": "The first release will be built as a web application.",
+      "rationale": "The brief mentions a web store, but explicit project constraints regarding platform technology or hosting infrastructure are absent.",
+      "status": "proposed"
+    }
+  ],
+  "resolutions": [
+    {
+      "question_id": "Q1",
+      "answer_id": "A1",
+      "outcome": "resolved",
+      "description": "The scope, rules, acceptance, and timing for the first release were defined.",
+      "source": {
+        "document": "A1",
+        "quote": "The first release serves one store. Customers may browse without signing in but must sign in before placing an order. Customers can add available products to the cart, change quantities to positive whole numbers, and remove items. Store owners and sales personnel can create and update products and customer accounts. Orders are submitted for staff processing; online payments and shipping integrations are outside the first release. A successful submission creates one order containing the selected items and quantities and displays its reference. An empty cart cannot be submitted. The business goal is to let store staff receive and process orders without manually transcribing customer messages. The Product Owner accepts the first release when the agreed browse-cart-order flow passes user acceptance testing. The first release is due eight weeks after requirements approval. Store owner is the Product Owner for this project."
+      }
+    },
+    {
+      "question_id": "Q2",
+      "answer_id": "A2",
+      "outcome": "resolved",
+      "description": "Accountability for key project activities was established.",
+      "source": {
+        "document": "A2",
+        "quote": "The Product Owner is accountable for specification acceptance and user acceptance testing. The Business Analyst is responsible for preparing the specification. The Full-stack Developer is accountable for implementation and deployment. The QA Engineer is accountable for test execution. The Product Owner is accountable for the final release decision."
+      }
+    }
+  ]
+}

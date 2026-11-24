@@ -1,0 +1,228 @@
+{
+  "goals": [
+    {
+      "id": "G1",
+      "description": "Create a Unified University Inventory System that combines inventory databases of three faculties and provides access through a secure web interface.",
+      "source": {
+        "document": "brief",
+        "quote": "A university needs a Unified University Inventory System that combines the inventory databases of three faculties and makes the integrated inventory available through a secure web interface."
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "U1",
+      "name": "University, faculty, and department staff",
+      "responsibilities": [
+        {
+          "description": "Manage assets such as rooms, software licences, and equipment.",
+          "source": {
+            "document": "brief",
+            "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+          }
+        }
+      ]
+    },
+    {
+      "id": "U2",
+      "name": "Other users",
+      "responsibilities": [
+        {
+          "description": "Request assets or reserve spaces for approval by the appropriate administrative level.",
+          "source": {
+            "document": "brief",
+            "quote": "other users should be able to request assets or reserve spaces for approval by the appropriate administrative level."
+          }
+        }
+      ]
+    },
+    {
+      "id": "U3",
+      "name": "Faculty inventory representative",
+      "responsibilities": [
+        {
+          "description": "Explains asset request and space reservation workflows.",
+          "source": {
+            "document": "brief",
+            "quote": "A faculty inventory representative explains asset request and space reservation workflows"
+          }
+        },
+        {
+          "description": "Participates in user acceptance testing.",
+          "source": {
+            "document": "brief",
+            "quote": "and participates in user acceptance testing."
+          }
+        }
+      ]
+    }
+  ],
+  "team_roles": [
+    {
+      "id": "T1",
+      "name": "Product Owner",
+      "responsibilities": [
+        {
+          "description": "Defines priorities, approves business requirements, and makes the final release decision.",
+          "source": {
+            "document": "brief",
+            "quote": "The Product Owner defines priorities, approves business requirements, and makes the final release decision."
+          }
+        },
+        {
+          "description": "Approves the user acceptance testing results.",
+          "source": {
+            "document": "brief",
+            "quote": "The Product Owner approves the user acceptance testing results."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "name": "Business Analyst",
+      "responsibilities": [
+        {
+          "description": "Gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks.",
+          "source": {
+            "document": "brief",
+            "quote": "The Business Analyst gathers and clarifies requirements, prepares the specification, and maintains links between requirements and implementation tasks."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "name": "Full-stack Developer",
+      "responsibilities": [
+        {
+          "description": "Makes technical implementation decisions, develops the application, and deploys releases.",
+          "source": {
+            "document": "brief",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application, and deploys releases."
+          }
+        }
+      ]
+    },
+    {
+      "id": "T4",
+      "name": "QA Engineer",
+      "responsibilities": [
+        {
+          "description": "Prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria.",
+          "source": {
+            "document": "brief",
+            "quote": "The QA Engineer prepares and executes tests, records defects, and reports whether the release meets the agreed acceptance criteria."
+          }
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "description": "System shall combine inventory databases of three faculties.",
+      "source": {
+        "document": "brief",
+        "quote": "combines the inventory databases of three faculties"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R2",
+      "description": "Integrated inventory shall be available through a secure web interface.",
+      "source": {
+        "document": "brief",
+        "quote": "makes the integrated inventory available through a secure web interface."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R3",
+      "description": "Staff shall be able to manage assets.",
+      "source": {
+        "document": "brief",
+        "quote": "University, faculty, and department staff need to manage assets such as rooms, software licences, and equipment"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R4",
+      "description": "Other users shall be able to request assets.",
+      "source": {
+        "document": "brief",
+        "quote": "other users should be able to request assets"
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R5",
+      "description": "Other users shall be able to reserve spaces.",
+      "source": {
+        "document": "brief",
+        "quote": "or reserve spaces for approval by the appropriate administrative level."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R6",
+      "description": "Room reservations must be approved by the owning faculty administrator before confirmation.",
+      "source": {
+        "document": "brief",
+        "quote": "Every room reservation must be approved by the owning faculty administrator before confirmation."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    },
+    {
+      "id": "R7",
+      "description": "Room reservations shall be confirmed immediately without administrator approval.",
+      "source": {
+        "document": "brief",
+        "quote": "Every room reservation is confirmed immediately without administrator approval."
+      },
+      "kind": "functional",
+      "status": "confirmed"
+    }
+  ],
+  "missing_information": [
+    {
+      "id": "M1",
+      "topic": "System roles access control",
+      "why_needed": "The brief mentions different groups needing to manage assets or request items, but the specific permission levels for each role are not defined."
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "C1",
+      "description": "Room reservation approval process is simultaneously required to be approved by an administrator and to be confirmed automatically.",
+      "requirement_ids": [
+        "R6",
+        "R7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Should room reservations be confirmed automatically or only after approval by an administrator?",
+      "target_type": "conflict",
+      "target_id": "C1",
+      "blocks_final_specification": true
+    },
+    {
+      "id": "Q2",
+      "text": "Could you define the specific roles and permission levels required for users to manage assets versus requesting them?",
+      "target_type": "gap",
+      "target_id": "M1",
+      "blocks_final_specification": false
+    }
+  ],
+  "assumptions": [],
+  "resolutions": []
+}

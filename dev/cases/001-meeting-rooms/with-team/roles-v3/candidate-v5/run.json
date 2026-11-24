@@ -1,0 +1,21 @@
+{
+  "case_id": "001-meeting-rooms/with-team",
+  "split": "dev",
+  "origin": "live_api",
+  "model": "gemini-3.1-flash-lite",
+  "prompt_revision": "brief-analysis-v5-responsibilities",
+  "schema_version": 3,
+  "changed_together": [
+    "schema",
+    "prompt",
+    "validator"
+  ],
+  "prompt_sha256": "6f3b47e86039966c932ac764ae2c058f96e1c7eef1d3d473e77bd87924ccac5e",
+  "brief_sha256": "a19c11f6ff5cfd5475680223f3bad4d0ade34872daf15ab173137e4bf830f195",
+  "started_at_utc": "2026-11-18T13:19:28.742980+00:00",
+  "evaluation": "exploratory; existing draft expectations not approved",
+  "baseline": "../baseline-v4",
+  "status": "completed",
+  "validation": "passed",
+  "completed_at_utc": "2026-11-18T13:19:33.597738+00:00"
+}

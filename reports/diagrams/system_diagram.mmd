@@ -1,0 +1,17 @@
+flowchart TD
+  U[User: brief / replies / review changes] --> S[Source-aware session and revision history]
+  S --> A[Gemini: structured analysis]
+  A --> V[Python: schema, quotes and references]
+  V --> H[Human review and clarification]
+  H -->|actual reply / correction| S
+  H --> G[Python approval gate]
+  G -->|no blockers; current approval| SR[Python source-ID registry]
+  SR --> W[Gemini: tasks and acceptance criteria]
+  W --> WC[Python work-stage checks]
+  WC -->|open questions| H
+  WC -->|validated fixed work| R[Gemini: RACI]
+  R --> P[Python full-plan checks]
+  P -->|first failure: prior RACI and exact errors; once only| R
+  P -->|second failure| STOP[Stop; preserve work and both outcomes]
+  P -->|pass| D[Python: specification copy and evidence hydration]
+  D --> E[Human document review; PDF / JSON / Markdown export]

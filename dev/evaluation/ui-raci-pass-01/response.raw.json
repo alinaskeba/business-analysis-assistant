@@ -1,0 +1,166 @@
+{
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Requirements Approval",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "requirements_approval"
+    },
+    {
+      "id": "RA2",
+      "activity": "Specification Preparation",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S26"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source_ids": [
+            "S21",
+            "S25",
+            "S5"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "specification_preparation"
+    },
+    {
+      "id": "RA3",
+      "activity": "Specification Acceptance",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S20",
+            "S27"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S27"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "specification_acceptance"
+    },
+    {
+      "id": "RA4",
+      "activity": "User Acceptance Testing",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S20"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S17",
+            "S8"
+          ]
+        }
+      ],
+      "consulted": [
+        {
+          "role_id": "T4",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ],
+      "informed": [],
+      "activity_type": "uat_acceptance"
+    },
+    {
+      "id": "RA5",
+      "activity": "Final Release Decision",
+      "task_ids": [],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S24",
+            "S4"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S4"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "release_decision"
+    },
+    {
+      "id": "RA6",
+      "activity": "Implementation of core store features",
+      "task_ids": [
+        "TASK1",
+        "TASK2",
+        "TASK3"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source_ids": [
+            "S22",
+            "S6"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source_ids": [
+            "S22",
+            "S6"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "implementation"
+    }
+  ]
+}

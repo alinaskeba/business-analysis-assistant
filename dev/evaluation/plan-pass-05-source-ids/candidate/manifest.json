@@ -1,0 +1,24 @@
+{
+  "case_id": "PURE_002_without_team",
+  "requirements_unchanged": true,
+  "source_documents_unchanged": true,
+  "representation_change": "Evidence is represented by S-IDs and an authoritative Python-built sentence registry; original source documents, roles and facts are unchanged.",
+  "prompt_revision": "plan-v3-source-ids-and-governance",
+  "schema_version": 3,
+  "required_governance": [
+    "requirements_approval",
+    "specification_preparation",
+    "specification_acceptance",
+    "uat_acceptance",
+    "release_decision"
+  ],
+  "initial_files_sha256": {
+    "ba_workflow.py": "08034f8cd39bc42e34d6c6960d5159875e09df887f8e7455339c0ddc0f3bf153",
+    "business_analysis.py": "3e68885616ea6008bb2d3102bcc64ce877b4780ae0422e4b182056972064f57b",
+    "input.json": "e1aa719ccf4a418b3c0e803adf9f41425f93807420c4215fb636c10fbfdfa5bf",
+    "instructions.txt": "7a1a852f90d512354cf27c271fc9df2afeffe9994fc79905184563730fbea6d7",
+    "original-sources.json": "feacb56ff8e71870d083550e7a7ca803f314b1d331ad68a8771458fa95da2185",
+    "plan_sources.py": "9aa89f4e2b7652b391de1bac3d9c227aca6afe64f8e20f2b89f3a8d04ed19f7a",
+    "schema.json": "8e16b73fe6fa8b17b863b2f1ca7a1022302f196d89369ad78ef030949ad3a990"
+  }
+}

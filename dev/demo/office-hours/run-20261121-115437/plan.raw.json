@@ -1,0 +1,158 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Implement static opening hours page",
+      "description": "Develop a static web page that displays the fixed opening hours text.",
+      "requirement_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Test opening hours display",
+      "description": "Verify the page renders the correct text for unauthenticated users and contains no extra features.",
+      "requirement_ids": [
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    {
+      "id": "TASK3",
+      "title": "Deploy to company environment",
+      "description": "Publish the page to the existing company hosting environment and domain.",
+      "requirement_ids": [
+        "R4"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R1",
+      "given": "an Office visitor accesses the page",
+      "when": "the page loads",
+      "then": "the browser displays the text 'Monday to Friday, 09:00-17:00'",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R2",
+      "given": "an Office visitor is not signed in",
+      "when": "the visitor navigates to the page",
+      "then": "the page contents are immediately readable",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "AC3",
+      "requirement_id": "R3",
+      "given": "an Office visitor accesses the page",
+      "when": "the visitor inspects the page components",
+      "then": "there are no editing controls, booking forms, or user account login widgets found",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "id": "AC4",
+      "requirement_id": "R4",
+      "given": "the page deployment process is initiated",
+      "when": "the page is hosted",
+      "then": "the page is available via the existing company domain within the existing company infrastructure",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "open_questions": [],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Implementation",
+      "task_ids": [
+        "TASK1"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S6"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "implementation"
+    },
+    {
+      "id": "RA2",
+      "activity": "Testing",
+      "task_ids": [
+        "TASK2"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S7"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "testing"
+    },
+    {
+      "id": "RA3",
+      "activity": "Deployment",
+      "task_ids": [
+        "TASK3"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S8",
+            "S10"
+          ]
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T1",
+          "source_ids": [
+            "S8",
+            "S10"
+          ]
+        }
+      ],
+      "consulted": [],
+      "informed": [],
+      "activity_type": "deployment"
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "type": "object",
+  "properties": {
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "English description supported by the cited brief text."
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "description": "Source document identifier; brief denotes the input brief."
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Nonempty contiguous verbatim excerpt of the input brief."
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false,
+            "description": "Evidence for this fact or responsibility."
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Explicit business goals or expected project outcomes."
+    },
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Explicitly named role, expressed in English."
+          },
+          "responsibilities": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "English description supported by the cited brief text."
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "document": {
+                      "type": "string",
+                      "description": "Source document identifier; brief denotes the input brief."
+                    },
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Nonempty contiguous verbatim excerpt of the input brief."
+                    }
+                  },
+                  "required": [
+                    "document",
+                    "quote"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Evidence for this fact or responsibility."
+                }
+              },
+              "required": [
+                "description",
+                "source"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Explicit duties or business-process participation, each with its own evidence."
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "responsibilities"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Business-process roles and their explicit participation."
+    },
+    "team_roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Explicitly named role, expressed in English."
+          },
+          "responsibilities": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "English description supported by the cited brief text."
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "document": {
+                      "type": "string",
+                      "description": "Source document identifier; brief denotes the input brief."
+                    },
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Nonempty contiguous verbatim excerpt of the input brief."
+                    }
+                  },
+                  "required": [
+                    "document",
+                    "quote"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Evidence for this fact or responsibility."
+                }
+              },
+              "required": [
+                "description",
+                "source"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Explicit duties or business-process participation, each with its own evidence."
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "responsibilities"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Project-team roles, duties and decision authority."
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "English description supported by the cited brief text."
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "description": "Source document identifier; brief denotes the input brief."
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Nonempty contiguous verbatim excerpt of the input brief."
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false,
+            "description": "Evidence for this fact or responsibility."
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "functional",
+              "non_functional",
+              "constraint"
+            ],
+            "description": "Functional behavior, non-functional quality or project/solution constraint."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "confirmed"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "source",
+          "kind",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Explicit solution capabilities, properties and constraints."
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "topic": {
+            "type": "string",
+            "minLength": 1,
+            "description": "English name of the information gap."
+          },
+          "why_needed": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Specific impact of leaving this information unresolved."
+          }
+        },
+        "required": [
+          "id",
+          "topic",
+          "why_needed"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Relevant unresolved information with its specific impact."
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "English description supported by the cited brief text."
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 2,
+            "description": "IDs of the distinct requirements involved in this conflict."
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "requirement_ids"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Incompatible explicit requirements under the same conditions."
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique record ID with the category-specific prefix."
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Neutral English question understandable to the customer."
+          },
+          "target_type": {
+            "type": "string",
+            "enum": [
+              "conflict",
+              "gap"
+            ],
+            "description": "Type of the clarification target: conflict or gap."
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "ID of the existing conflict or gap addressed by this question."
+          },
+          "blocks_final_specification": {
+            "type": "boolean",
+            "description": "Whether the answer is needed to avoid an unagreed material decision."
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "target_type",
+          "target_id",
+          "blocks_final_specification"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Clarification questions linked to existing conflicts or gaps."
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "proposed"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "rationale",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "resolutions": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "answer_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "still_open"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string",
+                "minLength": 1
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "document",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "question_id",
+          "answer_id",
+          "outcome",
+          "description",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "goals",
+    "users",
+    "team_roles",
+    "requirements",
+    "missing_information",
+    "contradictions",
+    "questions",
+    "assumptions",
+    "resolutions"
+  ],
+  "additionalProperties": false
+}

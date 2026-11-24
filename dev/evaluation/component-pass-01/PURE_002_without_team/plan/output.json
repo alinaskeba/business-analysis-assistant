@@ -1,0 +1,141 @@
+{
+  "tasks": [
+    {
+      "id": "TASK1",
+      "title": "Develop Store Admin Module",
+      "description": "Implement product and customer account management for store owners and sales personnel.",
+      "requirement_ids": [
+        "R1",
+        "R2",
+        "R12",
+        "R14"
+      ]
+    },
+    {
+      "id": "TASK2",
+      "title": "Develop Customer Storefront",
+      "description": "Implement product browsing, shopping cart management, and order placement features.",
+      "requirement_ids": [
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R9",
+        "R10",
+        "R16",
+        "R17"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "requirement_id": "R17",
+      "given": "the user has an empty shopping cart",
+      "when": "the user attempts to submit the order",
+      "then": "the system rejects the submission and does not create an order",
+      "source": {
+        "document": "A2",
+        "quote": "An empty cart cannot be submitted."
+      }
+    },
+    {
+      "id": "AC2",
+      "requirement_id": "R7",
+      "given": "the user is browsing the store without being signed in",
+      "when": "the user attempts to place an order",
+      "then": "the system forces the user to sign in before finalizing the order",
+      "source": {
+        "document": "A2",
+        "quote": "Customers may browse without signing in but must sign in before placing an order."
+      }
+    }
+  ],
+  "raci": [
+    {
+      "id": "RA1",
+      "activity": "Specification Preparation",
+      "task_ids": [
+        "TASK1",
+        "TASK2"
+      ],
+      "accountable": [
+        {
+          "role_id": "T1",
+          "source": {
+            "document": "A3",
+            "quote": "The Product Owner is accountable for specification acceptance"
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T2",
+          "source": {
+            "document": "A3",
+            "quote": "The Business Analyst is responsible for preparing the specification."
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA2",
+      "activity": "System Implementation",
+      "task_ids": [
+        "TASK1",
+        "TASK2"
+      ],
+      "accountable": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A3",
+            "quote": "The Full-stack Developer is accountable for implementation and deployment."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T3",
+          "source": {
+            "document": "A1",
+            "quote": "The Full-stack Developer makes technical implementation decisions, develops the application"
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    },
+    {
+      "id": "RA3",
+      "activity": "Test Execution",
+      "task_ids": [
+        "TASK1",
+        "TASK2"
+      ],
+      "accountable": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A3",
+            "quote": "The QA Engineer is accountable for test execution."
+          }
+        }
+      ],
+      "responsible": [
+        {
+          "role_id": "T4",
+          "source": {
+            "document": "A1",
+            "quote": "The QA Engineer prepares and executes tests"
+          }
+        }
+      ],
+      "consulted": [],
+      "informed": []
+    }
+  ]
+}

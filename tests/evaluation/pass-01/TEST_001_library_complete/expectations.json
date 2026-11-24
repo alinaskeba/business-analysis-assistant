@@ -1,0 +1,215 @@
+{
+  "status": "final",
+  "initial_analysis": {
+    "goals": [
+      "Reduce manual loan records."
+    ],
+    "product_users": [
+      "Librarian",
+      "Member"
+    ],
+    "project_roles": [
+      "Product Owner",
+      "Business Analyst",
+      "Developer",
+      "QA Engineer",
+      "Library representative as project adviser"
+    ],
+    "conflicts": [],
+    "clarifications": [
+      "Ask about borrowing eligibility or member loan limits.",
+      "Ask about access to borrowing and own current loans."
+    ],
+    "must_preserve": [
+      "Copy-level availability and active-loan restriction.",
+      "Own current loans rather than all member loans.",
+      "Librarian return recording."
+    ],
+    "must_not_infer": [
+      "A library representative is a product user solely because they advise the project.",
+      "Fines, reservations, renewal, email or payment as confirmed scope."
+    ]
+  },
+  "after_clarification": {
+    "required_facts": [
+      {
+        "meaning": "Create and update book-copy records as a librarian.",
+        "source_document": "brief"
+      },
+      {
+        "meaning": "Browse available copies as a member or visitor without mandatory sign-in.",
+        "source_document": "A1"
+      },
+      {
+        "meaning": "Borrow an available copy as a signed-in member.",
+        "source_document": "A1"
+      },
+      {
+        "meaning": "View only own current loans as a signed-in member.",
+        "source_document": "A1"
+      },
+      {
+        "meaning": "Record a return as a librarian.",
+        "source_document": "brief"
+      },
+      {
+        "meaning": "Prevent two active loans for the same copy.",
+        "source_document": "brief"
+      },
+      {
+        "meaning": "Make a returned copy available again.",
+        "source_document": "brief"
+      },
+      {
+        "meaning": "Limit members to three active loans and refuse a fourth without creating a loan.",
+        "source_document": "A1"
+      },
+      {
+        "meaning": "Refuse borrowing an unavailable copy.",
+        "source_document": "A1"
+      }
+    ],
+    "preserve_initial_facts": true,
+    "nonblocking_unknown": "No quantitative performance target agreed.",
+    "scope_exclusions": [
+      "Fines",
+      "Reservations",
+      "Renewals",
+      "Payments",
+      "Email notifications"
+    ],
+    "constraint": "First release due six weeks after requirements approval."
+  },
+  "specification": {
+    "must_include": [
+      "Business goal",
+      "Product users",
+      "Confirmed requirements",
+      "Scope exclusions",
+      "Timeline",
+      "Project team",
+      "Explicit assumptions and open questions"
+    ],
+    "must_preserve": "All original and clarified in-scope facts, actors and conditions.",
+    "traceability": "Facts link to the brief or actually supplied user reply. Proposed assumptions are labeled."
+  },
+  "tasks": {
+    "checks": [
+      "Every implementable requirement is covered by a task.",
+      "Every task references existing requirements.",
+      "Tasks preserve role permissions, three-loan limit and copy-level availability.",
+      "No unagreed product features added."
+    ]
+  },
+  "acceptance_criteria": {
+    "coverage": "All implementable requirements have meaningful testable criteria. Below are mandatory scenario meanings, not an exhaustive generated output.",
+    "required_scenarios": [
+      {
+        "check_id": "LAC1",
+        "topic": "Loan creation",
+        "given": "A signed-in member has fewer than three active loans and a copy is available.",
+        "when": "The member borrows that copy.",
+        "then": "One active loan for that member and copy is created, and the copy is no longer available."
+      },
+      {
+        "check_id": "LAC2",
+        "topic": "Loan limit",
+        "given": "A member has three active loans and another copy is available.",
+        "when": "The member tries to borrow that copy.",
+        "then": "The attempt is refused and the member still has exactly three active loans."
+      },
+      {
+        "check_id": "LAC3",
+        "topic": "Own loans",
+        "given": "Members A and B each have an active loan.",
+        "when": "Signed-in member A views their current loans.",
+        "then": "Only member A loans are shown."
+      },
+      {
+        "check_id": "LAC4",
+        "topic": "Return",
+        "given": "A copy has an active loan.",
+        "when": "A librarian records its return.",
+        "then": "The loan is no longer active and the copy is available."
+      },
+      {
+        "check_id": "LAC5",
+        "topic": "Unavailable copy",
+        "given": "A copy has an active loan.",
+        "when": "Another member tries to borrow it.",
+        "then": "No second active loan is created."
+      },
+      {
+        "check_id": "LAC6",
+        "topic": "Guest browsing",
+        "given": "A visitor is signed out and a copy is available.",
+        "when": "The visitor browses available copies.",
+        "then": "The copy is shown without requiring sign-in."
+      },
+      {
+        "check_id": "LAC7",
+        "topic": "Sign-in gating",
+        "given": "A visitor is signed out.",
+        "when": "The visitor attempts to borrow a copy.",
+        "then": "Borrowing cannot complete and no loan is created before sign-in."
+      }
+    ],
+    "additional_checks": [
+      "Creation and updating of book copies both have criteria.",
+      "Avoid invented error message text, automatic redirection, fines or loan due dates."
+    ]
+  },
+  "raci": {
+    "required_activities": [
+      {
+        "activity": "Prepare specification",
+        "responsible": "Business Analyst",
+        "accountable": "Product Owner"
+      },
+      {
+        "activity": "Approve business requirements",
+        "responsible": "Product Owner",
+        "accountable": "Product Owner"
+      },
+      {
+        "activity": "Accept specification",
+        "responsible": "Product Owner",
+        "accountable": "Product Owner"
+      },
+      {
+        "activity": "Implement and deploy",
+        "responsible": "Developer",
+        "accountable": "Developer"
+      },
+      {
+        "activity": "Prepare and execute tests",
+        "responsible": "QA Engineer",
+        "accountable": "QA Engineer"
+      },
+      {
+        "activity": "Accept UAT results",
+        "responsible": "Product Owner",
+        "accountable": "Product Owner"
+      },
+      {
+        "activity": "Make release decision",
+        "responsible": "Product Owner",
+        "accountable": "Product Owner"
+      }
+    ],
+    "structural_checks": [
+      "Exactly one A per activity.",
+      "At least one R per activity; same role may be A and R.",
+      "Role references exist.",
+      "Implementation tasks are covered by implementation responsibility.",
+      "Governance activities may have empty task references."
+    ],
+    "stakeholder_check": "Library representative participation in UAT is preserved. Consulted participation is acceptable; do not invent final approval authority."
+  },
+  "end_to_end": [
+    "Clarification precedes final documents.",
+    "After verified answers and owner approval, all four document outputs are produced.",
+    "Documents consistently enforce the same rules.",
+    "No fabricated source references or edited quotes."
+  ]
+}

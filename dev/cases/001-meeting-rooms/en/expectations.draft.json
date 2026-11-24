@@ -1,0 +1,330 @@
+{
+  "case_id": "001-meeting-rooms/with-team/en",
+  "split": "dev",
+  "status": "draft",
+  "language": "en",
+  "adaptation": "translated adaptation; no model output",
+  "source_expectations": "../with-team/prompt-only-comparison/expectations.draft.md (original preserved in history/pre-english)",
+  "rows": [
+    {
+      "id": "E01",
+      "expectation": "Reduce scheduling clashes; do not invent a numeric target.",
+      "location": "goals",
+      "source_quotes": [
+        "The goal is to reduce scheduling clashes in bookings."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E02",
+      "expectation": "A small web application for this office; internal scope, not public customers.",
+      "location": "requirements: scope/constraint",
+      "source_quotes": [
+        "We need a small web application for booking meeting rooms in our office.",
+        "A small team is building the internal meeting-room booking application. The first version is planned in one month."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E03",
+      "expectation": "The employee views available rooms by BOTH date and time.",
+      "location": "users: Employee AND separate functional requirement",
+      "source_quotes": [
+        "An employee views available rooms by date and time, creates and cancels their own booking."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E04",
+      "expectation": "The employee creates their OWN booking.",
+      "location": "users: Employee AND separate functional requirement",
+      "source_quotes": [
+        "An employee views available rooms by date and time, creates and cancels their own booking."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E05",
+      "expectation": "The employee cancels their OWN booking, not arbitrary bookings.",
+      "location": "users: Employee AND separate functional requirement distinct from E04",
+      "source_quotes": [
+        "An employee views available rooms by date and time, creates and cancels their own booking."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E06",
+      "expectation": "The administrator adds rooms with capacity AND equipment. Editing/deleting is not stated.",
+      "location": "users: Administrator AND functional requirement with attributes",
+      "source_quotes": [
+        "An administrator adds rooms, their capacity and equipment."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E07",
+      "expectation": "Prohibit overlapping booking times for the SAME room, not different rooms.",
+      "location": "functional requirement",
+      "source_quotes": [
+        "The system does not allow the same room to be booked for a time that overlaps another booking."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E08",
+      "expectation": "ALL bookings are confirmed automatically AND immediately; retain despite the conflict.",
+      "location": "separate functional requirement",
+      "source_quotes": [
+        "All bookings are confirmed automatically and immediately."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E09",
+      "expectation": "EVERY booking must be approved by the office manager BEFORE confirmation. Preserve actor, scope and timing.",
+      "location": "users: Office manager AND separate functional requirement",
+      "source_quotes": [
+        "Every booking must be approved by the office manager before confirmation."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E10",
+      "expectation": "Sign-in uses corporate email; no provider or protocol is specified.",
+      "location": "functional requirement",
+      "source_quotes": [
+        "Sign-in uses corporate email."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E11",
+      "expectation": "Email booking confirmations; no invented templates, recipients or extra reminders.",
+      "location": "functional requirement",
+      "source_quotes": [
+        "Email booking confirmations are required."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E12",
+      "expectation": "One-month deadline for the first version. Repetition is not a second requirement; classify as constraint, not an extra business goal.",
+      "location": "one constraint requirement",
+      "source_quotes": [
+        "We want the first version in one month.",
+        "The first version is planned in one month."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E13",
+      "expectation": "Product Owner FROM THE ADMINISTRATIVE DEPARTMENT sets priorities.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Product Owner from the administrative department sets priorities and makes decisions about booking rules."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E14",
+      "expectation": "Product Owner decides booking rules; authority is not an already selected rule.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Product Owner from the administrative department sets priorities and makes decisions about booking rules."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E15",
+      "expectation": "Product Owner decides whether to launch the first version.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Product Owner makes the decision to launch the first version."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E16",
+      "expectation": "Business Analyst gathers requirements.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Business Analyst gathers requirements, prepares the specification and agrees it with the Product Owner."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E17",
+      "expectation": "Business Analyst prepares the specification.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Business Analyst gathers requirements, prepares the specification and agrees it with the Product Owner."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E18",
+      "expectation": "Business Analyst agrees the specification WITH the Product Owner.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Business Analyst gathers requirements, prepares the specification and agrees it with the Product Owner."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E19",
+      "expectation": "Full-stack Developer is responsible for technical implementation.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Full-stack Developer is responsible for technical implementation and deployment."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E20",
+      "expectation": "Full-stack Developer is responsible for deployment; do not equate this with launch authority.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The Full-stack Developer is responsible for technical implementation and deployment."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E21",
+      "expectation": "QA Engineer is responsible for testing.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The QA Engineer is responsible for testing, including checking simultaneous bookings of the same room."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E22",
+      "expectation": "QA testing explicitly includes simultaneous bookings of the SAME room.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The QA Engineer is responsible for testing, including checking simultaneous bookings of the same room."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E23",
+      "expectation": "Office manager advises on room-use rules.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The office manager advises on room-use rules and participates in acceptance testing."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E24",
+      "expectation": "Office manager participates in acceptance testing; launch authority is not assigned to them.",
+      "location": "team_roles responsibility; one record per each of the five roles",
+      "source_quotes": [
+        "The office manager advises on room-use rules and participates in acceptance testing."
+      ],
+      "question_or_check": ""
+    },
+    {
+      "id": "E25",
+      "expectation": "Exactly one expected conflict: immediate automatic confirmation of all bookings versus approval of every booking before confirmation; link two distinct requirement IDs.",
+      "location": "contradictions",
+      "source_quotes": [
+        "All bookings are confirmed automatically and immediately.",
+        "Every booking must be approved by the office manager before confirmation."
+      ],
+      "question_or_check": "Neutral: Which booking-confirmation rule should apply? blocks_final_specification=true. Do not propose cancellation after confirmation."
+    },
+    {
+      "id": "E26",
+      "expectation": "Do not duplicate E25 as a booking-status gap requiring the same decision.",
+      "location": "contradictions only for this decision",
+      "source_quotes": [
+        "All bookings are confirmed automatically and immediately.",
+        "Every booking must be approved by the office manager before confirmation."
+      ],
+      "question_or_check": "One conflict and its linked question suffice."
+    },
+    {
+      "id": "E27",
+      "expectation": "An unknown manager interaction channel does not remove the role from users. A separate conditional gap is relevant if approval is retained.",
+      "location": "missing_information + question",
+      "source_quotes": [
+        "Every booking must be approved by the office manager before confirmation."
+      ],
+      "question_or_check": "How should the manager participate in approval if this process is selected? Do not treat a web interface as agreed."
+    },
+    {
+      "id": "E28",
+      "expectation": "The time zone is unspecified and affects time interpretation and overlaps.",
+      "location": "missing_information + question",
+      "source_quotes": [
+        "An employee views available rooms by date and time, creates and cancels their own booking.",
+        "The system does not allow the same room to be booked for a time that overlaps another booking."
+      ],
+      "question_or_check": "Which time zone should apply? Do not invent a value."
+    },
+    {
+      "id": "E29",
+      "expectation": "Booking duration/time-interval rules are not specified and affect booking behavior.",
+      "location": "missing_information + question",
+      "source_quotes": [
+        "An employee views available rooms by date and time, creates and cancels their own booking.",
+        "The system does not allow the same room to be booked for a time that overlaps another booking."
+      ],
+      "question_or_check": "What start/end or duration rules are allowed? Do not invent increments or limits."
+    },
+    {
+      "id": "E30",
+      "expectation": "The stated goal has no measurable success criterion.",
+      "location": "missing_information + question",
+      "source_quotes": [
+        "The goal is to reduce scheduling clashes in bookings."
+      ],
+      "question_or_check": "How will the customer decide that clashes have decreased sufficiently? Do not invent a percentage."
+    },
+    {
+      "id": "E31",
+      "expectation": "Corporate email does not specify the business sign-in method.",
+      "location": "missing_information + question",
+      "source_quotes": [
+        "Sign-in uses corporate email."
+      ],
+      "question_or_check": "How should users sign in with corporate email? Do not require an OAuth/stack choice as a business decision."
+    },
+    {
+      "id": "E32",
+      "expectation": "Do not add room editing/deletion, recurring bookings, reminders, new statuses or automatic cancellation as confirmed requirements.",
+      "location": "unsupported-fact check",
+      "source_quotes": [],
+      "question_or_check": ""
+    },
+    {
+      "id": "E33",
+      "expectation": "Do not make PO, BA, Developer or QA product users solely because they are on the team; do not equate Administrator with PO.",
+      "location": "role separation check",
+      "source_quotes": [],
+      "question_or_check": ""
+    },
+    {
+      "id": "E34",
+      "expectation": "Do not declare the conflict resolved by PO authority; do not treat deployment as launch permission.",
+      "location": "decision check",
+      "source_quotes": [],
+      "question_or_check": ""
+    },
+    {
+      "id": "E35",
+      "expectation": "All quotes are verbatim without [...]; references exist; every gap/conflict has a question; missing facts have no invented evidence.",
+      "location": "validation and evidence check",
+      "source_quotes": [],
+      "question_or_check": ""
+    },
+    {
+      "id": "E36",
+      "expectation": "Questions do not introduce new behavior as given or desired. Alternatives only clarify the existing contradictory rules.",
+      "location": "neutrality check",
+      "source_quotes": [],
+      "question_or_check": ""
+    }
+  ]
+}

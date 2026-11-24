@@ -1,0 +1,181 @@
+{
+  "scope": "Original test trajectories and separate owner-assisted recovery, not pooled scenario success",
+  "original_quote_fidelity": {
+    "numerator": 84,
+    "denominator": 85,
+    "value": 0.9882352941176471
+  },
+  "original_response_structural_pass": {
+    "numerator": 3,
+    "denominator": 4,
+    "value": 0.75
+  },
+  "conflict_pair_precision": {
+    "numerator": 1,
+    "denominator": 1,
+    "value": 1.0
+  },
+  "conflict_pair_recall": {
+    "numerator": 1,
+    "denominator": 1,
+    "value": 1.0
+  },
+  "conflict_pair_counts": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "clean_cases_without_false_conflicts": 1
+  },
+  "equipment_requirement_matching": {
+    "status": "single_assistant_manual_matching",
+    "rule": "Facts must match the full brief; standalone requirement coverage is separate from quote support and atomicity.",
+    "gold_matches": [
+      {
+        "expected": "Browse available equipment.",
+        "output_id": "R1"
+      },
+      {
+        "expected": "Submit a request for one item.",
+        "output_id": "R2"
+      },
+      {
+        "expected": "View own requests.",
+        "output_id": "R3"
+      },
+      {
+        "expected": "Coordinator reviews requests.",
+        "output_id": null
+      },
+      {
+        "expected": "Remain pending until coordinator approval.",
+        "output_id": "R4"
+      },
+      {
+        "expected": "Immediately approve every submitted request without review.",
+        "output_id": "R5"
+      }
+    ],
+    "correct_output_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5"
+    ],
+    "precision": {
+      "numerator": 5,
+      "denominator": 5,
+      "value": 1.0
+    },
+    "recall": {
+      "numerator": 5,
+      "denominator": 6,
+      "value": 0.8333333333333334
+    }
+  },
+  "unchanged_equipment_requirements": {
+    "numerator": 5,
+    "denominator": 5,
+    "value": 1.0
+  },
+  "equipment_approval_blocked": true,
+  "equipment_generation_blocked": true,
+  "library_unassisted_documents": "not_reached_after_invalid_clarification",
+  "assisted_task_id_coverage": {
+    "numerator": 13,
+    "denominator": 13,
+    "value": 1.0
+  },
+  "assisted_criterion_id_coverage": {
+    "numerator": 13,
+    "denominator": 13,
+    "value": 1.0
+  },
+  "assisted_documents": "not_finalized_due_to_repeated_nonessential_performance_question",
+  "raci_quality": null,
+  "requirement_precision_and_recall": null,
+  "full_semantic_source_support": null,
+  "live_api_calls": 7,
+  "original_calls": 4,
+  "assisted_calls": 3,
+  "response_seconds_total": 35.698,
+  "response_seconds_mean": 5.1,
+  "original_observations": [
+    {
+      "case": "TEST_001_library_complete",
+      "stage": "initial",
+      "status": "validated_result",
+      "quotes_correct": 22,
+      "quotes_total": 22,
+      "api_calls": 1
+    },
+    {
+      "case": "TEST_001_library_complete",
+      "stage": "clarify",
+      "status": "validation_failed",
+      "quotes_correct": 31,
+      "quotes_total": 32,
+      "api_calls": 1
+    },
+    {
+      "case": "TEST_002_equipment_unresolved",
+      "stage": "initial",
+      "status": "validated_result",
+      "quotes_correct": 15,
+      "quotes_total": 15,
+      "api_calls": 1
+    },
+    {
+      "case": "TEST_002_equipment_unresolved",
+      "stage": "clarify",
+      "status": "validated_result",
+      "quotes_correct": 16,
+      "quotes_total": 16,
+      "api_calls": 1
+    }
+  ],
+  "requests": [
+    {
+      "origin": "original",
+      "artifact": "tests\\evaluation\\pass-01\\TEST_001_library_complete\\step-01-initial\\call-01\\run.json",
+      "elapsed_seconds": 4.847,
+      "status": "response_received"
+    },
+    {
+      "origin": "original",
+      "artifact": "tests\\evaluation\\pass-01\\TEST_001_library_complete\\step-02-clarify\\call-01\\run.json",
+      "elapsed_seconds": 5.98,
+      "status": "response_received"
+    },
+    {
+      "origin": "original",
+      "artifact": "tests\\evaluation\\pass-01\\TEST_002_equipment_unresolved\\step-01-initial\\call-01\\run.json",
+      "elapsed_seconds": 3.959,
+      "status": "response_received"
+    },
+    {
+      "origin": "original",
+      "artifact": "tests\\evaluation\\pass-01\\TEST_002_equipment_unresolved\\step-02-clarify\\call-01\\run.json",
+      "elapsed_seconds": 3.76,
+      "status": "response_received"
+    },
+    {
+      "origin": "assisted",
+      "artifact": "tests\\evaluation\\pass-01-assisted-library\\call-01\\run.json",
+      "elapsed_seconds": 6.299,
+      "status": "response_received"
+    },
+    {
+      "origin": "assisted",
+      "artifact": "tests\\evaluation\\pass-01-assisted-library\\documents-02\\call-01\\run.json",
+      "elapsed_seconds": 4.581,
+      "status": "response_received"
+    },
+    {
+      "origin": "assisted",
+      "artifact": "tests\\evaluation\\pass-01-assisted-library\\followup-01\\call-01\\run.json",
+      "elapsed_seconds": 6.272,
+      "status": "response_received"
+    }
+  ]
+}

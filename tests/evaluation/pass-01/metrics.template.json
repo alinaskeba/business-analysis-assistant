@@ -1,0 +1,77 @@
+{
+  "status": "awaiting_observations_and_human_review",
+  "components": {
+    "requirements": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "sources": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "goals": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "users": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "team_roles": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "conflicts": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "questions": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "answers": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "specification": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "tasks_and_criteria": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "raci": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    },
+    "end_to_end": {
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "status": "not_measured"
+    }
+  }
+}

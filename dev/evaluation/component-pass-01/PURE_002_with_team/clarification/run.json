@@ -1,0 +1,23 @@
+{
+  "case_id": "PURE_002_with_team",
+  "stage": "clarification",
+  "model": "gemini-3.1-flash-lite",
+  "origin": "live_api",
+  "started_at_utc": "2026-11-21T08:39:10.638145+00:00",
+  "input_sha256": "7b2f48f4406e934a89557b078c55179db70924b6b20a90f146dda27ded6ad390",
+  "prompt_sha256": "3f970527eba855f0a22777e3a2196870d0dfeee3df789a548fa98503dc255fc0",
+  "schema_sha256": "f63390037eb7055235f2263d93b0fef84412e2f3b1344f8c548b8fa80138770b",
+  "prompt_revision": "full-workflow-v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "response_received",
+      "elapsed_seconds": 5.89
+    }
+  ],
+  "status": "validation_failed",
+  "validation_errors": [
+    "result.team_roles[0].responsibilities[2].source.quote: quote not found in brief or named source"
+  ],
+  "completed_at_utc": "2026-11-21T08:39:16.530991+00:00"
+}
