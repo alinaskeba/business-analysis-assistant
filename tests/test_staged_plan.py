@@ -4,10 +4,10 @@ import json
 import unittest
 from unittest.mock import patch
 
-import business_analysis as ba
-import ba_workflow as wf
-import staged_plan as stages
-import test_workflow as fixtures
+from ba_assistant import business_analysis as ba
+from ba_assistant import ba_workflow as wf
+from ba_assistant import staged_plan as stages
+from tests import test_workflow as fixtures
 
 
 class StagedPlanTests(unittest.TestCase):

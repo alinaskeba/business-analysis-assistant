@@ -3,10 +3,10 @@ import copy
 import unittest
 from unittest.mock import patch
 
-import ba_workflow as wf
-import business_analysis as ba
-import test_workflow as fixtures
-from test_workflow import valid_plan
+from ba_assistant import ba_workflow as wf
+from ba_assistant import business_analysis as ba
+from tests import test_workflow as fixtures
+from tests.test_workflow import valid_plan
 
 
 class PlanCoverageTests(unittest.TestCase):

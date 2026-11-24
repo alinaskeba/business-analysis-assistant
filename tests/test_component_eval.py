@@ -5,10 +5,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-import business_analysis as ba
-import run_component_eval as runner
-
-
+from ba_assistant import business_analysis as ba
+from scripts import run_component_eval as runner
 class ComponentRunnerTests(unittest.TestCase):
     def dataset(self, root, case_id="example"):
         (root / "dataset.json").write_text(json.dumps({"expectations_status": "final", "cases": [{

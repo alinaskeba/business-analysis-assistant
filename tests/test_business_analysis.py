@@ -7,9 +7,7 @@ import io
 import hashlib
 from unittest.mock import patch
 
-import business_analysis as ba
-
-
+from ba_assistant import business_analysis as ba
 class AnalysisValidationTests(unittest.TestCase):
     def setUp(self):
         self.result = {key: [] for key in ba.SCHEMA["properties"]}
@@ -40,7 +38,7 @@ class AnalysisValidationTests(unittest.TestCase):
         self.assertIs(ba.validate_analysis(self.result, ba.EXAMPLE), self.result)
 
     def test_saved_dev_result(self):
-        case = Path(__file__).parent / "dev/cases/001-meeting-rooms"
+        case = Path(__file__).resolve().parents[1] / "dev/cases/001-meeting-rooms"
         brief = (case / "brief.txt").read_text(encoding="utf-8").strip()
         result = json.loads((case / "analysis.model-result.json").read_text(encoding="utf-8"))
         # Historical outputs must keep their original-language evidence.
@@ -90,7 +88,7 @@ class AnalysisValidationTests(unittest.TestCase):
         self.assertTrue(any("too few items" in e for e in errors))
 
     def test_baseline_reports_both_known_errors_with_archived_schema(self):
-        case = Path(__file__).parent / "dev/cases/001-meeting-rooms/with-team/roles-v3/baseline-v4"
+        case = Path(__file__).resolve().parents[1] / "dev/cases/001-meeting-rooms/with-team/roles-v3/baseline-v4"
         result = json.loads((case / "model-result.json").read_text(encoding="utf-8"))
         schema = json.loads((case / "schema.json").read_text(encoding="utf-8"))
         errors = ba.collect_analysis_errors(result, (case / "brief.txt").read_text(encoding="utf-8"), schema)
@@ -111,7 +109,7 @@ class AnalysisValidationTests(unittest.TestCase):
         self.assertIn("no clarification question", err.getvalue())
 
     def test_saved_schema_v3_candidate_and_nested_sources(self):
-        case = Path(__file__).parent / "dev/cases/001-meeting-rooms/with-team/roles-v3/candidate-v5"
+        case = Path(__file__).resolve().parents[1] / "dev/cases/001-meeting-rooms/with-team/roles-v3/candidate-v5"
         result = json.loads((case / "model-result.json").read_text(encoding="utf-8"))
         brief = (case.parent / "baseline-v4/brief.txt").read_text(encoding="utf-8")
         ba.validate_analysis(result, brief)
@@ -145,7 +143,7 @@ class AnalysisValidationTests(unittest.TestCase):
 
 
 class EnglishAdaptationTests(unittest.TestCase):
-    root = Path(__file__).parent
+    root = Path(__file__).resolve().parents[1]
     case = root / "dev/cases/001-meeting-rooms/en"
 
     def test_english_example_and_team_composition(self):
@@ -238,7 +236,7 @@ class EnglishAdaptationTests(unittest.TestCase):
 
     def test_active_materials_are_english_and_prompt_snapshot_matches(self):
         self.assertEqual(ba.INSTRUCTIONS, (self.case / "instructions.txt").read_text(encoding="utf-8").strip())
-        paths = [self.root / "business_analysis.py", self.root / "README.md", self.root / "AGENTS.md"]
+        paths = [self.root / "ba_assistant/business_analysis.py", self.root / "README.md", self.root / "AGENTS.md"]
         paths += list((self.root / "dev").rglob("*.md"))
         paths += list((self.root / ".agents/skills").rglob("SKILL.md"))
         for path in paths:

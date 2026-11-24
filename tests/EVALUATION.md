@@ -13,8 +13,8 @@ must be recorded separately and must not alter the application or test expectati
 ## Collection commands
 
 ```powershell
-python collect_test_evaluation.py prepare --directory tests/evaluation/pass-01
-python collect_test_evaluation.py initial --directory tests/evaluation/pass-01
+python -m scripts.collect_test_evaluation prepare --directory tests/evaluation/pass-01
+python -m scripts.collect_test_evaluation initial --directory tests/evaluation/pass-01
 ```
 
 Each initial case gets one API request, no retry. Raw inputs, instructions, schemas, raw responses,
@@ -24,7 +24,7 @@ observations; do not omit them or rerun until a favorable answer is obtained.
 For clarification, inspect the questions actually asked. Choose only related questions, for example:
 
 ```powershell
-python collect_test_evaluation.py clarify --directory tests/evaluation/pass-01 --case TEST_001_library_complete --prepared-reply A1 --question Q1
+python -m scripts.collect_test_evaluation clarify --directory tests/evaluation/pass-01 --case TEST_001_library_complete --prepared-reply A1 --question Q1
 ```
 
 `Q1` is an example, not a predefined runtime ID. Multiple `--question` arguments route the prepared

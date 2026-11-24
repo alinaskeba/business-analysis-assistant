@@ -10,11 +10,11 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
-import ba_workflow as wf
-import collect_test_evaluation as collect
-from report_docx import Document
+from ba_assistant import ba_workflow as wf
+from scripts import collect_test_evaluation as collect
+from .report_docx import Document
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'reports'
 
 
@@ -179,7 +179,7 @@ def main():
     for file in (ROOT/'tests/evaluation/pass-01/report-assets').glob('*'):
         if file.suffix in ('.png','.svg','.csv'):shutil.copyfile(file,OUT/'figures'/file.name)
     architecture()
-    from submission_text import evaluation_report, final_report
+    from .submission_text import evaluation_report, final_report
     evaluation=evaluation_report(metrics,annotation,table)
     final=final_report(metrics,annotation,table)
     for stem,text,title in [('Evaluation_Report',evaluation,'Business Analysis Assistant — consolidated evaluation'),('Project_Report',final,'Business Analysis Assistant — project report')]:
@@ -211,7 +211,7 @@ editable content; diagrams/plots are embedded images, with separate vector/sourc
 Semantic judgments use one assistant-assisted assessment without an independent second-rating study.
 Historical outputs are separated from final-test evidence. Building the reports makes no API calls.
 
-Rebuild with `python build_submission.py` (matplotlib, numpy and Pillow are used for figures).
+Rebuild with `python -m scripts.build_submission` (matplotlib, numpy and Pillow are used for figures).
 DOCX generation uses standard-library OOXML and does not require Microsoft Word or python-docx.
 Historical outputs, frozen system code and approved test labels remain unchanged.
 ''',encoding='utf-8')

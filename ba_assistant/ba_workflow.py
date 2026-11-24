@@ -1,14 +1,14 @@
 """Stateful English BA workflow; Gemini calls are explicit CLI actions only."""
 import copy
+import sys
 import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 import re
 
-import business_analysis as ba
-import plan_sources
-
+from . import business_analysis as ba
+from . import plan_sources
 WORKFLOW_VERSION = 1
 PROMPT_REVISION = "full-workflow-v1"
 PLAN_PROMPT_REVISION = "plan-v4-explicit-implementation-task-coverage"
@@ -483,8 +483,8 @@ def generate_documents(session):
     if not approval or approval["revision_hash"] != revision_hash(session):
         raise ValueError("The current requirements revision needs explicit human approval")
     model_input = plan_sources.prepare_input(session["analysis"], session["sources"])
-    import staged_plan
-    plan, progress = staged_plan.generate(session, __import__(__name__))
+    from . import staged_plan
+    plan, progress = staged_plan.generate(session, sys.modules[__name__])
     updated = copy.deepcopy(session)
     if progress:
         updated["generation_progress"] = progress

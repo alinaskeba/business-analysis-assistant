@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-const {generateWithOneRepair}=require('./web/generation.js');
+const {generateWithOneRepair}=require('../web/generation.js');
 (async()=>{
  let s={session:{approval:null}},calls=[],messages=[];
  await generateWithOneRepair(async action=>{calls.push(action);s={session:{approval:{},generation_progress:{status:'raci_failed',raci_attempts:1}}};if(calls.length===2)s={session:{approval:{},documents:{}}};return true;},()=>s,m=>messages.push(m));

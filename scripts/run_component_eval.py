@@ -5,10 +5,8 @@ import json
 from pathlib import Path
 import time
 
-import business_analysis as ba
-import ba_workflow as wf
-
-
+from ba_assistant import business_analysis as ba
+from ba_assistant import ba_workflow as wf
 def write(path, value):
     with Path(path).open("x", encoding="utf-8") as handle:
         handle.write(json.dumps(value, ensure_ascii=False, indent=2) + "\n")

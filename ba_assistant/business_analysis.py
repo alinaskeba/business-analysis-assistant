@@ -347,7 +347,7 @@ def validate_analysis(result, brief, schema=None, sources=None):
 
 def load_env(path=None):
     """Read simple KEY=value settings; existing environment takes priority."""
-    path = Path(path) if path is not None else Path(__file__).with_name(".env")
+    path = Path(path) if path is not None else Path(__file__).resolve().parents[1] / ".env"
     if not path.exists():
         return
     for number, line in enumerate(path.read_text(encoding="utf-8-sig").splitlines(), 1):
@@ -434,7 +434,7 @@ def main():
     source.add_argument("--file", type=Path, help="Path to a UTF-8 English brief file")
     source.add_argument("--example", action="store_true", help="Translated meeting-room example")
     source.add_argument("--dev-case", help="Dev case ID; send only input.initial_requirements to Gemini")
-    parser.add_argument("--dataset", type=Path, default=Path(__file__).parent / "dev/cases/ba_dev_cases.json")
+    parser.add_argument("--dataset", type=Path, default=Path(__file__).resolve().parents[1] / "dev/cases/ba_dev_cases.json")
     parser.add_argument("--model", default=default_model())
     parser.add_argument("--workflow", choices=["start", "reply", "review", "approve", "generate", "export"])
     parser.add_argument("--session", type=Path, help="Session JSON path; keep private sessions outside Git")
@@ -444,7 +444,7 @@ def main():
     args = parser.parse_args()
     try:
         if args.workflow:
-            import ba_workflow
+            from . import ba_workflow
             result = ba_workflow.run_cli(args)
             print(json.dumps(result, ensure_ascii=False, indent=2))
             return 0

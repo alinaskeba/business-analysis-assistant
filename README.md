@@ -10,7 +10,7 @@ requirements, clarification questions and a reviewed work plan. Python + Gemini 
 Python 3.10+ is required. The application runtime uses the standard library.
 
 1. Copy `.env.example` to `.env` and set `GEMINI_API_KEY`.
-2. Run `python web_ui.py`.
+2. Run `python app.py`.
 3. Open **http://127.0.0.1:8000**. Use `--port 8001` if needed.
 
 The default model is `gemini-3.1-flash-lite`. Access and quota depend on the configured account.
@@ -32,7 +32,7 @@ not prove semantic correctness; the generated package remains a draft for conten
 
 The app is local and single-user. Accepted sessions stay in server memory until downloaded.
 Page refresh keeps the accepted session but loses unsent input. Resume a downloaded session with
-`python web_ui.py --session path/to/session.json`. Private sessions belong in ignored `sessions/`.
+`python app.py --session path/to/session.json`. Private sessions belong in ignored `sessions/`.
 
 ## Reports and architecture
 
@@ -56,8 +56,8 @@ assessment without an independent second-rating study.
 ## Tests and reproducibility
 
 ```powershell
-python -m unittest -q test_business_analysis test_workflow test_component_eval test_plan_coverage test_reviewed_baseline test_plan_sources test_web_ui test_staged_plan test_document_export test_evaluation_collection
-node test_generation_ui.cjs
+python -m unittest discover -s tests -t . -q
+node tests/test_generation_ui.cjs
 ```
 
 The recorded suite has 89 Python tests and four offline UI scenarios. These are software checks,
@@ -66,11 +66,11 @@ not 89 independent model observations. Historical fixtures are retained for regr
 Reporting-only dependencies: `python -m pip install -r requirements-reporting.txt`.
 
 ```powershell
-python build_evaluation_figures.py
-python build_submission.py
+python -m scripts.build_evaluation_figures
+python -m scripts.build_submission
 ```
 
-These commands do not call an LLM. `collect_test_evaluation.py` is an explicit live collection tool,
+These commands do not call an LLM. `python -m scripts.collect_test_evaluation` is an explicit live collection tool,
 documented in `tests/EVALUATION.md`. Historical snapshot hashes remain unchanged. Publication edits
 to prose and configuration examples are distinct from executable-runtime changes.
 
@@ -81,3 +81,24 @@ quality and CRISP-DM rules; `.agents/skills/` contains evaluation preparation/ex
 The project report describes the process and its limitations, as required by the assignment.
 Local credentials, personal sessions, browser profiles, superseded report bundles and temporary
 files are excluded by `.gitignore`. Cloud deployment is not required.
+
+## Repository layout
+
+```text
+app.py                 Local web UI entry point
+ba_assistant/          Analysis, workflow, validation and export modules
+web/                   Browser interface and print assets
+scripts/               Evaluation, plotting, reporting and GitHub packaging tools
+tests/                 Unit tests, final cases and observed test evidence
+dev/                   Development cases and recorded development experiments
+history/               Immutable regression/provenance fixtures
+reports/               Current project/evaluation reports and diagrams
+FINAL_REPORT.pdf       Final project report
+EVALUATION_REPORT.pdf  Final evaluation report
+```
+
+CLI example: `python -m ba_assistant --example` (live API request).
+Build a secret-checked public archive with `python -m scripts.prepare_github`.
+The import/path reorganization is documented in `layout_migration.json`; original experiment
+snapshots and test labels are unchanged. Model prompts and response schemas retain their evaluated
+values. Historical report commands describe the earlier layout; this README lists current commands.

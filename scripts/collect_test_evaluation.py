@@ -7,10 +7,9 @@ from pathlib import Path
 import shutil
 import time
 
-import business_analysis as ba
-import ba_workflow as wf
-
-ROOT = Path(__file__).resolve().parent
+from ba_assistant import business_analysis as ba
+from ba_assistant import ba_workflow as wf
+ROOT = Path(__file__).resolve().parents[1]
 COMPONENTS = ("requirements", "sources", "goals", "users", "team_roles", "conflicts",
               "questions", "answers", "specification", "tasks_and_criteria", "raci", "end_to_end")
 
@@ -37,6 +36,13 @@ def verify(root):
         # Publication edits to prose/config examples do not change the evaluated runtime.
         # Historical hashes remain intact; only executable files and web assets gate runs.
         if name in {"README.md", "SYSTEM.md", "AGENTS.md", ".env.example"}:
+            continue
+        migration_path = ROOT / "layout_migration.json"
+        migration = read(migration_path)["files"] if migration_path.exists() else {}
+        moved = migration.get(name)
+        if moved:
+            if moved["original_sha256"] != expected or sha(ROOT / moved["target"]) != moved["organized_sha256"]:
+                raise ValueError(f"Organized implementation differs from its audited layout: {name}")
             continue
         if sha(ROOT / name) != expected:
             raise ValueError(f"Frozen implementation changed: {name}")

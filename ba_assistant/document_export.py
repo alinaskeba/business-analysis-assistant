@@ -1,8 +1,7 @@
 """Escaped, print-ready individual documents; browser Save as PDF needs no new dependency."""
 from html import escape
 import copy
-import ba_workflow as wf
-
+from . import ba_workflow as wf
 TITLES = {"specification": "Specification", "tasks": "Implementation tasks",
           "acceptance_criteria": "Acceptance criteria", "raci": "RACI"}
 

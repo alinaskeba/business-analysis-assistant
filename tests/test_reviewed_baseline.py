@@ -4,12 +4,10 @@ import json
 from pathlib import Path
 import unittest
 
-import ba_workflow as wf
-import business_analysis as ba
-
-
+from ba_assistant import ba_workflow as wf
+from ba_assistant import business_analysis as ba
 class ReviewedBaselineTests(unittest.TestCase):
-    root = Path(__file__).parent / "dev/evaluation/plan-pass-03-reviewed-baseline"
+    root = Path(__file__).resolve().parents[1] / "dev/evaluation/plan-pass-03-reviewed-baseline"
 
     def setUp(self):
         self.plan = json.loads((self.root / "plan.reviewed.json").read_text(encoding="utf-8"))
@@ -69,7 +67,7 @@ class ReviewedBaselineTests(unittest.TestCase):
 
     def test_history_and_baseline_hashes_are_preserved(self):
         manifest = json.loads((self.root / "manifest.json").read_text())
-        original = Path(__file__).parent / manifest["original_output"]
+        original = Path(__file__).resolve().parents[1] / manifest["original_output"]
         self.assertEqual(original.read_bytes(), (self.root / "model-original.json").read_bytes())
         self.assertEqual(hashlib.sha256(original.read_bytes()).hexdigest(), manifest["original_output_sha256"])
         self.assertFalse(manifest["ready_for_finalization"])

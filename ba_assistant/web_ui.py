@@ -1,4 +1,4 @@
-"""Local demonstration UI. Run: python web_ui.py; open http://127.0.0.1:8000."""
+"""Local demonstration UI. Run: python app.py; open http://127.0.0.1:8000."""
 import argparse
 import json
 import os
@@ -7,10 +7,9 @@ import secrets
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from threading import Lock
 
-import business_analysis as ba
-import ba_workflow as wf
-
-ROOT = Path(__file__).resolve().parent
+from . import business_analysis as ba
+from . import ba_workflow as wf
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class DemoApp:
@@ -90,7 +89,7 @@ def handler_for(app):
             if self.path == "/print.js":
                 return self.send(200, (ROOT / "web/print.js").read_text(encoding="utf-8"), "application/javascript; charset=utf-8")
             if self.path.startswith("/export/"):
-                import document_export
+                from . import document_export
                 if not app.lock.acquire(blocking=False):
                     return self.send(409, {"errors": ["Generation is running; wait before exporting"]})
                 try:

@@ -9,11 +9,11 @@ import os
 import unittest
 from unittest.mock import patch
 
-import business_analysis as ba
-import ba_workflow as wf
-import evaluate_dev
+from ba_assistant import business_analysis as ba
+from ba_assistant import ba_workflow as wf
+from scripts import evaluate_dev
 
-DATASET_PATH = Path(__file__).parent / "dev/cases/ba_dev_cases.json"
+DATASET_PATH = Path(__file__).resolve().parents[1] / "dev/cases/ba_dev_cases.json"
 DATASET = json.loads(DATASET_PATH.read_text(encoding="utf-8"))
 CASE = DATASET["cases"][0]
 BRIEF = CASE["input"]["initial_requirements"]
@@ -366,12 +366,12 @@ class WorkflowTests(unittest.TestCase):
             output = Path(directory) / "package.md"
             wf.save_session(path, session, create=True)
             environment = dict(os.environ, GEMINI_API_KEY="")
-            cli = Path(__file__).parent / "business_analysis.py"
-            review = subprocess.run([sys.executable, str(cli), "--workflow", "review", "--session", str(path)],
+            cli = ["-m", "ba_assistant.business_analysis"]
+            review = subprocess.run([sys.executable, *cli, "--workflow", "review", "--session", str(path)],
                                     env=environment, capture_output=True, text=True)
             self.assertEqual(review.returncode, 0, review.stderr)
             self.assertEqual(json.loads(review.stdout)["source_ids"], ["brief", "A1", "A2", "A3"])
-            export = subprocess.run([sys.executable, str(cli), "--workflow", "export", "--session", str(path),
+            export = subprocess.run([sys.executable, *cli, "--workflow", "export", "--session", str(path),
                                      "--output", str(output)], env=environment, capture_output=True, text=True)
             self.assertEqual(export.returncode, 0, export.stderr)
             self.assertTrue(output.exists())

@@ -3,8 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
-import ba_workflow as wf
-
+from ba_assistant import ba_workflow as wf
 COMPONENTS = ("initial_analysis", "clarification", "updated_requirements", "specification",
               "tasks", "acceptance_criteria", "raci", "end_to_end")
 
@@ -58,7 +57,7 @@ def evaluate(dataset, sessions_dir):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dataset", type=Path, default=Path(__file__).parent / "dev/cases/ba_dev_cases.json")
+    parser.add_argument("--dataset", type=Path, default=Path(__file__).resolve().parents[1] / "dev/cases/ba_dev_cases.json")
     parser.add_argument("--sessions", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()

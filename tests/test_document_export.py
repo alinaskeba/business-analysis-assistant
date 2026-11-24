@@ -3,13 +3,11 @@ import json
 from pathlib import Path
 import unittest
 
-import document_export as export
-import business_analysis as ba
-
-
+from ba_assistant import document_export as export
+from ba_assistant import business_analysis as ba
 class ExportTests(unittest.TestCase):
     def setUp(self):
-        self.session = json.loads((Path(__file__).parent / 'dev/demo/office-hours/verified.session.json').read_text(encoding='utf-8'))
+        self.session = json.loads((Path(__file__).resolve().parents[1] / 'dev/demo/office-hours/verified.session.json').read_text(encoding='utf-8'))
 
     def test_each_export_contains_only_the_selected_document(self):
         for kind, title in export.TITLES.items():

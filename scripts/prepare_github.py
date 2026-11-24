@@ -6,7 +6,7 @@ import re
 import subprocess
 from zipfile import ZipFile, ZIP_DEFLATED
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
@@ -18,7 +18,7 @@ def main():
     result = subprocess.run(command, check=True, capture_output=True)
     files = sorted(Path(name) for name in result.stdout.decode('utf-8').split('\0') if name)
     files = [name for name in files if (ROOT / name).is_file()]
-    import business_analysis as ba
+    from ba_assistant import business_analysis as ba
     ba.load_env()
     values = [os.getenv(key, '').strip().encode() for key in ('GEMINI_API_KEY', 'OPENAI_API_KEY')]
     values = [value for value in values if len(value) >= 12]

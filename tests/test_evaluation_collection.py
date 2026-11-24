@@ -5,10 +5,10 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-import collect_test_evaluation as collect
-import business_analysis as ba
-import ba_workflow as wf
-import test_workflow as fixtures
+from scripts import collect_test_evaluation as collect
+from ba_assistant import business_analysis as ba
+from ba_assistant import ba_workflow as wf
+from tests import test_workflow as fixtures
 
 
 class CollectionTests(unittest.TestCase):

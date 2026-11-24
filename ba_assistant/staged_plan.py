@@ -2,9 +2,8 @@
 import copy
 import json
 
-import business_analysis as ba
-import plan_sources as ps
-
+from . import business_analysis as ba
+from . import plan_sources as ps
 REVISION = "staged-plan-v1"
 WORK_KEYS = ("tasks", "acceptance_criteria", "open_questions")
 

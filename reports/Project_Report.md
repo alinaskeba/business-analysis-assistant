@@ -65,7 +65,7 @@ Metrics include requirement precision/recall where approved countable gold units
 
 ### Deployment / delivery
 
-The application runs locally with python web_ui.py or the existing CLI. The UI supports brief analysis, batched replies, reviewer corrections, button-based requirements approval, generation, the single RACI repair and exports. Sessions stay in server memory unless downloaded; CLI sessions are saved explicitly. Page refresh preserves accepted server state but does not preserve unsent text. Cloud deployment is not part of this prototype. A demo video is still a submission deliverable, not an already recorded result.
+The application runs locally with python app.py or the existing CLI. The UI supports brief analysis, batched replies, reviewer corrections, button-based requirements approval, generation, the single RACI repair and exports. Sessions stay in server memory unless downloaded; CLI sessions are saved explicitly. Page refresh preserves accepted server state but does not preserve unsent text. Cloud deployment is not part of this prototype. A demo video is still a submission deliverable, not an already recorded result.
 
 ## 4. Evaluation results
 
@@ -113,16 +113,16 @@ The owner reviewed briefs, labels and requirements and supplied additional busin
 From the project directory, configure GEMINI_API_KEY privately in .env. The default model is gemini-3.1-flash-lite. The runtime uses the Python standard library; plotting/report tooling additionally uses matplotlib, numpy and Pillow.
 
 ```powershell
-python web_ui.py
+python app.py
 ```
 
 Open http://127.0.0.1:8000. Analyze a brief, inspect evidence, submit actual answers, request corrections if needed, then approve and generate. A first RACI failure is shown and automatically repaired once. Inspect the content before using it. PDF buttons open a printable individual document; choose Save as PDF in the browser dialog. Download session JSON before stopping the server.
 
 ```powershell
-python -m unittest -q test_business_analysis test_workflow test_component_eval test_plan_coverage test_reviewed_baseline test_plan_sources test_web_ui test_staged_plan test_document_export test_evaluation_collection
-node test_generation_ui.cjs
-python build_evaluation_figures.py
-python build_submission.py
+python -m unittest discover -s tests -t . -q
+node tests/test_generation_ui.cjs
+python -m scripts.build_evaluation_figures
+python -m scripts.build_submission
 ```
 
 The recorded software suite has 89 passing Python tests including collection-tool tests, plus four offline UI flow scenarios. These are not 89 model-quality test cases. Frozen code, raw request/response logs, exact source text, execution outcomes and hashes make the reported observations auditable.

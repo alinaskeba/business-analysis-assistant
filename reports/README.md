@@ -15,6 +15,6 @@ editable content; diagrams/plots are embedded images, with separate vector/sourc
 Semantic judgments use one assistant-assisted assessment without an independent second-rating study.
 Historical outputs are separated from final-test evidence. Building the reports makes no API calls.
 
-Rebuild with `python build_submission.py` (matplotlib, numpy and Pillow are used for figures).
+Rebuild with `python -m scripts.build_submission` (matplotlib, numpy and Pillow are used for figures).
 DOCX generation uses standard-library OOXML and does not require Microsoft Word or python-docx.
 Historical outputs, frozen system code and approved test labels remain unchanged.

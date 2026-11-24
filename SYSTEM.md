@@ -7,12 +7,12 @@ are English. The surface is a Python CLI and local single-user web UI.
 
 | Component | Purpose |
 | --- | --- |
-| business_analysis.py | Gemini transport, analysis prompt/schema, evidence/reference checks, CLI |
-| ba_workflow.py | Source-aware sessions, clarification, revisions, approval and specification assembly |
-| plan_sources.py | Source registry, quote hydration, plan checks and semantic audit |
-| staged_plan.py | Separate work/RACI requests and validated-work reuse |
-| web_ui.py and web/ | Review, corrections, approval, one visible RACI repair and document display |
-| document_export.py | Individually printable documents for browser PDF export |
+| ba_assistant/business_analysis.py | Gemini transport, analysis prompt/schema, evidence/reference checks, CLI |
+| ba_assistant/ba_workflow.py | Source-aware sessions, clarification, revisions, approval and specification assembly |
+| ba_assistant/plan_sources.py | Source registry, quote hydration, plan checks and semantic audit |
+| ba_assistant/staged_plan.py | Separate work/RACI requests and validated-work reuse |
+| ba_assistant/web_ui.py and web/ | Review, corrections, approval, one visible RACI repair and document display |
+| ba_assistant/document_export.py | Individually printable documents for browser PDF export |
 | Evaluation/report scripts | Explicit collection, metrics, annotations and reproducible reports |
 
 See the architecture in reports/diagrams/. The original brief is source brief; each actual reply
@@ -47,3 +47,7 @@ stages remain not measured or intentionally N/A. The frozen executable version i
 Historical raw artifacts and snapshot hashes remain unchanged. Publication prose/config examples
 are excluded from executable-code checks, without changing historical metadata or model scores.
 See reports/Evaluation_Report.md for observations, scope and limitations.
+
+The published layout uses `app.py` for UI startup and `python -m ba_assistant` for the CLI.
+`layout_migration.json` maps evaluated filenames and hashes to organized files; original frozen
+snapshots remain unchanged. The migration changes imports/paths, not model prompts or schemas.

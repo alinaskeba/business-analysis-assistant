@@ -8,9 +8,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-import collect_test_evaluation as collect
-
-ROOT = Path(__file__).resolve().parent
+from scripts import collect_test_evaluation as collect
+ROOT = Path(__file__).resolve().parents[1]
 PASS = ROOT / "tests/evaluation/pass-01"
 ASSISTED = ROOT / "tests/evaluation/pass-01-assisted-library"
 OUT = PASS / "report-assets"

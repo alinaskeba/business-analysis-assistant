@@ -25,16 +25,6 @@ submission/Report_Pack.zip
 **/manual-review.json
 tests/history/
 
-# One-off experiment launchers; preserved locally, not part of the public app
-run_plan_pass06.py
-run_office_hours_demo.py
-run_raci_repair_eval.py
-run_ui_raci_case.py
-run_assisted_library_eval.py
-test_ui_raci_live.cjs
-build_reviewed_plan_baseline.py
-prepare_component_references.py
-review_component_pass01.py
 
 submission/
 github-ready.zip

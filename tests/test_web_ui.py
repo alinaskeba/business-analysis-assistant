@@ -8,9 +8,9 @@ from unittest.mock import patch
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
-import business_analysis as ba
-import web_ui
-import test_workflow as fixtures
+from ba_assistant import business_analysis as ba
+from ba_assistant import web_ui
+from tests import test_workflow as fixtures
 
 
 class WebTests(unittest.TestCase):

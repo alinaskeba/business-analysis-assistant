@@ -3,9 +3,7 @@ import copy
 import json
 import re
 
-import business_analysis as ba
-
-
+from . import business_analysis as ba
 ACTIVITIES = {
     "requirements_approval": r"approv\w* (?:the )?business requirements",
     "specification_preparation": r"prepar\w* (?:the )?specification|specification preparation",
